@@ -4,7 +4,7 @@
  <title>Json Lee</title>
  <link href="http://lijiansong.github.io/atom.xml" rel="self"/>
  <link href="http://lijiansong.github.io/"/>
- <updated>2016-08-17T15:10:04+08:00</updated>
+ <updated>2016-08-17T15:31:11+08:00</updated>
  <id>http://lijiansong.github.io</id>
  <author>
    <name>Json Lee</name>
@@ -77,9 +77,9 @@ Just like the OpenCV Manager, the Engine Manager is also an Android service targ
  
  <entry>
    <title>Example content</title>
-   <link href="http://lijiansong.github.io/test/2014/08/17/example-content/"/>
-   <updated>2014-08-17T00:00:00+08:00</updated>
-   <id>http://lijiansong.github.io/test/2014/08/17/example-content</id>
+   <link href="http://lijiansong.github.io/test/2014/08/12/example-content/"/>
+   <updated>2014-08-12T00:00:00+08:00</updated>
+   <id>http://lijiansong.github.io/test/2014/08/12/example-content</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
   Howdy! This is an example blog post that shows several types of HTML content supported in this theme.
 &lt;/div&gt;
