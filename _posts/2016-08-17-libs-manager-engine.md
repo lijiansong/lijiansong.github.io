@@ -3,6 +3,9 @@ layout: post
 title: Libs-Manager-Engine
 categories: Android Java
 comments: true
+tags:
+    - IDL
+    - platform tool
 ---
 
 
