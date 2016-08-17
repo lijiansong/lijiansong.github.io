@@ -11,7 +11,7 @@
 
   <title>
     
-      Welcome to Jekyll! &middot; Json Lee
+      Libs-Manager-Engine &middot; Json Lee
     
   </title>
 
@@ -212,26 +212,45 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Welcome to Jekyll!</h1>
-  <span class="post-date">16 Aug 2016</span>
+  <h1 class="post-title">Libs-Manager-Engine</h1>
+  <span class="post-date">17 Aug 2016</span>
    | 
   
   
   <article>
-    <p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+    <div class="message">
+  I have been coding an platform recently, which can manage library binaries on end users devices, such as android, iOS and so on.
 
-<p>To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the convention <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+</div>
 
-<p>Jekyll also offers powerful support for code snippets:</p>
+<p>The platform is a Service Store, which just like the app store in android, where delelopers develop their own apps and deploy them onto the app store, and users can download the app that they like and install it on his or her devices. Therefore, android’s app store can be treated as an ecological system.</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+<p>However, our Service Store is also an ecological system, where the Service Manufacture or Lib Developers can develop their own Cloud Services or Native Services, and users can connect to the service they like on their end devices, e.g. <em>Voice Recognition Service</em>, <em>Face Detection Service</em>, etc. The technical architecture of the platform is shown below.
+<!-- more --></p>
 
-<p>Check out the <a href="http://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+<p><strong>Technical Architecture</strong></p>
 
+<p><img src="/assets/blog-img/2016_08_17_arch.png" alt="image" title="Technical Architecture" /></p>
+
+<p>On Andrioid platform, it provides <a href="https://developer.android.com/guide/components/aidl.html"><em>AIDL</em></a> for developers. AIDL (Android Interface Definition Language) is similar to other IDLs you might have worked with. It allows you to define the programming interface that both the client and service agree upon in order to communicate with each other using interprocess communication (IPC). On Android, one process cannot normally access the memory of another process. So to talk, they need to decompose their objects into primitives that the operating system can understand, and marshall the objects across that boundary for you. The code to do that marshalling is tedious to write, so Android handles it for you with AIDL. With AIDL, developers don’t need to know the underlying Binder mechanisms.</p>
+
+<h2 id="introduction">Introduction</h2>
+<p>Refer to the OpenCV Manager Mauual.
+Just like the OpenCV Manager, the Engine Manager is also an Android service targeted to manage OpenCV library binaries on end users devices. It allows sharing the dynamic libraries between applications on the same device, such as Face Detection lib, Voice Recognition lib. The Engine Manager provides the following benefits:</p>
+<ul>
+  <li>Less memory usage. All apps use the same binaries from service and do not have to keep the native libs inside themselves;</li>
+  <li>Hardware specific optimizations for all supported platforms, such as the different CPU-Arch of Android platform;</li>
+  <li>Once the Engine is released, all the Service Libraries will be trusted library source. All packages with OpenCV should be published on Google Play market or Apple’s App Store;</li>
+  <li>Regular updates and bug fixes;</li>
+</ul>
+
+<blockquote>
+  <p><a href="https://github.com/lijiansong/Libs-Manager-Engine/blob/master/engine/README.md">Learn more details…</a></p>
+</blockquote>
+
+<hr />
+
+<p>Want to see something else added? <a href="https://github.com/lijiansong/Libs-Manager-Engine/issues">Open an issue.</a></p>
 
   </article>
 </div>
@@ -239,6 +258,15 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/test/2016/08/16/welcome-to-jekyll/">
+            Welcome to Jekyll!
+            <small>16 Aug 2016</small>
+          </a>
+        </h3>
+      </li>
     
       <li>
         <h3>
@@ -258,8 +286,8 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
   <div id="disqus_thread"></div>
   <script>
 var disqus_config = function () {
-  this.page.url = 'http://lijiansong.github.io/jekyll/update/2016/08/16/welcome-to-jekyll/'; // Replace PAGE_URL with your page's canonical URL variable
-  this.page.identifier = '/jekyll/update/2016/08/16/welcome-to-jekyll'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  this.page.url = 'http://lijiansong.github.io/android/java/2016/08/17/libs-manager-engine/'; // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/android/java/2016/08/17/libs-manager-engine'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 (function() {
   var d = document, s = d.createElement('script');
