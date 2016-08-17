@@ -47,8 +47,8 @@ title: About Json Lee
 ## Awards
 + Outstanding Graduate of Wuhan University, Wuhan University, 2016
 + Third Prize National Information Security Contest for College Students, China, 2015
-+ First Prize of American College Students' Mathematical and Modeling Contest, America, 2015
-+ First Prize of Eighth Central China Region of Mathematical and Modeling Contest for College Students, China, 2015
++ First Prize of American College Students' Mathematics and Modeling Contest, America, 2015
++ First Prize of Eighth Central China Region of Mathematics and Modeling Contest for College Students, China, 2015
 + Champions of 5000m/1500m long-distance race for many times, Wuhan University, 2014
 
 ## Postscript
