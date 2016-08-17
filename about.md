@@ -18,7 +18,7 @@ title: About Json Lee
 * [Awards](#awards)
 
 ## Biography
-> I received my B.E. degree in [Computer Science and Technology](http://cs.whu.edu.cn/) from [Wuhan University](http://www.whu.edu.cn) in July 2016 and mine Ph.D. degree in [Computer Architecture](http://www.carch.ac.cn/) from [Institute of Computing Technology, CAS](http://www.ict.ac.cn) in January 2021 under the supervision of Prof. Feng Xiaobing and Liu Lei.
+> I received my B.E. degree in [Computer Science and Technology](http://cs.whu.edu.cn/) from [Wuhan University](http://www.whu.edu.cn) in July 2016 and my Ph.D. degree in [Computer Architecture](http://www.carch.ac.cn/) from [Institute of Computing Technology, CAS](http://www.ict.ac.cn) in January 2021 under the supervision of Prof. Feng Xiaobing and Liu Lei.
 
 ## Research Directions
 > My research directions focus on *Distribution System, Parallel Computing, Compilation Technology, Machine Learning*, and etc.
