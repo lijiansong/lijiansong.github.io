@@ -52,5 +52,5 @@ title: About Json Lee
 + Champions of 5000m/1500m long-distance race for many times, Wuhan University, 2014
 
 ## Postscript
-> This archive will be updated regularly.  
+> This archive will be updated regularly. The early one is released on [CSDN](http://blog.csdn.net/u011000290). 
 Any questions or suggestions, feel free to [open an issue on GitHub](https://github.com/lijiansong) or email me to lijiansong@ict.ac.cn .
