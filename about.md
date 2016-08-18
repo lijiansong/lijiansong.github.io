@@ -27,29 +27,29 @@ title: About Json Lee
 
 ### Journals
 
-+ xxx
-+ xxx
-+ xxx
+- xxx
+- xxx
+- xxx
 
 ### Conferences
-+ xxx
-+ xxx
-+ xxx
-+ xxx
+- xxx
+- xxx
+- xxx
+- xxx
 
 ## Research Activities
-+ xxx
-+ xxx
+- xxx
+- xxx
 
 ## Internship Experiences
-+ 3D Road Modeling and Simulation System, in Wuhan Zoyon Technology co., ltd, 2015
+- 3D Road Modeling and Simulation System, in Wuhan Zoyon Technology co., ltd, 2015
 
 ## Awards
-+ Outstanding Graduate of Wuhan University, Wuhan University, 2016
-+ Third Prize National Information Security Contest for College Students, China, 2015
-+ First Prize of American College Students' Mathematics and Modeling Contest, America, 2015
-+ First Prize of Eighth Central China Region of Mathematics and Modeling Contest for College Students, China, 2015
-+ Champions of 5000m/1500m long-distance race for many times, Wuhan University, 2014
+- Outstanding Graduate of Wuhan University, Wuhan University, 2016
+- Third Prize National Information Security Contest for College Students, China, 2015
+- First Prize of American College Students' Mathematics and Modeling Contest, America, 2015
+- First Prize of Eighth Central China Region of Mathematics and Modeling Contest for College Students, China, 2015
+- Champions of 5000m/1500m long-distance race for many times, Wuhan University, 2014
 
 ## Postscript
 > This archive will be updated regularly. The early one is released on [CSDN](http://blog.csdn.net/u011000290). <br>
