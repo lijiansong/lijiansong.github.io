@@ -15,9 +15,9 @@ tags:
 </div>
 
 The platform is a Service Store, which just like the app store in android, where delelopers develop their own apps and deploy them onto the app store, and users can download the app that they like and install it on his or her devices. Therefore, android's app store can be treated as an ecological system.
-
-However, our Service Store is also an ecological system, where the Service Manufacture or Lib Developers can develop their own Cloud Services or Native Services, and users can connect to the service they like on their end devices, e.g. *Voice Recognition Service*, *Face Detection Service*, etc. The technical architecture of the platform is shown below.
 <!-- more -->
+However, our Service Store is also an ecological system, where the Service Manufacture or Lib Developers can develop their own Cloud Services or Native Services, and users can connect to the service they like on their end devices, e.g. *Voice Recognition Service*, *Face Detection Service*, etc. The technical architecture of the platform is shown below.
+
 
 **Technical Architecture**
 
