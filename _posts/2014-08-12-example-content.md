@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Example content
+title: 测试：Example content
 category: Test
 ---
 

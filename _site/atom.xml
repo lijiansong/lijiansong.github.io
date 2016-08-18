@@ -4,7 +4,7 @@
  <title>Json Lee</title>
  <link href="http://lijiansong.github.io/atom.xml" rel="self"/>
  <link href="http://lijiansong.github.io/"/>
- <updated>2016-08-18T09:33:30+08:00</updated>
+ <updated>2016-08-18T09:35:34+08:00</updated>
  <id>http://lijiansong.github.io</id>
  <author>
    <name>Json Lee</name>
@@ -53,7 +53,7 @@ Just like the OpenCV Manager, the Engine Manager is also an Android service targ
  </entry>
  
  <entry>
-   <title>Welcome to Jekyll!</title>
+   <title>测试：Welcome to Jekyll !</title>
    <link href="http://lijiansong.github.io/test/2016/08/16/welcome-to-jekyll/"/>
    <updated>2016-08-16T21:35:15+08:00</updated>
    <id>http://lijiansong.github.io/test/2016/08/16/welcome-to-jekyll</id>
@@ -75,7 +75,7 @@ To add new posts, simply add a file in the &lt;code class=&quot;highlighter-roug
  </entry>
  
  <entry>
-   <title>Example content</title>
+   <title>测试：Example content</title>
    <link href="http://lijiansong.github.io/test/2014/08/12/example-content/"/>
    <updated>2014-08-12T00:00:00+08:00</updated>
    <id>http://lijiansong.github.io/test/2014/08/12/example-content</id>
