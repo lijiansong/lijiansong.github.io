@@ -249,19 +249,17 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
   <p>Format of the config file is similar to JSON, which is composed of pairs of key-values. The config file is also composed of some tuples, which contain some pairs of key-values. e.g.</p>
 </blockquote>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">section</span> <span class="p">{</span>
- <span class="nx">key1</span> <span class="o">=</span> <span class="s2">"string"</span><span class="p">;</span>
- <span class="nx">key2</span> <span class="o">=</span> <span class="mf">12.34</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">section</span> <span class="p">{</span>
+ <span class="n">key1</span> <span class="o">=</span> <span class="s">"string"</span><span class="p">;</span>
+ <span class="n">key2</span> <span class="o">=</span> <span class="mf">12.34</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
 <blockquote>
   <p>Therefore,</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>section.key1= "string"
-section.key2=12.34
-</code></pre>
-</div>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">section</span><span class="p">.</span><span class="nx">key1</span><span class="o">=</span> <span class="s2">"string"</span>
+<span class="nx">section</span><span class="p">.</span><span class="nx">key2</span><span class="o">=</span><span class="mf">12.34</span></code></pre></figure>
 
 <h3 id="inheritance-mechanism">Inheritance Mechanism</h3>
 

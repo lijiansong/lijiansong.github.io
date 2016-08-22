@@ -27,7 +27,7 @@ tags:
 
 > Format of the config file is similar to JSON, which is composed of pairs of key-values. The config file is also composed of some tuples, which contain some pairs of key-values. e.g.
 
-{% highlight js %}
+{% highlight cpp %}
 section {
  key1 = "string";
  key2 = 12.34;
@@ -36,10 +36,10 @@ section {
 
 > Therefore,
 
-```
+{% highlight js %}
 section.key1= "string"
 section.key2=12.34
-```
+{% endhighlight %}
 
 ### Inheritance Mechanism
 
