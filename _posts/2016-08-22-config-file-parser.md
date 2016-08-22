@@ -22,22 +22,27 @@ tags:
 * [Usage](#usage)
 
 ## Description File Design
+
 ### Key-Values
+
 > Format of the config file is similar to JSON, which is composed of pairs of key-values. The config file is also composed of some tuples, which contain some pairs of key-values. e.g.
 
-```
+<div class="message">
 section {
  key1 = "string";
  key2 = 12.34;
 }
-```
+</div>
+
 > Therefore,
 
 ```
 section.key1= "string"
 section.key2=12.34
 ```
+
 ### Inheritance Mechanism
+
 > Besides the features above, the config file also supports inheritance mechanism. The symbol of inheritance is shown by ":", e.g.<br>
 
 ```
@@ -58,6 +63,7 @@ derived_section.key3=10
 > The types of the config file include int, float, string.<br>
 
 ### Induction Mechanism
+
 > The config file also introduces induction mechanism, which is expressed by "include", e.g.<br>
 > The contents of a.config:
 
@@ -67,6 +73,7 @@ section_a {
  key2 = 12.34;
 }
 ```
+
 > The contents of b.config:
 
 ```
@@ -90,6 +97,7 @@ key2=25;
 ```
 
 ### Comments
+
 > The config file also supports comments, formularized by /*comments*/ or //, e.g.<br>
 
 ```
@@ -101,6 +109,7 @@ section {
 ```
 
 ## Syntax Design
+
 > To parse the config file, flex & bison is of much efficiency. Before using the mature tools, we have to define the grammar in advance, which is formularized by Backus-Naur Form. The config files' Backus-Naur Form is shown below:<br>
 
 ```
@@ -138,6 +147,7 @@ $ make
 ```
 $ ./config_parser test.config
 ```
+
 > You can also call the static library *lib_cfg_parser.a* in your own program.
 
 

@@ -4,7 +4,7 @@
  <title>Json Lee</title>
  <link href="http://lijiansong.github.io/atom.xml" rel="self"/>
  <link href="http://lijiansong.github.io/"/>
- <updated>2016-08-22T19:23:26+08:00</updated>
+ <updated>2016-08-22T19:26:52+08:00</updated>
  <id>http://lijiansong.github.io</id>
  <author>
    <name>Json Lee</name>
@@ -37,17 +37,20 @@
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;description-file-design&quot;&gt;Description File Design&lt;/h2&gt;
+
 &lt;h3 id=&quot;key-values&quot;&gt;Key-Values&lt;/h3&gt;
+
 &lt;blockquote&gt;
   &lt;p&gt;Format of the config file is similar to JSON, which is composed of pairs of key-values. The config file is also composed of some tuples, which contain some pairs of key-values. e.g.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;section {
+&lt;div class=&quot;message&quot;&gt;
+section {
  key1 = &quot;string&quot;;
  key2 = 12.34;
 }
-&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
 &lt;blockquote&gt;
   &lt;p&gt;Therefore,&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -56,7 +59,9 @@
 section.key2=12.34
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
 &lt;h3 id=&quot;inheritance-mechanism&quot;&gt;Inheritance Mechanism&lt;/h3&gt;
+
 &lt;blockquote&gt;
   &lt;p&gt;Besides the features above, the config file also supports inheritance mechanism. The symbol of inheritance is shown by “:”, e.g.&lt;br /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -83,6 +88,7 @@ derived_section.key3=10
 &lt;/blockquote&gt;
 
 &lt;h3 id=&quot;induction-mechanism&quot;&gt;Induction Mechanism&lt;/h3&gt;
+
 &lt;blockquote&gt;
   &lt;p&gt;The config file also introduces induction mechanism, which is expressed by “include”, e.g.&lt;br /&gt;
 The contents of a.config:&lt;/p&gt;
@@ -94,6 +100,7 @@ The contents of a.config:&lt;/p&gt;
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
 &lt;blockquote&gt;
   &lt;p&gt;The contents of b.config:&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -119,6 +126,7 @@ key2=25;
 &lt;/div&gt;
 
 &lt;h3 id=&quot;comments&quot;&gt;Comments&lt;/h3&gt;
+
 &lt;blockquote&gt;
   &lt;p&gt;The config file also supports comments, formularized by /&lt;em&gt;comments&lt;/em&gt;/ or //, e.g.&lt;br /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -132,6 +140,7 @@ section {
 &lt;/div&gt;
 
 &lt;h2 id=&quot;syntax-design&quot;&gt;Syntax Design&lt;/h2&gt;
+
 &lt;blockquote&gt;
   &lt;p&gt;To parse the config file, flex &amp;amp; bison is of much efficiency. Before using the mature tools, we have to define the grammar in advance, which is formularized by Backus-Naur Form. The config files’ Backus-Naur Form is shown below:&lt;br /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -175,6 +184,7 @@ $ make
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ./config_parser test.config
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
 &lt;blockquote&gt;
   &lt;p&gt;You can also call the static library &lt;em&gt;lib_cfg_parser.a&lt;/em&gt; in your own program.&lt;/p&gt;
 &lt;/blockquote&gt;
