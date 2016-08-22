@@ -5,9 +5,191 @@
     <description>Copy Right (c) &lt;a href=&quot;http://lijiansong.github.io&quot; target=&quot;_blank&quot;&gt;Json Lee&lt;/a&gt;.</description>
     <link>http://lijiansong.github.io/</link>
     <atom:link href="http://lijiansong.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 21 Aug 2016 17:12:08 +0800</pubDate>
-    <lastBuildDate>Sun, 21 Aug 2016 17:12:08 +0800</lastBuildDate>
+    <pubDate>Mon, 22 Aug 2016 19:19:49 +0800</pubDate>
+    <lastBuildDate>Mon, 22 Aug 2016 19:19:49 +0800</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Config File Parser</title>
+        <description>&lt;div class=&quot;message&quot;&gt;
+  This archive is about how to use Flex and Bison (Yacc) to parse config files that is self-defined. 
+&lt;/div&gt;
+&lt;p&gt;The contens is shown below:&lt;br /&gt;
+&lt;!-- more --&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#description-file-design&quot;&gt;Description File Design&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#key-values&quot;&gt;Key-Values&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#inheritance-mechanism&quot;&gt;Inheritance Mechanism&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#induction-mechanism&quot;&gt;Induction Mechanism&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#syntax-design&quot;&gt;Syntax Design&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#usage&quot;&gt;Usage&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;description-file-design&quot;&gt;Description File Design&lt;/h2&gt;
+&lt;h3 id=&quot;key-values&quot;&gt;Key-Values&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Format of the config file is similar to JSON, which is composed of pairs of key-values. The config file is also composed of some tuples, which contain some pairs of key-values. e.g.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;section {
+ key1 = &quot;string&quot;;
+ key2 = 12.34;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Therefore,&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;section.key1= &quot;string&quot;
+section.key2=12.34
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h3 id=&quot;inheritance-mechanism&quot;&gt;Inheritance Mechanism&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Besides the features above, the config file also supports inheritance mechanism. The symbol of inheritance is shown by “:”, e.g.&lt;br /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;derived_section : section {
+  key1 = &quot;override string&quot;;
+  key3 = 10;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Therefore,&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;derived_section.key1=&quot;override string&quot;
+derived_section.key2=12.34
+derived_section.key3=10
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The types of the config file include int, float, string.&lt;br /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;induction-mechanism&quot;&gt;Induction Mechanism&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;The config file also introduces induction mechanism, which is expressed by “include”, e.g.&lt;br /&gt;
+The contents of a.config:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;section_a {
+ key1 = &quot;string&quot;;
+ key2 = 12.34;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;The contents of b.config:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#include &quot;path/a.config&quot;
+section_b {
+ key1 = &quot;str1&quot;;
+ key2 = 12.34;
+x{
+ key1=2;
+ key2=8;
+}
+y : section_b.x{
+ key1=20;
+ key3=33;
+}
+}
+z:section_a{
+key1=&quot;str&quot;;
+key2=25;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;comments&quot;&gt;Comments&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;The config file also supports comments, formularized by /&lt;em&gt;comments&lt;/em&gt;/ or //, e.g.&lt;br /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//comment
+section {
+ key1 = /* comment*/ &quot;string&quot;;
+ key2 = 12.34;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;syntax-design&quot;&gt;Syntax Design&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;To parse the config file, flex &amp;amp; bison is of much efficiency. Before using the mature tools, we have to define the grammar in advance, which is formularized by Backus-Naur Form. The config files’ Backus-Naur Form is shown below:&lt;br /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tuples::= tuple tuples | \epsilon
+tuples::= ID LB entries RB | ID COLON LB entries RB
+entries::= kv entries | tuple entries | \epsilon
+kv::= ID EQ value END
+value::= FLOAT | INT | ctring | NULLV
+cstring::= STRING cstring
+
+INT-&amp;gt;[0-9]+
+FLOAT-&amp;gt;[+-]?[0-9]+(\.[0-9]*)?
+STRING-&amp;gt;\&quot;(\\.|[^\\&quot;])*\&quot;
+ID-&amp;gt;[a-z_][a-z0-9_\.]*
+LB-&amp;gt;{
+RB-&amp;gt;}
+COLON-&amp;gt;:
+EQ-&amp;gt;=
+END-&amp;gt;;
+NULLV-&amp;gt;NULL
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;To Compile the source code, you need to install git &amp;amp; make. You can use the following command line to complie them:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone https://github.com/lijiansong/ConfigFileParser
+$ cd ConfigFileParser
+$ make
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;After the above cmds, you would get an executable file, named &lt;em&gt;config_parser&lt;/em&gt;, and a static library suffixed by &lt;em&gt;.a&lt;/em&gt;, named &lt;em&gt;lib_cfg_parser.a&lt;/em&gt;. You can execute it like this( before use it you need to write a config file that is formulized by the grammar defined above ):&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ./config_parser test.config
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;You can also call the static library &lt;em&gt;lib_cfg_parser.a&lt;/em&gt; in your own program.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Want to see something else added? &lt;a href=&quot;https://github.com/lijiansong/ConfigFileParser/issues&quot;&gt;Open an issue.&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 22 Aug 2016 00:00:00 +0800</pubDate>
+        <link>http://lijiansong.github.io/yacc/cpp/2016/08/22/config-file-parser/</link>
+        <guid isPermaLink="true">http://lijiansong.github.io/yacc/cpp/2016/08/22/config-file-parser/</guid>
+        
+        <category>IDL</category>
+        
+        <category>platform tool</category>
+        
+        
+        <category>Yacc</category>
+        
+        <category>Cpp</category>
+        
+      </item>
     
       <item>
         <title>Libs-Manager-Engine</title>

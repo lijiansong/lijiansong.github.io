@@ -11,7 +11,7 @@
 
   <title>
     
-      测试：Welcome to Jekyll ! &middot; Json Lee
+      Config File Parser &middot; Json Lee
     
   </title>
 
@@ -212,26 +212,180 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">测试：Welcome to Jekyll !</h1>
-  <span class="post-date">16 Aug 2016</span>
+  <h1 class="post-title">Config File Parser</h1>
+  <span class="post-date">22 Aug 2016</span>
    | 
+  
+    <a href="/blog/tags/#idl" class="post-tag">IDL</a>
+  
+    <a href="/blog/tags/#platform-tool" class="post-tag">platform tool</a>
   
   
   <article>
-    <p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.
-<!-- more -->
-To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the convention <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+    <div class="message">
+  This archive is about how to use Flex and Bison (Yacc) to parse config files that is self-defined. 
+</div>
+<p>The contens is shown below:<br />
+<!-- more --></p>
+<ul>
+  <li><a href="#description-file-design">Description File Design</a>
+    <ul>
+      <li><a href="#key-values">Key-Values</a></li>
+      <li><a href="#inheritance-mechanism">Inheritance Mechanism</a></li>
+      <li><a href="#induction-mechanism">Induction Mechanism</a></li>
+      <li><a href="#comments">Comments</a></li>
+    </ul>
+  </li>
+  <li><a href="#syntax-design">Syntax Design</a></li>
+  <li><a href="#usage">Usage</a></li>
+</ul>
 
-<p>Jekyll also offers powerful support for code snippets:</p>
+<h2 id="description-file-design">Description File Design</h2>
+<h3 id="key-values">Key-Values</h3>
+<blockquote>
+  <p>Format of the config file is similar to JSON, which is composed of pairs of key-values. The config file is also composed of some tuples, which contain some pairs of key-values. e.g.</p>
+</blockquote>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+<div class="highlighter-rouge"><pre class="highlight"><code>section {
+ key1 = "string";
+ key2 = 12.34;
+}
+</code></pre>
+</div>
+<blockquote>
+  <p>Therefore,</p>
+</blockquote>
 
-<p>Check out the <a href="http://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>section.key1= "string"
+section.key2=12.34
+</code></pre>
+</div>
+<h3 id="inheritance-mechanism">Inheritance Mechanism</h3>
+<blockquote>
+  <p>Besides the features above, the config file also supports inheritance mechanism. The symbol of inheritance is shown by “:”, e.g.<br /></p>
+</blockquote>
 
+<div class="highlighter-rouge"><pre class="highlight"><code>derived_section : section {
+  key1 = "override string";
+  key3 = 10;
+}
+</code></pre>
+</div>
+
+<blockquote>
+  <p>Therefore,</p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>derived_section.key1="override string"
+derived_section.key2=12.34
+derived_section.key3=10
+</code></pre>
+</div>
+
+<blockquote>
+  <p>The types of the config file include int, float, string.<br /></p>
+</blockquote>
+
+<h3 id="induction-mechanism">Induction Mechanism</h3>
+<blockquote>
+  <p>The config file also introduces induction mechanism, which is expressed by “include”, e.g.<br />
+The contents of a.config:</p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>section_a {
+ key1 = "string";
+ key2 = 12.34;
+}
+</code></pre>
+</div>
+<blockquote>
+  <p>The contents of b.config:</p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#include "path/a.config"
+section_b {
+ key1 = "str1";
+ key2 = 12.34;
+x{
+ key1=2;
+ key2=8;
+}
+y : section_b.x{
+ key1=20;
+ key3=33;
+}
+}
+z:section_a{
+key1="str";
+key2=25;
+}
+</code></pre>
+</div>
+
+<h3 id="comments">Comments</h3>
+<blockquote>
+  <p>The config file also supports comments, formularized by /<em>comments</em>/ or //, e.g.<br /></p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>//comment
+section {
+ key1 = /* comment*/ "string";
+ key2 = 12.34;
+}
+</code></pre>
+</div>
+
+<h2 id="syntax-design">Syntax Design</h2>
+<blockquote>
+  <p>To parse the config file, flex &amp; bison is of much efficiency. Before using the mature tools, we have to define the grammar in advance, which is formularized by Backus-Naur Form. The config files’ Backus-Naur Form is shown below:<br /></p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>tuples::= tuple tuples | \epsilon
+tuples::= ID LB entries RB | ID COLON LB entries RB
+entries::= kv entries | tuple entries | \epsilon
+kv::= ID EQ value END
+value::= FLOAT | INT | ctring | NULLV
+cstring::= STRING cstring
+
+INT-&gt;[0-9]+
+FLOAT-&gt;[+-]?[0-9]+(\.[0-9]*)?
+STRING-&gt;\"(\\.|[^\\"])*\"
+ID-&gt;[a-z_][a-z0-9_\.]*
+LB-&gt;{
+RB-&gt;}
+COLON-&gt;:
+EQ-&gt;=
+END-&gt;;
+NULLV-&gt;NULL
+</code></pre>
+</div>
+
+<h2 id="usage">Usage</h2>
+
+<blockquote>
+  <p>To Compile the source code, you need to install git &amp; make. You can use the following command line to complie them:</p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/lijiansong/ConfigFileParser
+$ cd ConfigFileParser
+$ make
+</code></pre>
+</div>
+
+<blockquote>
+  <p>After the above cmds, you would get an executable file, named <em>config_parser</em>, and a static library suffixed by <em>.a</em>, named <em>lib_cfg_parser.a</em>. You can execute it like this( before use it you need to write a config file that is formulized by the grammar defined above ):</p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ./config_parser test.config
+</code></pre>
+</div>
+<blockquote>
+  <p>You can also call the static library <em>lib_cfg_parser.a</em> in your own program.</p>
+</blockquote>
+
+<hr />
+
+<p>Want to see something else added? <a href="https://github.com/lijiansong/ConfigFileParser/issues">Open an issue.</a></p>
 
   </article>
 </div>
@@ -242,18 +396,18 @@ To add new posts, simply add a file in the <code class="highlighter-rouge">_post
     
       <li>
         <h3>
-          <a href="/yacc/cpp/2016/08/22/config-file-parser/">
-            Config File Parser
-            <small>22 Aug 2016</small>
+          <a href="/android/java/2016/08/17/libs-manager-engine/">
+            Libs-Manager-Engine
+            <small>17 Aug 2016</small>
           </a>
         </h3>
       </li>
     
       <li>
         <h3>
-          <a href="/android/java/2016/08/17/libs-manager-engine/">
-            Libs-Manager-Engine
-            <small>17 Aug 2016</small>
+          <a href="/test/2016/08/16/welcome-to-jekyll/">
+            测试：Welcome to Jekyll !
+            <small>16 Aug 2016</small>
           </a>
         </h3>
       </li>
@@ -276,8 +430,8 @@ To add new posts, simply add a file in the <code class="highlighter-rouge">_post
   <div id="disqus_thread"></div>
   <script>
 var disqus_config = function () {
-  this.page.url = 'http://lijiansong.github.io/test/2016/08/16/welcome-to-jekyll/'; // Replace PAGE_URL with your page's canonical URL variable
-  this.page.identifier = '/test/2016/08/16/welcome-to-jekyll'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  this.page.url = 'http://lijiansong.github.io/yacc/cpp/2016/08/22/config-file-parser/'; // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/yacc/cpp/2016/08/22/config-file-parser'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 (function() {
   var d = document, s = d.createElement('script');
