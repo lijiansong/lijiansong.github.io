@@ -249,9 +249,9 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
   <p>Format of the config file is similar to JSON, which is composed of pairs of key-values. The config file is also composed of some tuples, which contain some pairs of key-values. e.g.</p>
 </blockquote>
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">section</span> <span class="p">{</span>
- <span class="n">key1</span> <span class="o">=</span> <span class="s">"string"</span><span class="p">;</span>
- <span class="n">key2</span> <span class="o">=</span> <span class="mf">12.34</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">section</span> <span class="p">{</span>
+ <span class="nx">key1</span> <span class="o">=</span> <span class="s2">"string"</span><span class="p">;</span>
+ <span class="nx">key2</span> <span class="o">=</span> <span class="mf">12.34</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
 <blockquote>
@@ -267,22 +267,18 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
   <p>Besides the features above, the config file also supports inheritance mechanism. The symbol of inheritance is shown by “:”, e.g.<br /></p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>derived_section : section {
-  key1 = "override string";
-  key3 = 10;
-}
-</code></pre>
-</div>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">derived_section</span> <span class="err">:</span> <span class="nx">section</span> <span class="p">{</span>
+  <span class="nx">key1</span> <span class="o">=</span> <span class="s2">"override string"</span><span class="p">;</span>
+  <span class="nx">key3</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
 
 <blockquote>
   <p>Therefore,</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>derived_section.key1="override string"
-derived_section.key2=12.34
-derived_section.key3=10
-</code></pre>
-</div>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">derived_section</span><span class="p">.</span><span class="nx">key1</span><span class="o">=</span><span class="s2">"override string"</span>
+<span class="nx">derived_section</span><span class="p">.</span><span class="nx">key2</span><span class="o">=</span><span class="mf">12.34</span>
+<span class="nx">derived_section</span><span class="p">.</span><span class="nx">key3</span><span class="o">=</span><span class="mi">10</span></code></pre></figure>
 
 <blockquote>
   <p>The types of the config file include int, float, string.<br /></p>
@@ -295,36 +291,32 @@ derived_section.key3=10
 The contents of a.config:</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>section_a {
- key1 = "string";
- key2 = 12.34;
-}
-</code></pre>
-</div>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">section_a</span> <span class="p">{</span>
+ <span class="nx">key1</span> <span class="o">=</span> <span class="s2">"string"</span><span class="p">;</span>
+ <span class="nx">key2</span> <span class="o">=</span> <span class="mf">12.34</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
 
 <blockquote>
   <p>The contents of b.config:</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#include "path/a.config"
-section_b {
- key1 = "str1";
- key2 = 12.34;
-x{
- key1=2;
- key2=8;
-}
-y : section_b.x{
- key1=20;
- key3=33;
-}
-}
-z:section_a{
-key1="str";
-key2=25;
-}
-</code></pre>
-</div>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="err">#</span><span class="nx">include</span> <span class="s2">"path/a.config"</span>
+<span class="nx">section_b</span> <span class="p">{</span>
+ <span class="nx">key1</span> <span class="o">=</span> <span class="s2">"str1"</span><span class="p">;</span>
+ <span class="nx">key2</span> <span class="o">=</span> <span class="mf">12.34</span><span class="p">;</span>
+<span class="nx">x</span><span class="p">{</span>
+ <span class="nx">key1</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+ <span class="nx">key2</span><span class="o">=</span><span class="mi">8</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nl">y</span> <span class="p">:</span> <span class="nx">section_b</span><span class="p">.</span><span class="nx">x</span><span class="p">{</span>
+ <span class="nx">key1</span><span class="o">=</span><span class="mi">20</span><span class="p">;</span>
+ <span class="nx">key3</span><span class="o">=</span><span class="mi">33</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="nl">z</span><span class="p">:</span><span class="nx">section_a</span><span class="p">{</span>
+<span class="nx">key1</span><span class="o">=</span><span class="s2">"str"</span><span class="p">;</span>
+<span class="nx">key2</span><span class="o">=</span><span class="mi">25</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
 
 <h3 id="comments">Comments</h3>
 
@@ -332,13 +324,11 @@ key2=25;
   <p>The config file also supports comments, formularized by /<em>comments</em>/ or //, e.g.<br /></p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>//comment
-section {
- key1 = /* comment*/ "string";
- key2 = 12.34;
-}
-</code></pre>
-</div>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">//comment</span>
+<span class="nx">section</span> <span class="p">{</span>
+ <span class="nx">key1</span> <span class="o">=</span> <span class="cm">/* comment*/</span> <span class="s2">"string"</span><span class="p">;</span>
+ <span class="nx">key2</span> <span class="o">=</span> <span class="mf">12.34</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
 
 <h2 id="syntax-design">Syntax Design</h2>
 
@@ -346,25 +336,23 @@ section {
   <p>To parse the config file, flex &amp; bison is of much efficiency. Before using the mature tools, we have to define the grammar in advance, which is formularized by Backus-Naur Form. The config files’ Backus-Naur Form is shown below:<br /></p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>tuples::= tuple tuples | \epsilon
-tuples::= ID LB entries RB | ID COLON LB entries RB
-entries::= kv entries | tuple entries | \epsilon
-kv::= ID EQ value END
-value::= FLOAT | INT | ctring | NULLV
-cstring::= STRING cstring
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">tuples</span><span class="err">::</span><span class="o">=</span> <span class="nx">tuple</span> <span class="nx">tuples</span> <span class="o">|</span> <span class="err">\</span><span class="nx">epsilon</span>
+<span class="nl">tuples</span><span class="p">:</span><span class="err">:</span><span class="o">=</span> <span class="nx">ID</span> <span class="nx">LB</span> <span class="nx">entries</span> <span class="nx">RB</span> <span class="o">|</span> <span class="nx">ID</span> <span class="nx">COLON</span> <span class="nx">LB</span> <span class="nx">entries</span> <span class="nx">RB</span>
+<span class="nl">entries</span><span class="p">:</span><span class="err">:</span><span class="o">=</span> <span class="nx">kv</span> <span class="nx">entries</span> <span class="o">|</span> <span class="nx">tuple</span> <span class="nx">entries</span> <span class="o">|</span> <span class="err">\</span><span class="nx">epsilon</span>
+<span class="nl">kv</span><span class="p">:</span><span class="err">:</span><span class="o">=</span> <span class="nx">ID</span> <span class="nx">EQ</span> <span class="nx">value</span> <span class="nx">END</span>
+<span class="nl">value</span><span class="p">:</span><span class="err">:</span><span class="o">=</span> <span class="nx">FLOAT</span> <span class="o">|</span> <span class="nx">INT</span> <span class="o">|</span> <span class="nx">ctring</span> <span class="o">|</span> <span class="nx">NULLV</span>
+<span class="nl">cstring</span><span class="p">:</span><span class="err">:</span><span class="o">=</span> <span class="nx">STRING</span> <span class="nx">cstring</span>
 
-INT-&gt;[0-9]+
-FLOAT-&gt;[+-]?[0-9]+(\.[0-9]*)?
-STRING-&gt;\"(\\.|[^\\"])*\"
-ID-&gt;[a-z_][a-z0-9_\.]*
-LB-&gt;{
-RB-&gt;}
-COLON-&gt;:
-EQ-&gt;=
-END-&gt;;
-NULLV-&gt;NULL
-</code></pre>
-</div>
+<span class="nx">INT</span><span class="o">-&gt;</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">+</span>
+<span class="nx">FLOAT</span><span class="o">-&gt;</span><span class="p">[</span><span class="o">+-</span><span class="p">]?[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="err">\</span><span class="p">.[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="p">)?</span>
+<span class="nx">STRING</span><span class="o">-&gt;</span><span class="err">\</span><span class="s2">"(\\.|[^\\"</span><span class="p">])</span><span class="o">*</span><span class="err">\"</span>
+<span class="nx">ID</span><span class="o">-&gt;</span><span class="p">[</span><span class="nx">a</span><span class="o">-</span><span class="nx">z_</span><span class="p">][</span><span class="nx">a</span><span class="o">-</span><span class="nx">z0</span><span class="o">-</span><span class="mi">9</span><span class="nx">_</span><span class="err">\</span><span class="p">.]</span><span class="o">*</span>
+<span class="nx">LB</span><span class="o">-&gt;</span><span class="p">{</span>
+<span class="nx">RB</span><span class="o">-&gt;</span><span class="p">}</span>
+<span class="nx">COLON</span><span class="o">-&gt;</span><span class="p">:</span>
+<span class="nx">EQ</span><span class="o">-&gt;=</span>
+<span class="nx">END</span><span class="o">-&gt;</span><span class="p">;</span>
+<span class="nx">NULLV</span><span class="o">-&gt;</span><span class="nx">NULL</span></code></pre></figure>
 
 <h2 id="usage">Usage</h2>
 
@@ -372,22 +360,18 @@ NULLV-&gt;NULL
   <p>To Compile the source code, you need to install git &amp; make. You can use the following command line to complie them:</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/lijiansong/ConfigFileParser
-$ cd ConfigFileParser
-$ make
-</code></pre>
-</div>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span> <span class="nx">git</span> <span class="nx">clone</span> <span class="nx">https</span><span class="err">:</span><span class="c1">//github.com/lijiansong/ConfigFileParser</span>
+<span class="nx">$</span> <span class="nx">cd</span> <span class="nx">ConfigFileParser</span>
+<span class="nx">$</span> <span class="nx">make</span></code></pre></figure>
 
 <blockquote>
   <p>After the above cmds, you would get an executable file, named <em>config_parser</em>, and a static library suffixed by <em>.a</em>, named <em>lib_cfg_parser.a</em>. You can execute it like this( before use it you need to write a config file that is formulized by the grammar defined above ):</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ ./config_parser test.config
-</code></pre>
-</div>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span> <span class="p">.</span><span class="o">/</span><span class="nx">config_parser</span> <span class="nx">test</span><span class="p">.</span><span class="nx">config</span></code></pre></figure>
 
 <blockquote>
-  <p>You can also call the static library <em>lib_cfg_parser.a</em> in your own program.</p>
+  <p>You can also call the static library <em>lib_cfg_parser.a</em> in your own program. <a href="https://github.com/lijiansong/ConfigFileParser">To learn more…</a></p>
 </blockquote>
 
 <hr />
