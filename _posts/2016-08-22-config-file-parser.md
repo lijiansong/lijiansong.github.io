@@ -12,6 +12,7 @@ tags:
   This archive is about how to use Flex and Bison (Yacc) to parse config files that is self-defined. 
 </div>The contens is shown below:<br>
 <!-- more -->
+
 * [Description File Design](#description-file-design)
   * [Key-Values](#key-values)
   * [Inheritance Mechanism](#inheritance-mechanism)
