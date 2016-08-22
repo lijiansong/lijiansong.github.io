@@ -148,7 +148,7 @@ $ make
 $ ./config_parser test.config
 {% endhighlight %}
 
-> You can also call the static library *lib_cfg_parser.a* in your own program. [To learn more...](https://github.com/lijiansong/ConfigFileParser)
+> You can also call the static library *lib_cfg_parser.a* in your own program.<br>[To learn more...](https://github.com/lijiansong/ConfigFileParser)
 
 
 -----

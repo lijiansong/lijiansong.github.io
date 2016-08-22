@@ -4,7 +4,7 @@
  <title>Json Lee</title>
  <link href="http://lijiansong.github.io/atom.xml" rel="self"/>
  <link href="http://lijiansong.github.io/"/>
- <updated>2016-08-22T19:41:01+08:00</updated>
+ <updated>2016-08-22T19:43:08+08:00</updated>
  <id>http://lijiansong.github.io</id>
  <author>
    <name>Json Lee</name>
@@ -166,7 +166,7 @@ The contents of a.config:&lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;config_parser&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;You can also call the static library &lt;em&gt;lib_cfg_parser.a&lt;/em&gt; in your own program. &lt;a href=&quot;https://github.com/lijiansong/ConfigFileParser&quot;&gt;To learn more…&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;You can also call the static library &lt;em&gt;lib_cfg_parser.a&lt;/em&gt; in your own program.&lt;br /&gt;&lt;a href=&quot;https://github.com/lijiansong/ConfigFileParser&quot;&gt;To learn more…&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;hr /&gt;
