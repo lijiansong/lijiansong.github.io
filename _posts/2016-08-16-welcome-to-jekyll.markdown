@@ -5,7 +5,7 @@ date:   2016-08-16 21:35:15 +0800
 category: Test
 ---
 
-*以后写博客尽量用英文来写，顺便练一下自己的英文写作能力*
+**以后写博客尽量用英文来写，顺便练一下自己的英文写作能力**
 
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 <!-- more -->
