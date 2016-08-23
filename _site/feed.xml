@@ -5,8 +5,8 @@
     <description>Copy Right (c) &lt;a href=&quot;http://lijiansong.github.io&quot; target=&quot;_blank&quot;&gt;Json Lee&lt;/a&gt;.</description>
     <link>http://lijiansong.github.io/</link>
     <atom:link href="http://lijiansong.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 22 Aug 2016 20:22:36 +0800</pubDate>
-    <lastBuildDate>Mon, 22 Aug 2016 20:22:36 +0800</lastBuildDate>
+    <pubDate>Tue, 23 Aug 2016 20:50:47 +0800</pubDate>
+    <lastBuildDate>Tue, 23 Aug 2016 20:50:47 +0800</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -246,6 +246,8 @@ To add new posts, simply add a file in the &lt;code class=&quot;highlighter-roug
 &lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
+&lt;p&gt;以后写博客尽量用英文来写，顺便练一下自己的英文写作能力&lt;/p&gt;
+
 &lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
 
 </description>
@@ -383,9 +385,9 @@ To add new posts, simply add a file in the &lt;code class=&quot;highlighter-roug
 
 &lt;p&gt;Want to see something else added? &lt;a href=&quot;https://github.com/poole/poole/issues/new&quot;&gt;Open an issue.&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Tue, 12 Aug 2014 00:00:00 +0800</pubDate>
-        <link>http://lijiansong.github.io/test/2014/08/12/example-content/</link>
-        <guid isPermaLink="true">http://lijiansong.github.io/test/2014/08/12/example-content/</guid>
+        <pubDate>Thu, 12 Jun 2014 00:00:00 +0800</pubDate>
+        <link>http://lijiansong.github.io/test/2014/06/12/example-content/</link>
+        <guid isPermaLink="true">http://lijiansong.github.io/test/2014/06/12/example-content/</guid>
         
         
         <category>Test</category>
