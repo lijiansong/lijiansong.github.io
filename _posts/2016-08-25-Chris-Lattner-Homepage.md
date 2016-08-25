@@ -9,7 +9,7 @@ tags:
 
 
 <div class="message">
-Born in 1978, Chris Lattner()is an American software developer, best known as the main author of LLVM and related projects, such as the compiler Clang and the programming language Swift. As of 2016, he works at Apple Inc., as Director of the Developer Tools department, leading the Xcode, Instruments, and compiler teams.
+Born in 1978, Chris Lattner is an American software developer, best known as the main author of LLVM and related projects, such as the compiler Clang and the programming language Swift. As of 2016, he works at Apple Inc., as Director of the Developer Tools department, leading the Xcode, Instruments, and compiler teams.
 
 </div>
 <!-- more -->
