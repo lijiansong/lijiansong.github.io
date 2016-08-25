@@ -5,8 +5,8 @@
     <description>Copy Right (c) &lt;a href=&quot;http://lijiansong.github.io&quot; target=&quot;_blank&quot;&gt;Json Lee&lt;/a&gt;.</description>
     <link>http://lijiansong.github.io/</link>
     <atom:link href="http://lijiansong.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 25 Aug 2016 20:57:01 +0800</pubDate>
-    <lastBuildDate>Thu, 25 Aug 2016 20:57:01 +0800</lastBuildDate>
+    <pubDate>Thu, 25 Aug 2016 21:00:05 +0800</pubDate>
+    <lastBuildDate>Thu, 25 Aug 2016 21:00:05 +0800</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -17,14 +17,16 @@ Born in 1978, Chris Lattner()is an American software developer, best known as th
 &lt;/div&gt;
 &lt;!-- more --&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/blog-img/2016_08_25_ChrisPhoto3.png&quot; alt=&quot;image&quot; title=&quot;Chris Lattner&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;div align=center&amp;gt;
+&lt;img src=&quot;/assets/blog-img/2016_08_25_ChrisPhoto3.png&quot; alt=&quot;image&quot; title=&quot;Chris Lattner&quot; /&gt;
+&amp;lt;/div&amp;gt;&lt;/p&gt;
 
 &lt;p&gt;In late 2000, Lattner joined the University of Illinois at Urbana-Champaign(UIUC) as a research assistant and M.Sc. student. While working with Vikram Adve, he designed and began implementing LLVM, an innovative infrastructure for optimizing compilers, which was the subject of his 2002 M.Sc. thesis. He completed his Ph.D. in 2005, researching new techniques for optimizing pointer-intensive programs and adding them to LLVM.&lt;/p&gt;
 
 &lt;h1 id=&quot;more&quot;&gt;More…&lt;/h1&gt;
-&lt;p&gt;[1] &lt;a href=&quot;https://en.wikipedia.org/wiki/Chris_Lattner&quot;&gt;Wikipedia, Chris Lattner&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;[2] &lt;a href=&quot;http://nondot.org/sabre/&quot;&gt;Chris Lattner’s Homepage&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[1] &lt;a href=&quot;https://en.wikipedia.org/wiki/Chris_Lattner&quot;&gt;Wikipedia, Chris Lattner&lt;/a&gt;
+[2] &lt;a href=&quot;http://nondot.org/sabre/&quot;&gt;Chris Lattner’s Homepage&lt;/a&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 25 Aug 2016 00:00:00 +0800</pubDate>
