@@ -5,19 +5,38 @@
     <description>Copy Right (c) &lt;a href=&quot;http://lijiansong.github.io&quot; target=&quot;_blank&quot;&gt;Json Lee&lt;/a&gt;.</description>
     <link>http://lijiansong.github.io/</link>
     <atom:link href="http://lijiansong.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 04 Sep 2016 09:05:44 +0800</pubDate>
-    <lastBuildDate>Sun, 04 Sep 2016 09:05:44 +0800</lastBuildDate>
+    <pubDate>Sun, 04 Sep 2016 09:27:06 +0800</pubDate>
+    <lastBuildDate>Sun, 04 Sep 2016 09:27:06 +0800</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
         <title>2016 Study Plan</title>
-        <description>&lt;p&gt;It has been a long day since new term begins. Numerous life trivial needs to be done, such as purchasing house and living things, going through all the formalities, and etc.
-&lt;!-- more --&gt;
-  The whole year’s work depends on a good start. Since I am studying for a doctor’s degree, I need to develop all kinds of ability to improve myself, such as&lt;/p&gt;
+        <description>&lt;div class=&quot;message&quot;&gt;
+  It has been a long day since new term begins. Numerous life trivial needs to be done, such as purchasing house and living things, going through all the formalities, and etc.
+&lt;/div&gt;
+&lt;p&gt;&lt;!-- more --&gt;&lt;/p&gt;
+
+&lt;p&gt;The whole year’s work depends on a good start. Since I am studying for a doctor’s degree, I need to develop all kinds of ability to improve myself, such as&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;the ability to lead a team. I always insist that the difference between doctor and master is that a doctor has enough time to develop his or her team-leading ability. A new problem comes, a doctor is supposed to be clear about it, and guide his team to solve it in a short time.&lt;/li&gt;
-  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;the ability of programming. I also believe that a doctor’s programming ability should not no less that a master’s.&lt;/li&gt;
+  &lt;li&gt;the capacity for scientific resaerch. A doctor should keep him updated about the latest development on his domain, and be clear about its strengths and weaknesses.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;Actions speak louder than words. This year I have to learn some basic knowledge on &lt;strong&gt;distributed computing, compilation technology and data mining&lt;/strong&gt;.
+Numerous books need to be read.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spark…&lt;/li&gt;
+  &lt;li&gt;Hadoop…&lt;/li&gt;
+  &lt;li&gt;Storm…&lt;/li&gt;
+  &lt;li&gt;Kafka…&lt;/li&gt;
+  &lt;li&gt;Docker…&lt;/li&gt;
+  &lt;li&gt;Mahout…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Besides the above, I also have to spare some time to get a driver license.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;MAN, CHEER UP!&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.pgbovine.net/PhD-memoir/pguo-PhD-grind.pdf&quot;&gt;THE PH.D GRIND&lt;/a&gt;&lt;/p&gt;
 </description>
