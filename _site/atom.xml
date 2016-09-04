@@ -4,7 +4,7 @@
  <title>Json Lee</title>
  <link href="http://lijiansong.github.io/atom.xml" rel="self"/>
  <link href="http://lijiansong.github.io/"/>
- <updated>2016-09-04T09:27:06+08:00</updated>
+ <updated>2016-09-04T09:30:22+08:00</updated>
  <id>http://lijiansong.github.io</id>
  <author>
    <name>Json Lee</name>
@@ -23,6 +23,7 @@
 &lt;p&gt;&lt;!-- more --&gt;&lt;/p&gt;
 
 &lt;p&gt;The whole year’s work depends on a good start. Since I am studying for a doctor’s degree, I need to develop all kinds of ability to improve myself, such as&lt;/p&gt;
+
 &lt;ul&gt;
   &lt;li&gt;the ability to lead a team. I always insist that the difference between doctor and master is that a doctor has enough time to develop his or her team-leading ability. A new problem comes, a doctor is supposed to be clear about it, and guide his team to solve it in a short time.&lt;/li&gt;
   &lt;li&gt;the ability of programming. I also believe that a doctor’s programming ability should not no less that a master’s.&lt;/li&gt;
@@ -31,6 +32,7 @@
 
 &lt;p&gt;Actions speak louder than words. This year I have to learn some basic knowledge on &lt;strong&gt;distributed computing, compilation technology and data mining&lt;/strong&gt;.
 Numerous books need to be read.&lt;/p&gt;
+
 &lt;ul&gt;
   &lt;li&gt;Spark…&lt;/li&gt;
   &lt;li&gt;Hadoop…&lt;/li&gt;
