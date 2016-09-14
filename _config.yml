@@ -13,6 +13,7 @@ markdown: kramdown
 kramdown:
   input: GFM
 excerpt_separator: "<!-- more -->"
+highlighter: rouge
 sass:
   style: compressed
   sass_dir: _scss    
