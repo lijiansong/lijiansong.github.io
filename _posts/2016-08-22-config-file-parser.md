@@ -112,7 +112,7 @@ section {
 
 > To parse the config file, flex & bison is of much efficiency. Before using the mature tools, we have to define the grammar in advance, which is formularized by Backus-Naur Form. The config files' Backus-Naur Form is shown below:<br>
 
-{% highlight js %}
+```
 tuples::= tuple tuples | \epsilon
 tuples::= ID LB entries RB | ID COLON LB entries RB
 entries::= kv entries | tuple entries | \epsilon
@@ -130,7 +130,7 @@ COLON->:
 EQ->=
 END->;
 NULLV->NULL
-{% endhighlight %}
+```
 
 ## Usage
 

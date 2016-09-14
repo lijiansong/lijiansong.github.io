@@ -336,23 +336,25 @@ The contents of a.config:</p>
   <p>To parse the config file, flex &amp; bison is of much efficiency. Before using the mature tools, we have to define the grammar in advance, which is formularized by Backus-Naur Form. The config files’ Backus-Naur Form is shown below:<br /></p>
 </blockquote>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">tuples</span><span class="err">::</span><span class="o">=</span> <span class="nx">tuple</span> <span class="nx">tuples</span> <span class="o">|</span> <span class="err">\</span><span class="nx">epsilon</span>
-<span class="nl">tuples</span><span class="p">:</span><span class="err">:</span><span class="o">=</span> <span class="nx">ID</span> <span class="nx">LB</span> <span class="nx">entries</span> <span class="nx">RB</span> <span class="o">|</span> <span class="nx">ID</span> <span class="nx">COLON</span> <span class="nx">LB</span> <span class="nx">entries</span> <span class="nx">RB</span>
-<span class="nl">entries</span><span class="p">:</span><span class="err">:</span><span class="o">=</span> <span class="nx">kv</span> <span class="nx">entries</span> <span class="o">|</span> <span class="nx">tuple</span> <span class="nx">entries</span> <span class="o">|</span> <span class="err">\</span><span class="nx">epsilon</span>
-<span class="nl">kv</span><span class="p">:</span><span class="err">:</span><span class="o">=</span> <span class="nx">ID</span> <span class="nx">EQ</span> <span class="nx">value</span> <span class="nx">END</span>
-<span class="nl">value</span><span class="p">:</span><span class="err">:</span><span class="o">=</span> <span class="nx">FLOAT</span> <span class="o">|</span> <span class="nx">INT</span> <span class="o">|</span> <span class="nx">ctring</span> <span class="o">|</span> <span class="nx">NULLV</span>
-<span class="nl">cstring</span><span class="p">:</span><span class="err">:</span><span class="o">=</span> <span class="nx">STRING</span> <span class="nx">cstring</span>
+<div class="highlighter-rouge"><pre class="highlight"><code>tuples::= tuple tuples | \epsilon
+tuples::= ID LB entries RB | ID COLON LB entries RB
+entries::= kv entries | tuple entries | \epsilon
+kv::= ID EQ value END
+value::= FLOAT | INT | ctring | NULLV
+cstring::= STRING cstring
 
-<span class="nx">INT</span><span class="o">-&gt;</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">+</span>
-<span class="nx">FLOAT</span><span class="o">-&gt;</span><span class="p">[</span><span class="o">+-</span><span class="p">]?[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="err">\</span><span class="p">.[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="p">)?</span>
-<span class="nx">STRING</span><span class="o">-&gt;</span><span class="err">\</span><span class="s2">"(\\.|[^\\"</span><span class="p">])</span><span class="o">*</span><span class="err">\"</span>
-<span class="nx">ID</span><span class="o">-&gt;</span><span class="p">[</span><span class="nx">a</span><span class="o">-</span><span class="nx">z_</span><span class="p">][</span><span class="nx">a</span><span class="o">-</span><span class="nx">z0</span><span class="o">-</span><span class="mi">9</span><span class="nx">_</span><span class="err">\</span><span class="p">.]</span><span class="o">*</span>
-<span class="nx">LB</span><span class="o">-&gt;</span><span class="p">{</span>
-<span class="nx">RB</span><span class="o">-&gt;</span><span class="p">}</span>
-<span class="nx">COLON</span><span class="o">-&gt;</span><span class="p">:</span>
-<span class="nx">EQ</span><span class="o">-&gt;=</span>
-<span class="nx">END</span><span class="o">-&gt;</span><span class="p">;</span>
-<span class="nx">NULLV</span><span class="o">-&gt;</span><span class="nx">NULL</span></code></pre></figure>
+INT-&gt;[0-9]+
+FLOAT-&gt;[+-]?[0-9]+(\.[0-9]*)?
+STRING-&gt;\"(\\.|[^\\"])*\"
+ID-&gt;[a-z_][a-z0-9_\.]*
+LB-&gt;{
+RB-&gt;}
+COLON-&gt;:
+EQ-&gt;=
+END-&gt;;
+NULLV-&gt;NULL
+</code></pre>
+</div>
 
 <h2 id="usage">Usage</h2>
 
