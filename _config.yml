@@ -6,6 +6,9 @@ baseurl: ""
 url: http://lijiansong.github.io
 logo: '/public/logo.png'
 
+encoding: utf-8
+#encoding: utf8
+
 # Site configurations
 gems:
   - jekyll-paginate
@@ -63,4 +66,4 @@ hero:
 mathjax: true # whether support mathjax
 google_analytics_token: 'UA-00000000-1' # leave blank if you don't want google analytics
 disqus_short_name: 'your_short_name' # leave blank if you don't want disqus
-encoding: utf-8
+
