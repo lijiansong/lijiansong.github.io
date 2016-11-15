@@ -4,7 +4,7 @@
  <title>Json Lee</title>
  <link href="http://lijiansong.github.io/atom.xml" rel="self"/>
  <link href="http://lijiansong.github.io/"/>
- <updated>2016-11-15T23:54:12+08:00</updated>
+ <updated>2016-11-16T00:03:20+08:00</updated>
  <id>http://lijiansong.github.io</id>
  <author>
    <name>Json Lee</name>
@@ -22,7 +22,7 @@
 &lt;/div&gt;
 &lt;p&gt;&lt;!-- more --&gt;
   ## &lt;strong&gt;Introduction&lt;/strong&gt;
-  &lt;br /&gt;The first blockchain was conceptualised by &lt;a href=&quot;(https://en.wikipedia.org/wiki/Satoshi_Nakamoto)&quot;&gt;Satoshi Nakamoto&lt;/a&gt; in 2008 and implemented the following year as a core component of the digital currency bitcoin, where it serves as the public ledger for all transactions. The bitcoin design has been the inspiration for other applications.
+  &lt;br /&gt;The first blockchain was conceptualised by &lt;a href=&quot;(https://en.wikipedia.org/wiki/Satoshi_Nakamoto)&quot;&gt;Satoshi Nakamoto&lt;/a&gt; in 2008 and implemented the following year as a core component of the digital currency &lt;a href=&quot;https://en.wikipedia.org/wiki/Bitcoin&quot;&gt;bitcoin&lt;/a&gt;, where it serves as the public ledger for all transactions. The bitcoin design has been the inspiration for other applications.
   By design blockchains are inherently resistant to modification of the data. Decentralised consensus can therefore be achieved for the first time with a blockchain. This offers the potential of mass disintermediation and vast repercussions for how global trade is conducted. Side chains and blockchain based smart contracts are not currently used but an effort to develop those concepts is taking place. The technology is not mature and has a low readiness level.&lt;/p&gt;
 
 &lt;p&gt;## &lt;strong&gt;History&lt;/strong&gt;

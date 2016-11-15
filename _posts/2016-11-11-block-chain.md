@@ -12,7 +12,7 @@ tags:
 </div>
   <!-- more -->
   ## **Introduction**
-  <br>The first blockchain was conceptualised by [Satoshi Nakamoto]((https://en.wikipedia.org/wiki/Satoshi_Nakamoto)) in 2008 and implemented the following year as a core component of the digital currency bitcoin, where it serves as the public ledger for all transactions. The bitcoin design has been the inspiration for other applications.
+  <br>The first blockchain was conceptualised by [Satoshi Nakamoto]((https://en.wikipedia.org/wiki/Satoshi_Nakamoto)) in 2008 and implemented the following year as a core component of the digital currency [bitcoin](https://en.wikipedia.org/wiki/Bitcoin), where it serves as the public ledger for all transactions. The bitcoin design has been the inspiration for other applications.
   By design blockchains are inherently resistant to modification of the data. Decentralised consensus can therefore be achieved for the first time with a blockchain. This offers the potential of mass disintermediation and vast repercussions for how global trade is conducted. Side chains and blockchain based smart contracts are not currently used but an effort to develop those concepts is taking place. The technology is not mature and has a low readiness level.
   
   ## **History**

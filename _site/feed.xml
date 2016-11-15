@@ -5,8 +5,8 @@
     <description>Copy Right (c) &lt;a href=&quot;http://lijiansong.github.io&quot; target=&quot;_blank&quot;&gt;Json Lee&lt;/a&gt;.</description>
     <link>http://lijiansong.github.io/</link>
     <atom:link href="http://lijiansong.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 15 Nov 2016 23:54:12 +0800</pubDate>
-    <lastBuildDate>Tue, 15 Nov 2016 23:54:12 +0800</lastBuildDate>
+    <pubDate>Wed, 16 Nov 2016 00:03:20 +0800</pubDate>
+    <lastBuildDate>Wed, 16 Nov 2016 00:03:20 +0800</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -16,7 +16,7 @@
 &lt;/div&gt;
 &lt;p&gt;&lt;!-- more --&gt;
   ## &lt;strong&gt;Introduction&lt;/strong&gt;
-  &lt;br /&gt;The first blockchain was conceptualised by &lt;a href=&quot;(https://en.wikipedia.org/wiki/Satoshi_Nakamoto)&quot;&gt;Satoshi Nakamoto&lt;/a&gt; in 2008 and implemented the following year as a core component of the digital currency bitcoin, where it serves as the public ledger for all transactions. The bitcoin design has been the inspiration for other applications.
+  &lt;br /&gt;The first blockchain was conceptualised by &lt;a href=&quot;(https://en.wikipedia.org/wiki/Satoshi_Nakamoto)&quot;&gt;Satoshi Nakamoto&lt;/a&gt; in 2008 and implemented the following year as a core component of the digital currency &lt;a href=&quot;https://en.wikipedia.org/wiki/Bitcoin&quot;&gt;bitcoin&lt;/a&gt;, where it serves as the public ledger for all transactions. The bitcoin design has been the inspiration for other applications.
   By design blockchains are inherently resistant to modification of the data. Decentralised consensus can therefore be achieved for the first time with a blockchain. This offers the potential of mass disintermediation and vast repercussions for how global trade is conducted. Side chains and blockchain based smart contracts are not currently used but an effort to develop those concepts is taking place. The technology is not mature and has a low readiness level.&lt;/p&gt;
 
 &lt;p&gt;## &lt;strong&gt;History&lt;/strong&gt;
