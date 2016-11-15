@@ -29,15 +29,25 @@ A working group for the World Economic Forum met in November 2016 to discuss the
 
   
   ## **Open Source Project**
+  
 - [HyperLedger](https://github.com/hyperledger/hyperledger)
+
 - [Ripple](https://github.com/ripple/rippled)
+
 - [openblockchain](https://github.com/openblockchain)
+
 - [HLP-Candidate](https://github.com/DigitalAssetCom/hlp-candidate)
+
 - [Elements Project](https://github.com/ElementsProject/elements)
+
 - [Marbles](https://github.com/IBM-Blockchain/marbles)
+
 - [Openchain](https://github.com/openchain/openchain)
+
 - [HydraChain](https://github.com/HydraChain/hydrachain)
+
 - [blockstrap](http://blockstrap.com/)
+
 
 
 ##**Ref**
