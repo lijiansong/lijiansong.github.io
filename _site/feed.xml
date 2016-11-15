@@ -5,9 +5,62 @@
     <description>Copy Right (c) &lt;a href=&quot;http://lijiansong.github.io&quot; target=&quot;_blank&quot;&gt;Json Lee&lt;/a&gt;.</description>
     <link>http://lijiansong.github.io/</link>
     <atom:link href="http://lijiansong.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 29 Oct 2016 22:05:58 +0800</pubDate>
-    <lastBuildDate>Sat, 29 Oct 2016 22:05:58 +0800</lastBuildDate>
+    <pubDate>Tue, 15 Nov 2016 23:47:20 +0800</pubDate>
+    <lastBuildDate>Tue, 15 Nov 2016 23:47:20 +0800</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Block Chain</title>
+        <description>&lt;div class=&quot;message&quot;&gt;
+  Recently, there is a hot term named blockchain, in Chinese is &amp;#x201C;&amp;#x533A;&amp;#x5757;&amp;#x94FE;&amp;#x201D;. I made some research on it. A blockchain &amp;#x2014; originally block chain &amp;#x2014; is a distributed database that maintains a continuously-growing list of records called blocks. Each block contains a timestamp and a link to a previous block.
+&lt;/div&gt;
+&lt;p&gt;&lt;!-- more --&gt;
+  ## &lt;strong&gt;Introduction&lt;/strong&gt;
+  &lt;br /&gt;The first blockchain was conceptualised by &lt;a href=&quot;(https://en.wikipedia.org/wiki/Satoshi_Nakamoto)&quot;&gt;Satoshi Nakamoto&lt;/a&gt; in 2008 and implemented the following year as a core component of the digital currency bitcoin, where it serves as the public ledger for all transactions. The bitcoin design has been the inspiration for other applications.
+  By design blockchains are inherently resistant to modification of the data. Decentralised consensus can therefore be achieved for the first time with a blockchain. This offers the potential of mass disintermediation and vast repercussions for how global trade is conducted. Side chains and blockchain based smart contracts are not currently used but an effort to develop those concepts is taking place. The technology is not mature and has a low readiness level.&lt;/p&gt;
+
+&lt;p&gt;## &lt;strong&gt;History&lt;/strong&gt;
+  &lt;br /&gt;The blockchain format was first used for bitcoin, as a solution to the problem of making a database both secure and not requiring a trusted administrator.
+  In August 2014, the bitcoin blockchain file size reached 20 gigabytes in size.&lt;/p&gt;
+
+&lt;p&gt;As of 2014, “Blockchain 2.0” was a term referring to new applications of the distributed blockchain database.
+The Economist described one implementation of this second-generation programmable blockchain as coming with “a programming language that allows users to write more sophisticated smart contracts, thus creating invoices that pay themselves when a shipment arrives or share certificates which automatically send their owners dividends if profits reach a certain level.”&lt;/p&gt;
+
+&lt;p&gt;In 2016, the central securities depository of the Russian Federation (NSD) announced a pilot project based on blockchain technology. 
+Various regulatory bodies in the music industry have started testing models that use blockchain technology for royalty collection and management of copyrights around the world.
+IBM opened a blockchain innovation research centre in Singapore in July 2016. 
+A working group for the World Economic Forum met in November 2016 to discuss the development of governance models related to blockchain.&lt;/p&gt;
+
+&lt;p&gt;## &lt;strong&gt;Open Source Project&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/hyperledger/hyperledger&quot;&gt;HyperLedger&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ripple/rippled&quot;&gt;Ripple&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/openblockchain&quot;&gt;openblockchain&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/DigitalAssetCom/hlp-candidate&quot;&gt;HLP-Candidate&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ElementsProject/elements&quot;&gt;Elements Project&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/IBM-Blockchain/marbles&quot;&gt;Marbles&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/openchain/openchain&quot;&gt;Openchain&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/HydraChain/hydrachain&quot;&gt;HydraChain&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blockstrap.com/&quot;&gt;blockstrap&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;##&lt;strong&gt;Ref&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Blockchain_(database)&quot;&gt;block chain on wikipedia…&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blockchaindev.org/&quot;&gt;block chain dev…&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.blockchain.com/&quot;&gt;Block Chain&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 11 Nov 2016 21:02:15 +0800</pubDate>
+        <link>http://lijiansong.github.io/tech/2016/11/11/block-chain/</link>
+        <guid isPermaLink="true">http://lijiansong.github.io/tech/2016/11/11/block-chain/</guid>
+        
+        <category>News</category>
+        
+        
+        <category>Tech</category>
+        
+      </item>
     
       <item>
         <title>The Little Prince</title>
