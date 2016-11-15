@@ -47,3 +47,4 @@ A working group for the World Economic Forum met in November 2016 to discuss the
 - [block chain on wikipedia...](https://en.wikipedia.org/wiki/Blockchain_(database))<br>
 - [block chain dev...](http://blockchaindev.org/)<br>
 - [Block Chain](https://www.blockchain.com/)<br>
+- [blockchain.info](https://blockchain.info/)
