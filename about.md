@@ -46,6 +46,7 @@ title: About Json Lee
 
 ## Awards
 - Outstanding Graduate of Wuhan University, Wuhan University, 2016
+- ACM/ICPC, Silver Medal, Shenyang Site 2016
 - Third Prize National Information Security Contest for College Students, China, 2015
 - First Prize of American College Students' Mathematics and Modeling Contest, America, 2015
 - First Prize of Eighth Central China Region of Mathematics and Modeling Contest for College Students, China, 2015

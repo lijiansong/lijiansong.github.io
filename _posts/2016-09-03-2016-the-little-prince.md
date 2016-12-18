@@ -12,7 +12,8 @@ tags:
   It is only with the heart that one can see rightly; what is essential is invisible to the eyes...
 </div>
   <!-- more -->
-  
+  <br>
+`Life has been so hard, sometimes i need to think such a question: what i have? what can i give to her? what can i promise her with and what is she want?`<br>
   The following snippets are excerpted from [The Little Prince...](https://en.wikipedia.org/wiki/The_Little_Prince)
 
 - If someone loves a flower, of which just one single blossom grows in all the millions and millions of stars, it is enough to make him happy just to look at the stars. He can say to himself, "Somewhere, my flower is there..." But if the sheep eats the flower, in one moment all his stars will be darkened... And you think that is not important!
