@@ -5,12 +5,12 @@
     <description>Copy Right (c) &lt;a href=&quot;http://lijiansong.github.io&quot; target=&quot;_blank&quot;&gt;Json Lee&lt;/a&gt;.</description>
     <link>http://lijiansong.github.io/</link>
     <atom:link href="http://lijiansong.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 20 Feb 2017 13:37:18 +0800</pubDate>
-    <lastBuildDate>Mon, 20 Feb 2017 13:37:18 +0800</lastBuildDate>
+    <pubDate>Mon, 20 Feb 2017 13:48:47 +0800</pubDate>
+    <lastBuildDate>Mon, 20 Feb 2017 13:48:47 +0800</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
-        <title>Modify the source code of Google's open-source Framework --- Blockly</title>
+        <title>Modify the Source Code of Google's Open-source Framework --- Blockly</title>
         <description>&lt;div class=&quot;message&quot;&gt;
 Blockly is an open-source framework under Apache 2.0 License for creating visual programming editors. It is a project of Google,which is able to run in web browser, Android or iOS operating system. 
 Blockly uses blocks that link together to make writing code easier, and can generate JavaScript, Python, PHP, Lua or Dart code automatically. It can also be customised to generate code in any computer language.
@@ -31,22 +31,32 @@ New blocks require a block definition and a generator. It is shown below:&lt;/p&
 &lt;p&gt;The definition describes the block’s appearance and the generator describes the block’s translation to executable code. 
 There is an example program called Block Factory which makes writing the block definition easier by using Blockly blocks to construct a new block.&lt;/p&gt;
 
-&lt;p&gt;Now all its functions is adequate for most developers. However, it doesn’t support dynamical loading blocks, e.g.
- in Android OS, the blocks’ JSON-formated definition files are stored in the &lt;code class=&quot;highlighter-rouge&quot;&gt;assets&lt;/code&gt; diirectory, obviously, all the files stored in this directory
-  are regarded as system resources, they will be packaged into the .apk file, all of them are read only, i.e. they can only be read, but cannot be written back.&lt;/p&gt;
+&lt;p&gt;Now all its functions is adequate for most developers. However, it doesn’t support dynamical loading blocks, e.g. in Android OS, the blocks’ JSON-formated definition files are stored in the &lt;code class=&quot;highlighter-rouge&quot;&gt;assets&lt;/code&gt; diirectory, obviously, all the files stored in this directory are regarded as system resources, they will be packaged into the .apk file, all of them are read only, i.e. they can only be read, but cannot be written back.&lt;/p&gt;
 
 &lt;p&gt;To manage to &lt;code class=&quot;highlighter-rouge&quot;&gt;dynamically load the blocks&lt;/code&gt;, I tried two methods…&lt;/p&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;Hook the OS functions. When the app process load the assets resources, we can intercept relevant methods that load the blocks definition files, read them out into other directory, and dynamically generate our own definition files then replace the paramaters with the new buffer that consists of the original definition files and the new generated file.It may sound unbelievable, however, there are many frameworks support dynamically hook Operating System’s process that is running, e.g. &lt;a href=&quot;https://github.com/googol-lab/Xposed&quot;&gt;Xposed&lt;/a&gt; and &lt;a href=&quot;https://github.com/googol-lab/adbi&quot;&gt;adbi&lt;/a&gt;. However, Xposed may be unsuitable, since if you want to take use of its Java API you need to root your Android device, it may be unacceptable for most users. Another instrumentation framework is adbi, which is short for Android Dynamic Binary Instrumentation Toolkit. With it you don’t need to root your Android device, I haven’t tried these framework yet, it may be useful, but Xposed does work.&lt;/li&gt;
-  &lt;li&gt;Modify the source code of Blockly to make it supporting dynamical loading blocks, for more details, see &lt;a href=&quot;https://github.com/lijiansong/blockly-android&quot;&gt;here…&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Hook the OS functions. &lt;br /&gt;
+When the app process load the assets resources, we can &lt;code class=&quot;highlighter-rouge&quot;&gt;intercept relevant methods that load the blocks definition files&lt;/code&gt;, read them out into other directory, and dynamically generate our own definition files then replace the paramaters with the new buffer that consists of the original definition files and the new generated file.
+&lt;br /&gt;It may sound unbelievable, however, there are many frameworks support dynamically hook Operating System’s process that is running, e.g. &lt;a href=&quot;https://github.com/googol-lab/Xposed&quot;&gt;Xposed&lt;/a&gt; and &lt;a href=&quot;https://github.com/googol-lab/adbi&quot;&gt;adbi&lt;/a&gt;. 
+&lt;br /&gt;However, Xposed may be unsuitable, since if you want to take use of its Java API you need to root your Android device, it may be unacceptable for most users. 
+&lt;br /&gt;Another instrumentation framework is adbi, which is short for Android Dynamic Binary Instrumentation Toolkit. With it you don’t need to root your Android device, I haven’t tried these framework yet, it may be useful, but Xposed does work.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Modify the source code of Blockly to make it supporting dynamical loading blocks. &lt;br /&gt;
+For more details, see &lt;a href=&quot;https://github.com/lijiansong/blockly-android&quot;&gt;here…&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 20 Feb 2017 11:02:15 +0800</pubDate>
-        <link>http://lijiansong.github.io/tech/2017/02/20/modify-blockly/</link>
-        <guid isPermaLink="true">http://lijiansong.github.io/tech/2017/02/20/modify-blockly/</guid>
+        <link>http://lijiansong.github.io/java/tech/2017/02/20/modify-blockly/</link>
+        <guid isPermaLink="true">http://lijiansong.github.io/java/tech/2017/02/20/modify-blockly/</guid>
         
         <category>platform tool</category>
         
+        
+        <category>Java</category>
         
         <category>Tech</category>
         
