@@ -4,7 +4,7 @@
  <title>Json Lee</title>
  <link href="http://lijiansong.github.io/atom.xml" rel="self"/>
  <link href="http://lijiansong.github.io/"/>
- <updated>2017-02-20T13:48:47+08:00</updated>
+ <updated>2017-02-20T16:00:29+08:00</updated>
  <id>http://lijiansong.github.io</id>
  <author>
    <name>Json Lee</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Modify the Source Code of Google's Open-source Framework --- Blockly</title>
-   <link href="http://lijiansong.github.io/java/tech/2017/02/20/modify-blockly/"/>
+   <link href="http://lijiansong.github.io/java/android/tech/2017/02/20/modify-blockly/"/>
    <updated>2017-02-20T11:02:15+08:00</updated>
-   <id>http://lijiansong.github.io/java/tech/2017/02/20/modify-blockly</id>
+   <id>http://lijiansong.github.io/java/android/tech/2017/02/20/modify-blockly</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 Blockly is an open-source framework under Apache 2.0 License for creating visual programming editors. It is a project of Google,which is able to run in web browser, Android or iOS operating system. 
 Blockly uses blocks that link together to make writing code easier, and can generate JavaScript, Python, PHP, Lua or Dart code automatically. It can also be customised to generate code in any computer language.

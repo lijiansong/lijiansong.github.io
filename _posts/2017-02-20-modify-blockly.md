@@ -2,7 +2,7 @@
 layout: post
 title: Modify the Source Code of Google's Open-source Framework --- Blockly
 date:   2017-02-20 11:02:15 +0800
-categories: Java Tech
+categories: Java Android Tech
 comments: true
 tags:
     - platform tool

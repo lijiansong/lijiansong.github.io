@@ -5,8 +5,8 @@
     <description>Copy Right (c) &lt;a href=&quot;http://lijiansong.github.io&quot; target=&quot;_blank&quot;&gt;Json Lee&lt;/a&gt;.</description>
     <link>http://lijiansong.github.io/</link>
     <atom:link href="http://lijiansong.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 20 Feb 2017 13:48:47 +0800</pubDate>
-    <lastBuildDate>Mon, 20 Feb 2017 13:48:47 +0800</lastBuildDate>
+    <pubDate>Mon, 20 Feb 2017 16:00:29 +0800</pubDate>
+    <lastBuildDate>Mon, 20 Feb 2017 16:00:29 +0800</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -50,13 +50,15 @@ For more details, see &lt;a href=&quot;https://github.com/lijiansong/blockly-and
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 20 Feb 2017 11:02:15 +0800</pubDate>
-        <link>http://lijiansong.github.io/java/tech/2017/02/20/modify-blockly/</link>
-        <guid isPermaLink="true">http://lijiansong.github.io/java/tech/2017/02/20/modify-blockly/</guid>
+        <link>http://lijiansong.github.io/java/android/tech/2017/02/20/modify-blockly/</link>
+        <guid isPermaLink="true">http://lijiansong.github.io/java/android/tech/2017/02/20/modify-blockly/</guid>
         
         <category>platform tool</category>
         
         
         <category>Java</category>
+        
+        <category>Android</category>
         
         <category>Tech</category>
         
