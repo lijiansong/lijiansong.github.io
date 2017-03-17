@@ -11,7 +11,7 @@
 
   <title>
     
-      测试：Welcome to Jekyll ! &middot; Json Lee
+      ELF Parser &middot; Json Lee
     
   </title>
 
@@ -212,28 +212,53 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">测试：Welcome to Jekyll !</h1>
-  <span class="post-date">16 Aug 2016</span>
+  <h1 class="post-title">ELF Parser</h1>
+  <span class="post-date">17 Mar 2017</span>
    | 
+  
+    <a href="/blog/tags/#platform-tool" class="post-tag">platform tool</a>
   
   
   <article>
-    <p><strong>以后写博客尽量用英文来写，顺便练一下自己的英文写作能力</strong></p>
+    <div class="message">
+In Unix-like system, the Executable and Linkable Format (ELF, formerly called Extensible Linking Format) is a common standard file format for executables, object code, shared libraries, and core dumps. 
+</div>
+<p><!-- more --></p>
 
-<p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.
-<!-- more -->
-To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the convention <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+<p>First published in the System V Release 4 (SVR4) Application Binary Interface (ABI) specification,and later in the Tool Interface Standard, it was quickly accepted among different vendors of Unix systems, such as Linux and etc.
+ELF is flexible and extensible by design, and it is not bound to any particular processor or architecture. This has allowed it to be adopted by many different operating systems on many different platforms.</p>
 
-<p>Jekyll also offers powerful support for code snippets:</p>
+<p>Each ELF file is made up of one ELF header, followed by file data. The file data can include:</p>
+<ul>
+  <li>Program header table, describing zero or more segments</li>
+  <li>Section header table, describing zero or more sections</li>
+  <li>Data referred to by entries in the program header table or section header table</li>
+</ul>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+<p>The segments contain information that is necessary for runtime execution of the file, while sections contain important data for linking and relocation. Any byte in the entire file can be owned by at most one section, and there can be orphan bytes which are not owned by any section.
+More details about ELF, see <a href="https://web.archive.org/web/20130403001804/http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/binary-formats.html">here…</a>
+Many tools can be taken use of to parse the ELF file, such as <code class="highlighter-rouge">readelf, elfutils, elfdump, objdump</code>…</p>
 
-<p>Check out the <a href="http://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+<p>Here I implement a my own elf-parser. There is nothing difficult to implement it, the whole work is mainly about <code class="highlighter-rouge">file IO &amp; string parsing</code>…
+You can follow the following steps to build it…</p>
 
+<p>##Build</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ cd xxx_dir
+$ make
+$ ./elf-parser ./test-cases/hello/hello
+$ make clean
+</code></pre>
+</div>
+<p>To generate the assembly code, you can type the following cmds:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ g++ -E hello.cpp -o hello.i
+$ g++ -S hello.cpp -o hello.s
+$ g++ -c hello.s -o hello.o
+</code></pre>
+</div>
+
+<p>For more details about the src, see <a href="https://github.com/lijiansong/Postgraduate-Course/tree/master/tools/elf-parser">here…</a></p>
+
+<p>Any questions or suggestions, feel free to open an issue @<a href="https://github.com/lijiansong/Postgraduate-Course/issues">here</a> or e-mail me to <em>lijiansong@ict.ac.cn</em>.</p>
 
   </article>
 </div>
@@ -278,8 +303,8 @@ To add new posts, simply add a file in the <code class="highlighter-rouge">_post
   <div id="disqus_thread"></div>
   <script>
 var disqus_config = function () {
-  this.page.url = 'http://lijiansong.github.io/test/2016/08/16/welcome-to-jekyll/'; // Replace PAGE_URL with your page's canonical URL variable
-  this.page.identifier = '/test/2016/08/16/welcome-to-jekyll'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  this.page.url = 'http://lijiansong.github.io/cpp/2017/03/17/elf-parser/'; // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/cpp/2017/03/17/elf-parser'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 (function() {
   var d = document, s = d.createElement('script');
