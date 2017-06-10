@@ -11,7 +11,7 @@
 
   <title>
     
-      The Little Prince &middot; Json Lee
+      Tiny Storm SQL --- A Real Time Stream Data Analysis Interface for Apache Storm &middot; Json Lee
     
   </title>
 
@@ -212,94 +212,138 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">The Little Prince</h1>
-  <span class="post-date">29 Oct 2016</span>
+  <h1 class="post-title">Tiny Storm SQL --- A Real Time Stream Data Analysis Interface for Apache Storm</h1>
+  <span class="post-date">06 Jun 2017</span>
    | 
   
-    <a href="/blog/tags/#temper" class="post-tag">Temper</a>
+    <a href="/blog/tags/#platform-tool" class="post-tag">platform tool</a>
   
   
   <article>
     <div class="message">
-  Something is wrong with the relationship between my girl friend and me these days. But I believe tomorrow will be better, and everything will be better. <br />
-  It is only with the heart that one can see rightly; what is essential is invisible to the eyes...
+SQL is a well-adopted interface especially for those non-computer major people. Several projects including Hive, Drill, Phoenix and Spark have already invested significantly in their SQL layers. Here we implement a Storm-based query language system for real time stream data analysis. 
 </div>
-<p><!-- more -->
-  <br />
-<code class="highlighter-rouge">Life has been so hard, sometimes i need to think such a question: what i have? what can i give to her? what can i promise her with and what is she want?</code><br />
-  The following snippets are excerpted from <a href="https://en.wikipedia.org/wiki/The_Little_Prince">The Little Prince…</a></p>
+<p><!-- more --></p>
 
+<h2 id="relevant-research">Relevant Research</h2>
+<p>For Apache storm <a href="http://storm.apache.org/2017/03/29/storm110-released.html">1.1.0</a> or later version, it has already provided Streaming SQL. In VLDB-2016, <a href="http://data.epfl.ch/">EPFL DATA Lab</a> implemented a streaming online query processing / analytics engine based on Apache Storm named <a href="https://github.com/epfldata/squall"><code class="highlighter-rouge">squall</code></a>.</p>
+
+<h2 id="system-architecture">System Architecture</h2>
+<p>Here we just implement a similar <code class="highlighter-rouge">demo</code> system which supports real time stream data analysis. The whole architecture is shown below:</p>
+
+<p><img src="/assets/blog-img/2017_06_05_architecture.png" alt="image" title="System Architecture" /></p>
+
+<p>As we can see from the above picture, when the user type a SQL-formatted query clause, the query sequence will be translated into a <code class="highlighter-rouge">query plan</code> which presents in the shape of a directed acyclic graph. The DAG-formatted query plan is optimized.
+Then it will be mapped into a Storm topology dynamically. Then the topology will be submitted to Storm cluster for running.</p>
+
+<h2 id="key-compoments">Key Compoments</h2>
+
+<p>Here, the SQL parser is implemented by taking use of <a href="https://github.com/antlr/antlr4">ANTLR</a>. <a href="http://www.antlr.org/">ANTLR(ANother Tool for Language Recognition)</a> is a powerful parser generator. Here we design the following BNF-formatted grammar for SQL:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>grammar sql;
+
+@header {
+package storm_sql.parser;
+}
+
+root
+    : 'select' select_list
+    'from' table_sources
+    ('where' search_condition)?
+    ('group' 'by' group_by_item (',' group_by_item)*)?
+    ('having' search_condition)?
+    ('within' within_time)?
+    ;
+
+
+select_list
+    : select_list_elem (',' select_list_elem)*	#printSelectList
+    ;
+
+select_list_elem
+    : /*(table_name=ID '.' column_name=ID)*/
+    expression					#printSelectListElem
+    | aggregate_function'(' expression ')'	#selectAggregateFunction
+    ;
+
+ID
+    : [a-zA-Z_][a-zA-Z_0-9]*
+    ;
+
+table_sources
+    : table_source (',' table_source)*		#tableSources
+    ;
+
+table_source
+    : ID					#tableSource
+    ;
+
+expression
+    : aggregate_function			#exprAggrFunc
+    | (table_name '.' column_name)		#expr
+    | NUM					#num
+    | ID                    #id
+    ;
+
+NUM
+    : '-'[1-9][0-9]*
+    | '0'
+    | [1-9][0-9]*
+    ;
+
+table_name
+    : ID					#tableName
+    ;
+
+column_name
+    : ID					#columnName
+    ;
+
+aggregate_function
+    : 'avg' | 'max' | 'min' | 'sum'| 'count'
+    ;
+
+search_condition
+    : search_condition_and ('and' search_condition_and)*	#printSearchCondition
+    ;
+
+search_condition_and
+    : expression comparison_operator expression			#printSearchConditionAnd
+    //| '(' search_condition ')'
+    ;
+
+comparison_operator
+    : '=' | '&gt;' | '&lt;' | '&lt;=' | '&gt;=' | '!='
+    ;
+
+group_by_item
+    : expression						#groupByItem
+    ;
+
+within_time
+    : (NUM)							#withinTime
+    ;
+
+WS  : [ \t\r\n]+ -&gt; skip ; // Define whitespace rule, toss it out
+
+</code></pre>
+</div>
+
+<p>By ANTLR <code class="highlighter-rouge">-visitor</code> tool, we can easily visit the AST through <code class="highlighter-rouge">visitor design pattern</code>. We store the necessary info of the sql sequence to build the DAG-formatted query plan. Here we use <a href="https://github.com/jgrapht/jgrapht"><code class="highlighter-rouge">JGraphT</code></a> to traverse the DAG, since it provides various interfaces for handling the DAG. We can eliminate the trouble of reinventing the wheel.
+To automatically generate Storm topology from the DAG-formatted query plan, we need to mark the father and child of each node in the DAG. In the DAG, the source tables are Storm spouts in Storm topology. Similarly, the operators of the DAG is storm bolts in Storm topology, so you need to implement these bolts ahead of schedule. Notice, join and group-by operators are time window based, in Storm, you can simply extend <code class="highlighter-rouge">BaseWindowedBolt</code> to implement the concepts of time window. Of course, you also have to connect to data sources to create Storm spouts to get the stream data. Here we simply create two spouts named <code class="highlighter-rouge">student and tc</code> to simulate the stream source data.</p>
+
+<p>The key features of the system include:</p>
 <ul>
-  <li>
-    <p>If someone loves a flower, of which just one single blossom grows in all the millions and millions of stars, it is enough to make him happy just to look at the stars. He can say to himself, “Somewhere, my flower is there…” But if the sheep eats the flower, in one moment all his stars will be darkened… And you think that is not important!</p>
-  </li>
-  <li>
-    <p>Flowers are so inconsistent! But I was too young to know how to love her…For she did not want him to see her crying. She was such a proud flower…</p>
-  </li>
-  <li>
-    <p>My flower is ephemeral, and she has only four thorns to defend herself against the world. And I have left on my planet, all alone!</p>
-  </li>
-  <li>
-    <p>His flower had told him that she was only one of her kind in all universe. And here were five thousand of them, all alike, in one single garden!</p>
-  </li>
-  <li>
-    <p>I thought that I was rich, with a flower that was unique in all the world; and all I had was a common rose. A common rose…</p>
-  </li>
-  <li>
-    <p>To me, you are still nothing more than a little boy who is just like a hundred thousand other little boys. And I have no need of you. And you, on your part, have no need of me. To you, I am nothing more than a fox like a hundred thousand other foxes. <code class="highlighter-rouge">But if you tame me, then we shall need each other. To me, you will be unique in all the world. To you, I shall be unique in all the world</code>.</p>
-  </li>
-  <li>
-    <p>The wheat fields have nothing to say to me. And that is sad. But you have hair that is the color of gold. Think how wonderful that will be when you have tamed me! The grain, which is also golden, will bring me back the thought of you. And I shall love to listen to the wind in the wheat.</p>
-  </li>
-  <li>
-    <p>It is your own fault, I never wished you any sort of harm; but you wanted me to tame you… but now you are going to cry! Then it has done you no good at all!</p>
-  </li>
-  <li>
-    <p>It has done me good, because of the color of the wheat fields. Go and look again at the roses. You will understand now that yours is unique in all the world.</p>
-  </li>
-  <li>
-    <p>And now here is my secret, a very simple secret. <code class="highlighter-rouge">It is only with the heart that one can see rightly; what is essential is invisible to the eyes</code>.</p>
-  </li>
-  <li>
-    <p>It is the time you have wasted for your rose that makes your rose so important.</p>
-  </li>
-  <li>
-    <p>Men have forgotten this truth. But you must not forget it. You become responsible, forever, for what you have tamed. You are responsible for your rose…</p>
-  </li>
-  <li>
-    <p>Only the children know what they are looking for. They waste their time over a rag doll and it becomes very important to them; and if anybody takes it away from them, they cry…</p>
-  </li>
-  <li>
-    <p>As for me, if I had fifty-three minutes to spend as I liked, I should walk at my leisure toward a spring of fresh water.</p>
-  </li>
-  <li>
-    <p>The stars are beautiful, because of a flower that cannot be seen.</p>
-  </li>
-  <li>
-    <p>What makes the desert beautiful is that somewhere it hides a well…</p>
-  </li>
-  <li>
-    <p>The house, the stars, the desert – what gives them their beauty is something that is invisible!</p>
-  </li>
-  <li>
-    <p>What moves me so deeply, about this little prince who is sleeping here, is his loyalty to a flower – the image of a rose that shine through his whole being like the flame of a lamp, even when he is asleep…</p>
-  </li>
-  <li>
-    <p>The men where you live, raise five thousand roses in the same garden – and they do not find in it what they are looking for. And yet what they are looking for could be found in one single rose, or in a little water. But eyes are blind. One must look with the heart…</p>
-  </li>
-  <li>
-    <p>All men have the stars, but they are not the same things for different people. For some, who are travelers, the stars are guides. For others they are no more than little lights in the sky. For others, who are scholars, they are problems. For my businessman they were wealth. But all these stars are silent. You – you alone – will have the stars as no one else has them…</p>
-  </li>
-  <li>
-    <p>In one of the stars I shall be living. In one of them I shall be laughing. And so it will be as if all the stars were laughing, when you look at the sky at night… You – only you – will have stars that can laugh…</p>
-  </li>
-  <li>
-    <p>And when your sorrow is comforted time soothes all sorrows you will be content that you have known me. You will always be my friend. You will want to laugh with me. And you will sometimes open your window, so, for that pleasure… And your friends will be properly astonished to see you laughing as you look up at the sky! Then you will say to them, “Yes, the stars always make me laugh!”</p>
-  </li>
-  <li>
-    <p>And no grown-ups will ever understand that this is a matter of so much importance!</p>
-  </li>
+  <li>the SQL parser is based on <code class="highlighter-rouge">ANTLR</code>, it is universal for users’ typing input;</li>
+  <li>the DAG-formatted query plan is based on <code class="highlighter-rouge">JGraphT</code>, you can access any vertex as you want;</li>
+  <li>the Storm topology is generated from the query plan <code class="highlighter-rouge">dynamically</code>, that is to say the whole system is not limited to a specific application or a specific stream data.</li>
 </ul>
+
+<p>Of course, the demo system is nothing but a demo, there is a lot to be improved. However, you can follow the whole architecture to develop your own interface.</p>
+
+<p>For more details about the src, see <a href="https://github.com/lijiansong/distribution/tree/master/storm/storm-sql/storm-sql/course-project">here…</a></p>
+
+<p>Any questions or suggestions, feel free to open an issue @<a href="https://github.com/lijiansong/distribution/issues">here</a> or e-mail me to <em>lijiansong@ict.ac.cn</em>.</p>
 
   </article>
 </div>
@@ -307,15 +351,6 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/java/2017/06/06/tiny-storm-sql/">
-            Tiny Storm SQL --- A Real Time Stream Data Analysis Interface for Apache Storm
-            <small>06 Jun 2017</small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -335,6 +370,15 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
         </h3>
       </li>
     
+      <li>
+        <h3>
+          <a href="/temper/2017/02/05/crazy-coder/">
+            Crazy Coder
+            <small>05 Feb 2017</small>
+          </a>
+        </h3>
+      </li>
+    
   </ul>
 </div>
 
@@ -344,8 +388,8 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
   <div id="disqus_thread"></div>
   <script>
 var disqus_config = function () {
-  this.page.url = 'http://lijiansong.github.io/temper/2016/10/29/2016-the-little-prince/'; // Replace PAGE_URL with your page's canonical URL variable
-  this.page.identifier = '/temper/2016/10/29/2016-the-little-prince'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  this.page.url = 'http://lijiansong.github.io/java/2017/06/06/tiny-storm-sql/'; // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/java/2017/06/06/tiny-storm-sql'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 (function() {
   var d = document, s = d.createElement('script');
