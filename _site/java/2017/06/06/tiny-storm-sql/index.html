@@ -184,7 +184,7 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 
   <div class="sidebar-item">
     <p>
-    &copy; 2017 Json Lee. This work is liscensed under <a href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.
+    &copy; 2018 Json Lee. This work is liscensed under <a href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.
     </p>
   </div>
 
@@ -240,94 +240,93 @@ Then it will be mapped into a Storm topology dynamically. Then the topology will
 
 <p>Here, the SQL parser is implemented by taking use of <a href="https://github.com/antlr/antlr4">ANTLR</a>. <a href="http://www.antlr.org/">ANTLR(ANother Tool for Language Recognition)</a> is a powerful parser generator. Here we design the following BNF-formatted grammar for SQL:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>grammar sql;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">grammar</span> <span class="n">sql</span><span class="p">;</span>
 
-@header {
-package storm_sql.parser;
-}
+<span class="p">@</span><span class="n">header</span> <span class="p">{</span>
+<span class="k">package</span> <span class="n">storm_sql</span><span class="p">.</span><span class="n">parser</span><span class="p">;</span>
+<span class="p">}</span>
 
-root
-    : 'select' select_list
-    'from' table_sources
-    ('where' search_condition)?
-    ('group' 'by' group_by_item (',' group_by_item)*)?
-    ('having' search_condition)?
-    ('within' within_time)?
-    ;
+<span class="n">root</span>
+    <span class="p">:</span> <span class="s1">'select'</span> <span class="n">select_list</span>
+    <span class="s1">'from'</span> <span class="n">table_sources</span>
+    <span class="p">(</span><span class="s1">'where'</span> <span class="n">search_condition</span><span class="p">)?</span>
+    <span class="p">(</span><span class="s1">'group'</span> <span class="s1">'by'</span> <span class="n">group_by_item</span> <span class="p">(</span><span class="s1">','</span> <span class="n">group_by_item</span><span class="p">)*)?</span>
+    <span class="p">(</span><span class="s1">'having'</span> <span class="n">search_condition</span><span class="p">)?</span>
+    <span class="p">(</span><span class="s1">'within'</span> <span class="n">within_time</span><span class="p">)?</span>
+    <span class="p">;</span>
 
 
-select_list
-    : select_list_elem (',' select_list_elem)*	#printSelectList
-    ;
+<span class="n">select_list</span>
+    <span class="p">:</span> <span class="n">select_list_elem</span> <span class="p">(</span><span class="s1">','</span> <span class="n">select_list_elem</span><span class="p">)*</span>	<span class="p">#</span><span class="n">printSelectList</span>
+    <span class="p">;</span>
 
-select_list_elem
-    : /*(table_name=ID '.' column_name=ID)*/
-    expression					#printSelectListElem
-    | aggregate_function'(' expression ')'	#selectAggregateFunction
-    ;
+<span class="n">select_list_elem</span>
+    <span class="p">:</span> <span class="p">/*(</span><span class="n">table_name</span><span class="p">=</span><span class="n">ID</span> <span class="s1">'.'</span> <span class="n">column_name</span><span class="p">=</span><span class="n">ID</span><span class="p">)*/</span>
+    <span class="n">expression</span>					<span class="p">#</span><span class="n">printSelectListElem</span>
+    <span class="p">|</span> <span class="n">aggregate_function</span><span class="s1">'('</span> <span class="n">expression</span> <span class="s1">')'</span>	<span class="p">#</span><span class="n">selectAggregateFunction</span>
+    <span class="p">;</span>
 
-ID
-    : [a-zA-Z_][a-zA-Z_0-9]*
-    ;
+<span class="n">ID</span>
+    <span class="p">:</span> <span class="p">[</span><span class="n">a</span><span class="p">-</span><span class="n">zA</span><span class="p">-</span><span class="n">Z_</span><span class="p">][</span><span class="n">a</span><span class="p">-</span><span class="n">zA</span><span class="p">-</span><span class="n">Z_0</span><span class="p">-</span><span class="m">9</span><span class="p">]*</span>
+    <span class="p">;</span>
 
-table_sources
-    : table_source (',' table_source)*		#tableSources
-    ;
+<span class="n">table_sources</span>
+    <span class="p">:</span> <span class="n">table_source</span> <span class="p">(</span><span class="s1">','</span> <span class="n">table_source</span><span class="p">)*</span>		<span class="p">#</span><span class="n">tableSources</span>
+    <span class="p">;</span>
 
-table_source
-    : ID					#tableSource
-    ;
+<span class="n">table_source</span>
+    <span class="p">:</span> <span class="n">ID</span>					<span class="p">#</span><span class="n">tableSource</span>
+    <span class="p">;</span>
 
-expression
-    : aggregate_function			#exprAggrFunc
-    | (table_name '.' column_name)		#expr
-    | NUM					#num
-    | ID                    #id
-    ;
+<span class="n">expression</span>
+    <span class="p">:</span> <span class="n">aggregate_function</span>			<span class="p">#</span><span class="n">exprAggrFunc</span>
+    <span class="p">|</span> <span class="p">(</span><span class="n">table_name</span> <span class="s1">'.'</span> <span class="n">column_name</span><span class="p">)</span>		<span class="p">#</span><span class="n">expr</span>
+    <span class="p">|</span> <span class="n">NUM</span>					<span class="p">#</span><span class="n">num</span>
+    <span class="p">|</span> <span class="n">ID</span>                    <span class="p">#</span><span class="n">id</span>
+    <span class="p">;</span>
 
-NUM
-    : '-'[1-9][0-9]*
-    | '0'
-    | [1-9][0-9]*
-    ;
+<span class="n">NUM</span>
+    <span class="p">:</span> <span class="s1">'-'</span><span class="p">[</span><span class="m">1</span><span class="p">-</span><span class="m">9</span><span class="p">][</span><span class="m">0</span><span class="p">-</span><span class="m">9</span><span class="p">]*</span>
+    <span class="p">|</span> <span class="s1">'0'</span>
+    <span class="p">|</span> <span class="p">[</span><span class="m">1</span><span class="p">-</span><span class="m">9</span><span class="p">][</span><span class="m">0</span><span class="p">-</span><span class="m">9</span><span class="p">]*</span>
+    <span class="p">;</span>
 
-table_name
-    : ID					#tableName
-    ;
+<span class="n">table_name</span>
+    <span class="p">:</span> <span class="n">ID</span>					<span class="p">#</span><span class="n">tableName</span>
+    <span class="p">;</span>
 
-column_name
-    : ID					#columnName
-    ;
+<span class="n">column_name</span>
+    <span class="p">:</span> <span class="n">ID</span>					<span class="p">#</span><span class="n">columnName</span>
+    <span class="p">;</span>
 
-aggregate_function
-    : 'avg' | 'max' | 'min' | 'sum'| 'count'
-    ;
+<span class="n">aggregate_function</span>
+    <span class="p">:</span> <span class="s1">'avg'</span> <span class="p">|</span> <span class="s1">'max'</span> <span class="p">|</span> <span class="s1">'min'</span> <span class="p">|</span> <span class="s1">'sum'</span><span class="p">|</span> <span class="s1">'count'</span>
+    <span class="p">;</span>
 
-search_condition
-    : search_condition_and ('and' search_condition_and)*	#printSearchCondition
-    ;
+<span class="n">search_condition</span>
+    <span class="p">:</span> <span class="n">search_condition_and</span> <span class="p">(</span><span class="s1">'and'</span> <span class="n">search_condition_and</span><span class="p">)*</span>	<span class="p">#</span><span class="n">printSearchCondition</span>
+    <span class="p">;</span>
 
-search_condition_and
-    : expression comparison_operator expression			#printSearchConditionAnd
-    //| '(' search_condition ')'
-    ;
+<span class="n">search_condition_and</span>
+    <span class="p">:</span> <span class="n">expression</span> <span class="n">comparison_operator</span> <span class="n">expression</span>			<span class="p">#</span><span class="n">printSearchConditionAnd</span>
+    <span class="p">//|</span> <span class="s1">'('</span> <span class="n">search_condition</span> <span class="s1">')'</span>
+    <span class="p">;</span>
 
-comparison_operator
-    : '=' | '&gt;' | '&lt;' | '&lt;=' | '&gt;=' | '!='
-    ;
+<span class="n">comparison_operator</span>
+    <span class="p">:</span> <span class="s1">'='</span> <span class="p">|</span> <span class="s1">'&gt;'</span> <span class="p">|</span> <span class="s1">'&lt;'</span> <span class="p">|</span> <span class="s1">'&lt;='</span> <span class="p">|</span> <span class="s1">'&gt;='</span> <span class="p">|</span> <span class="s1">'!='</span>
+    <span class="p">;</span>
 
-group_by_item
-    : expression						#groupByItem
-    ;
+<span class="n">group_by_item</span>
+    <span class="p">:</span> <span class="n">expression</span>						<span class="p">#</span><span class="n">groupByItem</span>
+    <span class="p">;</span>
 
-within_time
-    : (NUM)							#withinTime
-    ;
+<span class="n">within_time</span>
+    <span class="p">:</span> <span class="p">(</span><span class="n">NUM</span><span class="p">)</span>							<span class="p">#</span><span class="n">withinTime</span>
+    <span class="p">;</span>
 
-WS  : [ \t\r\n]+ -&gt; skip ; // Define whitespace rule, toss it out
+<span class="n">WS</span>  <span class="p">:</span> <span class="p">[</span> <span class="p">\</span><span class="n">t</span><span class="p">\</span><span class="n">r</span><span class="p">\</span><span class="n">n</span><span class="p">]+</span> <span class="p">-&gt;</span> <span class="n">skip</span> <span class="p">;</span> <span class="p">//</span> <span class="n">Define</span> <span class="n">whitespace</span> <span class="n">rule</span><span class="p">,</span> <span class="n">toss</span> <span class="n">it</span> <span class="n">out</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>By ANTLR <code class="highlighter-rouge">-visitor</code> tool, we can easily visit the AST through <code class="highlighter-rouge">visitor design pattern</code>. We store the necessary info of the sql sequence to build the DAG-formatted query plan. Here we use <a href="https://github.com/jgrapht/jgrapht"><code class="highlighter-rouge">JGraphT</code></a> to traverse the DAG, since it provides various interfaces for handling the DAG. We can eliminate the trouble of reinventing the wheel.
 To automatically generate Storm topology from the DAG-formatted query plan, we need to mark the father and child of each node in the DAG. In the DAG, the source tables are Storm spouts in Storm topology. Similarly, the operators of the DAG is storm bolts in Storm topology, so you need to implement these bolts ahead of schedule. Notice, join and group-by operators are time window based, in Storm, you can simply extend <code class="highlighter-rouge">BaseWindowedBolt</code> to implement the concepts of time window. Of course, you also have to connect to data sources to create Storm spouts to get the stream data. Here we simply create two spouts named <code class="highlighter-rouge">student and tc</code> to simulate the stream source data.</p>
@@ -388,7 +387,7 @@ To automatically generate Storm topology from the DAG-formatted query plan, we n
   <div id="disqus_thread"></div>
   <script>
 var disqus_config = function () {
-  this.page.url = 'http://lijiansong.github.io/java/2017/06/06/tiny-storm-sql/'; // Replace PAGE_URL with your page's canonical URL variable
+  this.page.url = 'http://localhost:4000/java/2017/06/06/tiny-storm-sql/'; // Replace PAGE_URL with your page's canonical URL variable
   this.page.identifier = '/java/2017/06/06/tiny-storm-sql'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 (function() {

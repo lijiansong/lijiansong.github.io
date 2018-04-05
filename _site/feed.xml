@@ -3,11 +3,11 @@
   <channel>
     <title>Json Lee</title>
     <description>Copy Right (c) &lt;a href=&quot;http://lijiansong.github.io&quot; target=&quot;_blank&quot;&gt;Json Lee&lt;/a&gt;.</description>
-    <link>http://lijiansong.github.io/</link>
-    <atom:link href="http://lijiansong.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 07 Aug 2017 00:01:43 +0800</pubDate>
-    <lastBuildDate>Mon, 07 Aug 2017 00:01:43 +0800</lastBuildDate>
-    <generator>Jekyll v3.2.1</generator>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 05 Apr 2018 17:01:15 +0800</pubDate>
+    <lastBuildDate>Thu, 05 Apr 2018 17:01:15 +0800</lastBuildDate>
+    <generator>Jekyll v3.7.3</generator>
     
       <item>
         <title>Tiny Storm SQL --- A Real Time Stream Data Analysis Interface for Apache Storm</title>
@@ -31,94 +31,93 @@ Then it will be mapped into a Storm topology dynamically. Then the topology will
 
 &lt;p&gt;Here, the SQL parser is implemented by taking use of &lt;a href=&quot;https://github.com/antlr/antlr4&quot;&gt;ANTLR&lt;/a&gt;. &lt;a href=&quot;http://www.antlr.org/&quot;&gt;ANTLR(ANother Tool for Language Recognition)&lt;/a&gt; is a powerful parser generator. Here we design the following BNF-formatted grammar for SQL:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;grammar sql;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;grammar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-@header {
-package storm_sql.parser;
-}
+&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;storm_sql&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-root
-    : 'select' select_list
-    'from' table_sources
-    ('where' search_condition)?
-    ('group' 'by' group_by_item (',' group_by_item)*)?
-    ('having' search_condition)?
-    ('within' within_time)?
-    ;
+&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'select'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;select_list&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;'from'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;table_sources&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'where'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;search_condition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)?&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'group'&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'by'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;group_by_item&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;','&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;group_by_item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)*)?&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'having'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;search_condition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)?&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'within'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;within_time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)?&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
 
-select_list
-    : select_list_elem (',' select_list_elem)*	#printSelectList
-    ;
+&lt;span class=&quot;n&quot;&gt;select_list&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;select_list_elem&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;','&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;select_list_elem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)*&lt;/span&gt;	&lt;span class=&quot;p&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;printSelectList&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-select_list_elem
-    : /*(table_name=ID '.' column_name=ID)*/
-    expression					#printSelectListElem
-    | aggregate_function'(' expression ')'	#selectAggregateFunction
-    ;
+&lt;span class=&quot;n&quot;&gt;select_list_elem&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;/*(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;table_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ID&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'.'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;column_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)*/&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;expression&lt;/span&gt;					&lt;span class=&quot;p&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;printSelectListElem&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aggregate_function&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'('&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expression&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;')'&lt;/span&gt;	&lt;span class=&quot;p&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;selectAggregateFunction&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-ID
-    : [a-zA-Z_][a-zA-Z_0-9]*
-    ;
+&lt;span class=&quot;n&quot;&gt;ID&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Z_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Z_0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]*&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-table_sources
-    : table_source (',' table_source)*		#tableSources
-    ;
+&lt;span class=&quot;n&quot;&gt;table_sources&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;table_source&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;','&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;table_source&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)*&lt;/span&gt;		&lt;span class=&quot;p&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tableSources&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-table_source
-    : ID					#tableSource
-    ;
+&lt;span class=&quot;n&quot;&gt;table_source&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ID&lt;/span&gt;					&lt;span class=&quot;p&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tableSource&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-expression
-    : aggregate_function			#exprAggrFunc
-    | (table_name '.' column_name)		#expr
-    | NUM					#num
-    | ID                    #id
-    ;
+&lt;span class=&quot;n&quot;&gt;expression&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aggregate_function&lt;/span&gt;			&lt;span class=&quot;p&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exprAggrFunc&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;table_name&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'.'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;column_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;		&lt;span class=&quot;p&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;expr&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NUM&lt;/span&gt;					&lt;span class=&quot;p&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ID&lt;/span&gt;                    &lt;span class=&quot;p&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-NUM
-    : '-'[1-9][0-9]*
-    | '0'
-    | [1-9][0-9]*
-    ;
+&lt;span class=&quot;n&quot;&gt;NUM&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'-'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]*&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'0'&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]*&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-table_name
-    : ID					#tableName
-    ;
+&lt;span class=&quot;n&quot;&gt;table_name&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ID&lt;/span&gt;					&lt;span class=&quot;p&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tableName&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-column_name
-    : ID					#columnName
-    ;
+&lt;span class=&quot;n&quot;&gt;column_name&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ID&lt;/span&gt;					&lt;span class=&quot;p&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;columnName&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-aggregate_function
-    : 'avg' | 'max' | 'min' | 'sum'| 'count'
-    ;
+&lt;span class=&quot;n&quot;&gt;aggregate_function&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'avg'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'max'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'min'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'sum'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'count'&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-search_condition
-    : search_condition_and ('and' search_condition_and)*	#printSearchCondition
-    ;
+&lt;span class=&quot;n&quot;&gt;search_condition&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;search_condition_and&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'and'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;search_condition_and&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)*&lt;/span&gt;	&lt;span class=&quot;p&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;printSearchCondition&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-search_condition_and
-    : expression comparison_operator expression			#printSearchConditionAnd
-    //| '(' search_condition ')'
-    ;
+&lt;span class=&quot;n&quot;&gt;search_condition_and&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expression&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comparison_operator&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expression&lt;/span&gt;			&lt;span class=&quot;p&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;printSearchConditionAnd&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;//|&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'('&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;search_condition&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;')'&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-comparison_operator
-    : '=' | '&amp;gt;' | '&amp;lt;' | '&amp;lt;=' | '&amp;gt;=' | '!='
-    ;
+&lt;span class=&quot;n&quot;&gt;comparison_operator&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'='&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&amp;gt;'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&amp;lt;'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&amp;lt;='&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&amp;gt;='&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'!='&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-group_by_item
-    : expression						#groupByItem
-    ;
+&lt;span class=&quot;n&quot;&gt;group_by_item&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expression&lt;/span&gt;						&lt;span class=&quot;p&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;groupByItem&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-within_time
-    : (NUM)							#withinTime
-    ;
+&lt;span class=&quot;n&quot;&gt;within_time&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NUM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;							&lt;span class=&quot;p&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withinTime&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-WS  : [ \t\r\n]+ -&amp;gt; skip ; // Define whitespace rule, toss it out
+&lt;span class=&quot;n&quot;&gt;WS&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;skip&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Define&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;whitespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;toss&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;By ANTLR &lt;code class=&quot;highlighter-rouge&quot;&gt;-visitor&lt;/code&gt; tool, we can easily visit the AST through &lt;code class=&quot;highlighter-rouge&quot;&gt;visitor design pattern&lt;/code&gt;. We store the necessary info of the sql sequence to build the DAG-formatted query plan. Here we use &lt;a href=&quot;https://github.com/jgrapht/jgrapht&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;JGraphT&lt;/code&gt;&lt;/a&gt; to traverse the DAG, since it provides various interfaces for handling the DAG. We can eliminate the trouble of reinventing the wheel.
 To automatically generate Storm topology from the DAG-formatted query plan, we need to mark the father and child of each node in the DAG. In the DAG, the source tables are Storm spouts in Storm topology. Similarly, the operators of the DAG is storm bolts in Storm topology, so you need to implement these bolts ahead of schedule. Notice, join and group-by operators are time window based, in Storm, you can simply extend &lt;code class=&quot;highlighter-rouge&quot;&gt;BaseWindowedBolt&lt;/code&gt; to implement the concepts of time window. Of course, you also have to connect to data sources to create Storm spouts to get the stream data. Here we simply create two spouts named &lt;code class=&quot;highlighter-rouge&quot;&gt;student and tc&lt;/code&gt; to simulate the stream source data.&lt;/p&gt;
@@ -137,8 +136,8 @@ To automatically generate Storm topology from the DAG-formatted query plan, we n
 &lt;p&gt;Any questions or suggestions, feel free to open an issue @&lt;a href=&quot;https://github.com/lijiansong/distribution/issues&quot;&gt;here&lt;/a&gt; or e-mail me to &lt;em&gt;lijiansong@ict.ac.cn&lt;/em&gt;.&lt;/p&gt;
 </description>
         <pubDate>Tue, 06 Jun 2017 01:02:15 +0800</pubDate>
-        <link>http://lijiansong.github.io/java/2017/06/06/tiny-storm-sql/</link>
-        <guid isPermaLink="true">http://lijiansong.github.io/java/2017/06/06/tiny-storm-sql/</guid>
+        <link>http://localhost:4000/java/2017/06/06/tiny-storm-sql/</link>
+        <guid isPermaLink="true">http://localhost:4000/java/2017/06/06/tiny-storm-sql/</guid>
         
         <category>platform tool</category>
         
@@ -172,26 +171,24 @@ Many tools can be taken use of to parse the ELF file, such as &lt;code class=&qu
 You can follow the following steps to build it…&lt;/p&gt;
 
 &lt;p&gt;##Build&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd xxx_dir
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd xxx_dir
 $ make
 $ ./elf-parser ./test-cases/hello/hello
 $ make clean
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;To generate the assembly code, you can type the following cmds:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ g++ -E hello.cpp -o hello.i
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ g++ -E hello.cpp -o hello.i
 $ g++ -S hello.cpp -o hello.s
 $ g++ -c hello.s -o hello.o
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;For more details about the src, see &lt;a href=&quot;https://github.com/lijiansong/Postgraduate-Course/tree/master/tools/elf-parser&quot;&gt;here…&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Any questions or suggestions, feel free to open an issue @&lt;a href=&quot;https://github.com/lijiansong/Postgraduate-Course/issues&quot;&gt;here&lt;/a&gt; or e-mail me to &lt;em&gt;lijiansong@ict.ac.cn&lt;/em&gt;.&lt;/p&gt;
 </description>
         <pubDate>Fri, 17 Mar 2017 11:02:15 +0800</pubDate>
-        <link>http://lijiansong.github.io/cpp/2017/03/17/elf-parser/</link>
-        <guid isPermaLink="true">http://lijiansong.github.io/cpp/2017/03/17/elf-parser/</guid>
+        <link>http://localhost:4000/cpp/2017/03/17/elf-parser/</link>
+        <guid isPermaLink="true">http://localhost:4000/cpp/2017/03/17/elf-parser/</guid>
         
         <category>platform tool</category>
         
@@ -241,8 +238,8 @@ For more details, see &lt;a href=&quot;https://github.com/lijiansong/blockly-and
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 20 Feb 2017 11:02:15 +0800</pubDate>
-        <link>http://lijiansong.github.io/java/android/tech/2017/02/20/modify-blockly/</link>
-        <guid isPermaLink="true">http://lijiansong.github.io/java/android/tech/2017/02/20/modify-blockly/</guid>
+        <link>http://localhost:4000/java/android/tech/2017/02/20/modify-blockly/</link>
+        <guid isPermaLink="true">http://localhost:4000/java/android/tech/2017/02/20/modify-blockly/</guid>
         
         <category>platform tool</category>
         
@@ -375,8 +372,8 @@ For more details, see &lt;a href=&quot;https://github.com/lijiansong/blockly-and
 &lt;p&gt;&lt;a href=&quot;https://github.com/lijiansong/acm-algorithms/blob/master/CodeForces/woj/%E7%96%AF%E7%8B%82%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98.mobi&quot;&gt;link…&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 05 Feb 2017 13:42:13 +0800</pubDate>
-        <link>http://lijiansong.github.io/temper/2017/02/05/crazy-coder/</link>
-        <guid isPermaLink="true">http://lijiansong.github.io/temper/2017/02/05/crazy-coder/</guid>
+        <link>http://localhost:4000/temper/2017/02/05/crazy-coder/</link>
+        <guid isPermaLink="true">http://localhost:4000/temper/2017/02/05/crazy-coder/</guid>
         
         <category>Temper</category>
         
@@ -431,8 +428,8 @@ A working group for the World Economic Forum met in November 2016 to discuss the
 &lt;/ul&gt;
 </description>
         <pubDate>Fri, 11 Nov 2016 21:02:15 +0800</pubDate>
-        <link>http://lijiansong.github.io/tech/2016/11/11/block-chain/</link>
-        <guid isPermaLink="true">http://lijiansong.github.io/tech/2016/11/11/block-chain/</guid>
+        <link>http://localhost:4000/tech/2016/11/11/block-chain/</link>
+        <guid isPermaLink="true">http://localhost:4000/tech/2016/11/11/block-chain/</guid>
         
         <category>News</category>
         
@@ -525,8 +522,8 @@ A working group for the World Economic Forum met in November 2016 to discuss the
 &lt;/ul&gt;
 </description>
         <pubDate>Sat, 29 Oct 2016 21:35:15 +0800</pubDate>
-        <link>http://lijiansong.github.io/temper/2016/10/29/2016-the-little-prince/</link>
-        <guid isPermaLink="true">http://lijiansong.github.io/temper/2016/10/29/2016-the-little-prince/</guid>
+        <link>http://localhost:4000/temper/2016/10/29/2016-the-little-prince/</link>
+        <guid isPermaLink="true">http://localhost:4000/temper/2016/10/29/2016-the-little-prince/</guid>
         
         <category>Temper</category>
         
@@ -570,8 +567,8 @@ I also want to take part in some programming contest, such as &lt;strong&gt;ACM/
 &lt;p&gt;&lt;a href=&quot;http://www.pgbovine.net/PhD-memoir/pguo-PhD-grind.pdf&quot;&gt;THE PH.D GRIND&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 03 Sep 2016 21:35:15 +0800</pubDate>
-        <link>http://lijiansong.github.io/temper/2016/09/03/2016-study-plan/</link>
-        <guid isPermaLink="true">http://lijiansong.github.io/temper/2016/09/03/2016-study-plan/</guid>
+        <link>http://localhost:4000/temper/2016/09/03/2016-study-plan/</link>
+        <guid isPermaLink="true">http://localhost:4000/temper/2016/09/03/2016-study-plan/</guid>
         
         <category>Temper</category>
         
@@ -599,8 +596,8 @@ Born in 1978, Chris Lattner is an American software developer, best known as the
 
 </description>
         <pubDate>Thu, 25 Aug 2016 00:00:00 +0800</pubDate>
-        <link>http://lijiansong.github.io/thumb/2016/08/25/Chris-Lattner-Homepage/</link>
-        <guid isPermaLink="true">http://lijiansong.github.io/thumb/2016/08/25/Chris-Lattner-Homepage/</guid>
+        <link>http://localhost:4000/thumb/2016/08/25/Chris-Lattner-Homepage/</link>
+        <guid isPermaLink="true">http://localhost:4000/thumb/2016/08/25/Chris-Lattner-Homepage/</guid>
         
         <category>People</category>
         
@@ -656,7 +653,7 @@ Born in 1978, Chris Lattner is an American software developer, best known as the
   &lt;p&gt;Besides the features above, the config file also supports inheritance mechanism. The symbol of inheritance is shown by “:”, e.g.&lt;br /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;derived_section&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;section&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;derived_section&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;section&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;key1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;override string&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;key3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -725,7 +722,7 @@ The contents of a.config:&lt;/p&gt;
   &lt;p&gt;To parse the config file, flex &amp;amp; bison is of much efficiency. Before using the mature tools, we have to define the grammar in advance, which is formularized by Backus-Naur Form. The config files’ Backus-Naur Form is shown below:&lt;br /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tuples::= tuple tuples | \epsilon
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tuples::= tuple tuples | \epsilon
 tuples::= ID LB entries RB | ID COLON LB entries RB
 entries::= kv entries | tuple entries | \epsilon
 kv::= ID EQ value END
@@ -742,8 +739,7 @@ COLON-&amp;gt;:
 EQ-&amp;gt;=
 END-&amp;gt;;
 NULLV-&amp;gt;NULL
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
 
@@ -751,7 +747,7 @@ NULLV-&amp;gt;NULL
   &lt;p&gt;To Compile the source code, you need to install git &amp;amp; make. You can use the following command line to complie them:&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;clone&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//github.com/lijiansong/ConfigFileParser&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;clone&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//github.com/lijiansong/ConfigFileParser&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ConfigFileParser&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;make&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -770,8 +766,8 @@ NULLV-&amp;gt;NULL
 &lt;p&gt;Want to see something else added? &lt;a href=&quot;https://github.com/lijiansong/ConfigFileParser/issues&quot;&gt;Open an issue.&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 22 Aug 2016 00:00:00 +0800</pubDate>
-        <link>http://lijiansong.github.io/yacc/cpp/2016/08/22/config-file-parser/</link>
-        <guid isPermaLink="true">http://lijiansong.github.io/yacc/cpp/2016/08/22/config-file-parser/</guid>
+        <link>http://localhost:4000/yacc/cpp/2016/08/22/config-file-parser/</link>
+        <guid isPermaLink="true">http://localhost:4000/yacc/cpp/2016/08/22/config-file-parser/</guid>
         
         <category>IDL</category>
         
@@ -820,8 +816,8 @@ Just like the OpenCV Manager, the Engine Manager is also an Android service targ
 &lt;p&gt;Want to see something else added? &lt;a href=&quot;https://github.com/lijiansong/Libs-Manager-Engine/issues&quot;&gt;Open an issue.&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 17 Aug 2016 00:00:00 +0800</pubDate>
-        <link>http://lijiansong.github.io/android/java/2016/08/17/libs-manager-engine/</link>
-        <guid isPermaLink="true">http://lijiansong.github.io/android/java/2016/08/17/libs-manager-engine/</guid>
+        <link>http://localhost:4000/android/java/2016/08/17/libs-manager-engine/</link>
+        <guid isPermaLink="true">http://localhost:4000/android/java/2016/08/17/libs-manager-engine/</guid>
         
         <category>IDL</category>
         
