@@ -11,7 +11,7 @@
 
   <title>
     
-      Tags &middot; Json Lee
+      NDArray: A Headers only Template Library for N Dimensions Tensor Expressions &middot; Json Lee
     
   </title>
 
@@ -140,7 +140,7 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
             
             
             
-              <a class="sidebar-nav-item sidebar-nav-item-sub active" href="/blog/tags/">
+              <a class="sidebar-nav-item sidebar-nav-item-sub " href="/blog/tags/">
                 Tags
               </a>
           
@@ -211,145 +211,112 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
       </div>
 
       <div class="container content">
-        <div class="page">
-  <h1 class="page-title">Tags</h1>
-  <div class="tags-expo">
-  <div class="tags-expo-list">
-    
-    <a href="#idl" class="post-tag">IDL</a>
-    
-    <a href="#platform-tool" class="post-tag">platform tool</a>
-    
-    <a href="#people" class="post-tag">People</a>
-    
-    <a href="#temper" class="post-tag">Temper</a>
-    
-    <a href="#news" class="post-tag">News</a>
-    
-  </div>
-  <hr/>
-  <div class="tags-expo-section">
-    
-    <h2 id="idl">IDL</h2>
-    <ul class="tags-expo-posts">
-      
-        <a class="post-title" href="/yacc/cpp/2016/08/22/config-file-parser/">
-      <li>
-        Config File Parser
-      <small class="post-date">22 Aug 2016</small>
-      </li>
-      </a>
-      
-        <a class="post-title" href="/android/java/2016/08/17/libs-manager-engine/">
-      <li>
-        Libs-Manager-Engine
-      <small class="post-date">17 Aug 2016</small>
-      </li>
-      </a>
-      
-    </ul>
-    
-    <h2 id="platform-tool">platform tool</h2>
-    <ul class="tags-expo-posts">
-      
-        <a class="post-title" href="/cpp/2018/02/26/ndarray/">
-      <li>
-        NDArray: A Headers only Template Library for N Dimensions Tensor Expressions
-      <small class="post-date">26 Feb 2018</small>
-      </li>
-      </a>
-      
-        <a class="post-title" href="/java/2017/06/06/tiny-storm-sql/">
-      <li>
-        Tiny Storm SQL: A Real Time Stream Data Analysis Interface for Apache Storm
-      <small class="post-date">06 Jun 2017</small>
-      </li>
-      </a>
-      
-        <a class="post-title" href="/cpp/2017/03/17/elf-parser/">
-      <li>
-        ELF Parser
-      <small class="post-date">17 Mar 2017</small>
-      </li>
-      </a>
-      
-        <a class="post-title" href="/java/android/tech/2017/02/20/modify-blockly/">
-      <li>
-        Modify the Source Code of Google's Open-source Framework --- Blockly
-      <small class="post-date">20 Feb 2017</small>
-      </li>
-      </a>
-      
-        <a class="post-title" href="/yacc/cpp/2016/08/22/config-file-parser/">
-      <li>
-        Config File Parser
-      <small class="post-date">22 Aug 2016</small>
-      </li>
-      </a>
-      
-        <a class="post-title" href="/android/java/2016/08/17/libs-manager-engine/">
-      <li>
-        Libs-Manager-Engine
-      <small class="post-date">17 Aug 2016</small>
-      </li>
-      </a>
-      
-    </ul>
-    
-    <h2 id="people">People</h2>
-    <ul class="tags-expo-posts">
-      
-        <a class="post-title" href="/thumb/2016/08/25/Chris-Lattner-Homepage/">
-      <li>
-        Chris Lattner's Homepage
-      <small class="post-date">25 Aug 2016</small>
-      </li>
-      </a>
-      
-    </ul>
-    
-    <h2 id="temper">Temper</h2>
-    <ul class="tags-expo-posts">
-      
-        <a class="post-title" href="/temper/2017/02/05/crazy-coder/">
-      <li>
-        Crazy Coder
-      <small class="post-date">05 Feb 2017</small>
-      </li>
-      </a>
-      
-        <a class="post-title" href="/temper/2016/10/29/2016-the-little-prince/">
-      <li>
-        The Little Prince
-      <small class="post-date">29 Oct 2016</small>
-      </li>
-      </a>
-      
-        <a class="post-title" href="/temper/2016/09/03/2016-study-plan/">
-      <li>
-        2016 Study Plan
-      <small class="post-date">03 Sep 2016</small>
-      </li>
-      </a>
-      
-    </ul>
-    
-    <h2 id="news">News</h2>
-    <ul class="tags-expo-posts">
-      
-        <a class="post-title" href="/tech/2016/11/11/block-chain/">
-      <li>
-        Block Chain
-      <small class="post-date">11 Nov 2016</small>
-      </li>
-      </a>
-      
-    </ul>
-    
-  </div>
+        <div class="post">
+  <h1 class="post-title">NDArray: A Headers only Template Library for N Dimensions Tensor Expressions</h1>
+  <span class="post-date">26 Feb 2018</span>
+   | 
+  
+    <a href="/blog/tags/#platform-tool" class="post-tag">platform tool</a>
+  
+  
+  <article>
+    <div class="message">
+
+NDArray is short for N Dimension Array, it is a headers only library for N-Dimensions array(i.e. tensor in deep learning) expressions, such as arithmatic operations, reshape, reduction, slice and etc. 
+</div>
+<p><!-- more --></p>
+
+<h2 id="relevant-research">Relevant Research</h2>
+
+<p>In deep learning applications, tensor can be seen everywhere<a href="#taco_pr">[7]</a>. It is necessary to wrap its operations to lower the difficulty and cost for application developers.</p>
+
+<p>Eigen<a href="#eigen_repo">[1]</a><a href="#eigen_page">[2]</a> is a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms. It has been applied into many open-source project, e.g. <a href="https://github.com/tensorflow/tensorflow">TensorFlow</a> and etc. Its implementation is template meta programming<a href="#wiki_meta">[3]</a> based and its expression templates allow to intelligently remove temporaries and enable <code class="highlighter-rouge">lazy evaluation</code>, when that is appropriate<a href="#eigen_lazy">[4]</a>.</p>
+
+<p>TACO(Tensor Algebra Compiler)<a href="#taco_page">[6]</a>is a C++ library that computes tensor algebra expressions on sparse and dense tensors. It uses novel compiler techniques to get performance competitive with hand-optimized kernels in widely used libraries for both sparse tensor algebra and sparse linear algebra.</p>
+
+<h2 id="ndarray-key-features">NDArray Key Features</h2>
+
+<p>Many C++11 new features has been applied during its implementation, e.g. Rvalue references, variadic templates, initializer lists, type traits and etc. Some of its design concept comes from C++ STL container and Eigen tensor<a href="#eigen_tensor">[5]</a>.</p>
+
+<ul>
+  <li>NDArray is versatile. It provides much flexibility, since its implementation is <code class="highlighter-rouge">template meta programming</code> based. It supports all standard numeric types, and any dimension NDArrays.</li>
+  <li>NDArray will provide both <code class="highlighter-rouge">static and dynamic</code> containers.</li>
+  <li>To guarantee performance, NDArray expression templates allow to intelligently remove temporaries and enable <code class="highlighter-rouge">lazy evaluation</code>. And I will try to take use of SIMD instructions for CPU, GPU or some ASIC platforms.</li>
+</ul>
+
+<h2 id="reference">Reference</h2>
+
+<ul>
+  <li>[1] <span id="eigen_repo">Eigen bitbucket repo: <a href="https://bitbucket.org/eigen/">https://bitbucket.org/eigen/</a> </span></li>
+  <li>[2] <span id="eigen_page">Eigen official page: <a href="http://eigen.tuxfamily.org/">http://eigen.tuxfamily.org/</a> </span></li>
+  <li>[3] <span id="wiki_meta">Template Meta Programming, wiki page: <a href="https://en.wikipedia.org/wiki/Template_metaprogramming">https://en.wikipedia.org/wiki/Template_metaprogramming</a> </span></li>
+  <li>[4] <span id="eigen_lazy">Eigen Lazy Evaluation and Aliasing, <a href="http://eigen.tuxfamily.org/dox/TopicLazyEvaluation.html">http://eigen.tuxfamily.org/dox/TopicLazyEvaluation.html</a> </span></li>
+  <li>[5] <span id="eigen_tensor">Eigen Tensor: <a href="https://bitbucket.org/eigen/eigen/src/677c9f1577810e869f4f09881cabc3e503a810c1/unsupported/Eigen/CXX11/src/Tensor/README.md">https://bitbucket.org/eigen/eigen/src/677c9f1577810e869f4f09881cabc3e503a810c1/unsupported/Eigen/CXX11/src/Tensor/README.md</a> </span></li>
+  <li>[6] <span id="taco_page">TACO official page: <a href="http://tensor-compiler.org">http://tensor-compiler.org</a> </span></li>
+  <li>[7] <span id="taco_pr">TACO presentation: <a href="http://groups.csail.mit.edu/commit/presentations/2017/tensor-compiler.pdf">http://groups.csail.mit.edu/commit/presentations/2017/tensor-compiler.pdf</a> </span></li>
+</ul>
+
+<p>For more details about NDArray src, see its github <a href="https://github.com/lijiansong/ndarray">repo</a> and its <a href="https://lijiansong.github.io/ndarray/">gh-pages</a>…</p>
+
+<p>Any questions or suggestions, feel free to open an issue @<a href="https://github.com/lijiansong/ndarray/issues">here</a> or e-mail me to <em>lijiansong@ict.ac.cn</em>.</p>
+
+
+  </article>
 </div>
 
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/java/2017/06/06/tiny-storm-sql/">
+            Tiny Storm SQL: A Real Time Stream Data Analysis Interface for Apache Storm
+            <small>06 Jun 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/cpp/2017/03/17/elf-parser/">
+            ELF Parser
+            <small>17 Mar 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/java/android/tech/2017/02/20/modify-blockly/">
+            Modify the Source Code of Google's Open-source Framework --- Blockly
+            <small>20 Feb 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
 </div>
+
+
+<div class="comments">
+  <h2>Comments</h2>
+  <div id="disqus_thread"></div>
+  <script>
+var disqus_config = function () {
+  this.page.url = 'http://localhost:4000/cpp/2018/02/26/ndarray/'; // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/cpp/2018/02/26/ndarray'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() {
+  var d = document, s = d.createElement('script');
+  s.src = '//your_short_name.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+
 
       </div>
     </div>

@@ -5,12 +5,66 @@
     <description>Copy Right (c) &lt;a href=&quot;http://lijiansong.github.io&quot; target=&quot;_blank&quot;&gt;Json Lee&lt;/a&gt;.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 05 Apr 2018 17:01:15 +0800</pubDate>
-    <lastBuildDate>Thu, 05 Apr 2018 17:01:15 +0800</lastBuildDate>
+    <pubDate>Sat, 07 Apr 2018 15:27:52 +0800</pubDate>
+    <lastBuildDate>Sat, 07 Apr 2018 15:27:52 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
-        <title>Tiny Storm SQL --- A Real Time Stream Data Analysis Interface for Apache Storm</title>
+        <title>NDArray: A Headers only Template Library for N Dimensions Tensor Expressions</title>
+        <description>&lt;div class=&quot;message&quot;&gt;
+
+NDArray is short for N Dimension Array, it is a headers only library for N-Dimensions array(i.e. tensor in deep learning) expressions, such as arithmatic operations, reshape, reduction, slice and etc. 
+&lt;/div&gt;
+&lt;p&gt;&lt;!-- more --&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;relevant-research&quot;&gt;Relevant Research&lt;/h2&gt;
+
+&lt;p&gt;In deep learning applications, tensor can be seen everywhere&lt;a href=&quot;#taco_pr&quot;&gt;[7]&lt;/a&gt;. It is necessary to wrap its operations to lower the difficulty and cost for application developers.&lt;/p&gt;
+
+&lt;p&gt;Eigen&lt;a href=&quot;#eigen_repo&quot;&gt;[1]&lt;/a&gt;&lt;a href=&quot;#eigen_page&quot;&gt;[2]&lt;/a&gt; is a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms. It has been applied into many open-source project, e.g. &lt;a href=&quot;https://github.com/tensorflow/tensorflow&quot;&gt;TensorFlow&lt;/a&gt; and etc. Its implementation is template meta programming&lt;a href=&quot;#wiki_meta&quot;&gt;[3]&lt;/a&gt; based and its expression templates allow to intelligently remove temporaries and enable &lt;code class=&quot;highlighter-rouge&quot;&gt;lazy evaluation&lt;/code&gt;, when that is appropriate&lt;a href=&quot;#eigen_lazy&quot;&gt;[4]&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;TACO(Tensor Algebra Compiler)&lt;a href=&quot;#taco_page&quot;&gt;[6]&lt;/a&gt;is a C++ library that computes tensor algebra expressions on sparse and dense tensors. It uses novel compiler techniques to get performance competitive with hand-optimized kernels in widely used libraries for both sparse tensor algebra and sparse linear algebra.&lt;/p&gt;
+
+&lt;h2 id=&quot;ndarray-key-features&quot;&gt;NDArray Key Features&lt;/h2&gt;
+
+&lt;p&gt;Many C++11 new features has been applied during its implementation, e.g. Rvalue references, variadic templates, initializer lists, type traits and etc. Some of its design concept comes from C++ STL container and Eigen tensor&lt;a href=&quot;#eigen_tensor&quot;&gt;[5]&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;NDArray is versatile. It provides much flexibility, since its implementation is &lt;code class=&quot;highlighter-rouge&quot;&gt;template meta programming&lt;/code&gt; based. It supports all standard numeric types, and any dimension NDArrays.&lt;/li&gt;
+  &lt;li&gt;NDArray will provide both &lt;code class=&quot;highlighter-rouge&quot;&gt;static and dynamic&lt;/code&gt; containers.&lt;/li&gt;
+  &lt;li&gt;To guarantee performance, NDArray expression templates allow to intelligently remove temporaries and enable &lt;code class=&quot;highlighter-rouge&quot;&gt;lazy evaluation&lt;/code&gt;. And I will try to take use of SIMD instructions for CPU, GPU or some ASIC platforms.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;[1] &lt;span id=&quot;eigen_repo&quot;&gt;Eigen bitbucket repo: &lt;a href=&quot;https://bitbucket.org/eigen/&quot;&gt;https://bitbucket.org/eigen/&lt;/a&gt; &lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;[2] &lt;span id=&quot;eigen_page&quot;&gt;Eigen official page: &lt;a href=&quot;http://eigen.tuxfamily.org/&quot;&gt;http://eigen.tuxfamily.org/&lt;/a&gt; &lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;[3] &lt;span id=&quot;wiki_meta&quot;&gt;Template Meta Programming, wiki page: &lt;a href=&quot;https://en.wikipedia.org/wiki/Template_metaprogramming&quot;&gt;https://en.wikipedia.org/wiki/Template_metaprogramming&lt;/a&gt; &lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;[4] &lt;span id=&quot;eigen_lazy&quot;&gt;Eigen Lazy Evaluation and Aliasing, &lt;a href=&quot;http://eigen.tuxfamily.org/dox/TopicLazyEvaluation.html&quot;&gt;http://eigen.tuxfamily.org/dox/TopicLazyEvaluation.html&lt;/a&gt; &lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;[5] &lt;span id=&quot;eigen_tensor&quot;&gt;Eigen Tensor: &lt;a href=&quot;https://bitbucket.org/eigen/eigen/src/677c9f1577810e869f4f09881cabc3e503a810c1/unsupported/Eigen/CXX11/src/Tensor/README.md&quot;&gt;https://bitbucket.org/eigen/eigen/src/677c9f1577810e869f4f09881cabc3e503a810c1/unsupported/Eigen/CXX11/src/Tensor/README.md&lt;/a&gt; &lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;[6] &lt;span id=&quot;taco_page&quot;&gt;TACO official page: &lt;a href=&quot;http://tensor-compiler.org&quot;&gt;http://tensor-compiler.org&lt;/a&gt; &lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;[7] &lt;span id=&quot;taco_pr&quot;&gt;TACO presentation: &lt;a href=&quot;http://groups.csail.mit.edu/commit/presentations/2017/tensor-compiler.pdf&quot;&gt;http://groups.csail.mit.edu/commit/presentations/2017/tensor-compiler.pdf&lt;/a&gt; &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For more details about NDArray src, see its github &lt;a href=&quot;https://github.com/lijiansong/ndarray&quot;&gt;repo&lt;/a&gt; and its &lt;a href=&quot;https://lijiansong.github.io/ndarray/&quot;&gt;gh-pages&lt;/a&gt;…&lt;/p&gt;
+
+&lt;p&gt;Any questions or suggestions, feel free to open an issue @&lt;a href=&quot;https://github.com/lijiansong/ndarray/issues&quot;&gt;here&lt;/a&gt; or e-mail me to &lt;em&gt;lijiansong@ict.ac.cn&lt;/em&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 26 Feb 2018 01:02:15 +0800</pubDate>
+        <link>http://localhost:4000/cpp/2018/02/26/ndarray/</link>
+        <guid isPermaLink="true">http://localhost:4000/cpp/2018/02/26/ndarray/</guid>
+        
+        <category>platform tool</category>
+        
+        
+        <category>Cpp</category>
+        
+      </item>
+    
+      <item>
+        <title>Tiny Storm SQL: A Real Time Stream Data Analysis Interface for Apache Storm</title>
         <description>&lt;div class=&quot;message&quot;&gt;
 SQL is a well-adopted interface especially for those non-computer major people. Several projects including Hive, Drill, Phoenix and Spark have already invested significantly in their SQL layers. Here we implement a Storm-based query language system for real time stream data analysis. 
 &lt;/div&gt;
@@ -777,56 +831,6 @@ NULLV-&amp;gt;NULL
         <category>Yacc</category>
         
         <category>Cpp</category>
-        
-      </item>
-    
-      <item>
-        <title>Libs-Manager-Engine</title>
-        <description>&lt;div class=&quot;message&quot;&gt;
-  I have been coding an platform recently, which can manage library binaries on end users devices, such as android, iOS and so on.
-
-&lt;/div&gt;
-
-&lt;p&gt;The platform is a Service Store, which just like the app store in android, where delelopers develop their own apps and deploy them onto the app store, and users can download the app that they like and install it on his or her devices. Therefore, android’s app store can be treated as an ecological system.
-&lt;!-- more --&gt;
-However, our Service Store is also an ecological system, where the Service Manufacture or Lib Developers can develop their own Cloud Services or Native Services, and users can connect to the service they like on their end devices, e.g. &lt;em&gt;Voice Recognition Service&lt;/em&gt;, &lt;em&gt;Face Detection Service&lt;/em&gt;, etc. The technical architecture of the platform is shown below.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Technical Architecture&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/blog-img/2016_08_17_arch.png&quot; alt=&quot;image&quot; title=&quot;Technical Architecture&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;On Andrioid platform, it provides &lt;a href=&quot;https://developer.android.com/guide/components/aidl.html&quot;&gt;&lt;em&gt;AIDL&lt;/em&gt;&lt;/a&gt; for developers. AIDL (Android Interface Definition Language) is similar to other IDLs you might have worked with. It allows you to define the programming interface that both the client and service agree upon in order to communicate with each other using interprocess communication (IPC). On Android, one process cannot normally access the memory of another process. So to talk, they need to decompose their objects into primitives that the operating system can understand, and marshall the objects across that boundary for you. The code to do that marshalling is tedious to write, so Android handles it for you with AIDL. With AIDL, developers don’t need to know the underlying Binder mechanisms.&lt;/p&gt;
-
-&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;Refer to the OpenCV Manager Mauual.
-Just like the OpenCV Manager, the Engine Manager is also an Android service targeted to manage OpenCV library binaries on end users devices. It allows sharing the dynamic libraries between applications on the same device, such as Face Detection lib, Voice Recognition lib. The Engine Manager provides the following benefits:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Less memory usage. All apps use the same binaries from service and do not have to keep the native libs inside themselves;&lt;/li&gt;
-  &lt;li&gt;Hardware specific optimizations for all supported platforms, such as the different CPU-Arch of Android platform;&lt;/li&gt;
-  &lt;li&gt;Once the Engine is released, all the Service Libraries will be trusted library source. All packages with OpenCV should be published on Google Play market or Apple’s App Store;&lt;/li&gt;
-  &lt;li&gt;Regular updates and bug fixes;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;a href=&quot;https://github.com/lijiansong/Libs-Manager-Engine/blob/master/engine/README.md&quot;&gt;Learn more details…&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Want to see something else added? &lt;a href=&quot;https://github.com/lijiansong/Libs-Manager-Engine/issues&quot;&gt;Open an issue.&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 17 Aug 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/android/java/2016/08/17/libs-manager-engine/</link>
-        <guid isPermaLink="true">http://localhost:4000/android/java/2016/08/17/libs-manager-engine/</guid>
-        
-        <category>IDL</category>
-        
-        <category>platform tool</category>
-        
-        
-        <category>Android</category>
-        
-        <category>Java</category>
         
       </item>
     

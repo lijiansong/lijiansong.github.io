@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tiny Storm SQL --- A Real Time Stream Data Analysis Interface for Apache Storm
+title: "Tiny Storm SQL: A Real Time Stream Data Analysis Interface for Apache Storm"
 date:   2017-06-06 01:02:15 +0800
 categories: Java
 comments: true

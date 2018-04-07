@@ -4,7 +4,7 @@
  <title>Json Lee</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-04-05T17:01:15+08:00</updated>
+ <updated>2018-04-07T15:27:52+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Json Lee</name>
@@ -13,7 +13,55 @@
 
  
  <entry>
-   <title>Tiny Storm SQL --- A Real Time Stream Data Analysis Interface for Apache Storm</title>
+   <title>NDArray: A Headers only Template Library for N Dimensions Tensor Expressions</title>
+   <link href="http://localhost:4000/cpp/2018/02/26/ndarray/"/>
+   <updated>2018-02-26T01:02:15+08:00</updated>
+   <id>http://localhost:4000/cpp/2018/02/26/ndarray</id>
+   <content type="html">&lt;div class=&quot;message&quot;&gt;
+
+NDArray is short for N Dimension Array, it is a headers only library for N-Dimensions array(i.e. tensor in deep learning) expressions, such as arithmatic operations, reshape, reduction, slice and etc. 
+&lt;/div&gt;
+&lt;p&gt;&lt;!-- more --&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;relevant-research&quot;&gt;Relevant Research&lt;/h2&gt;
+
+&lt;p&gt;In deep learning applications, tensor can be seen everywhere&lt;a href=&quot;#taco_pr&quot;&gt;[7]&lt;/a&gt;. It is necessary to wrap its operations to lower the difficulty and cost for application developers.&lt;/p&gt;
+
+&lt;p&gt;Eigen&lt;a href=&quot;#eigen_repo&quot;&gt;[1]&lt;/a&gt;&lt;a href=&quot;#eigen_page&quot;&gt;[2]&lt;/a&gt; is a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms. It has been applied into many open-source project, e.g. &lt;a href=&quot;https://github.com/tensorflow/tensorflow&quot;&gt;TensorFlow&lt;/a&gt; and etc. Its implementation is template meta programming&lt;a href=&quot;#wiki_meta&quot;&gt;[3]&lt;/a&gt; based and its expression templates allow to intelligently remove temporaries and enable &lt;code class=&quot;highlighter-rouge&quot;&gt;lazy evaluation&lt;/code&gt;, when that is appropriate&lt;a href=&quot;#eigen_lazy&quot;&gt;[4]&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;TACO(Tensor Algebra Compiler)&lt;a href=&quot;#taco_page&quot;&gt;[6]&lt;/a&gt;is a C++ library that computes tensor algebra expressions on sparse and dense tensors. It uses novel compiler techniques to get performance competitive with hand-optimized kernels in widely used libraries for both sparse tensor algebra and sparse linear algebra.&lt;/p&gt;
+
+&lt;h2 id=&quot;ndarray-key-features&quot;&gt;NDArray Key Features&lt;/h2&gt;
+
+&lt;p&gt;Many C++11 new features has been applied during its implementation, e.g. Rvalue references, variadic templates, initializer lists, type traits and etc. Some of its design concept comes from C++ STL container and Eigen tensor&lt;a href=&quot;#eigen_tensor&quot;&gt;[5]&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;NDArray is versatile. It provides much flexibility, since its implementation is &lt;code class=&quot;highlighter-rouge&quot;&gt;template meta programming&lt;/code&gt; based. It supports all standard numeric types, and any dimension NDArrays.&lt;/li&gt;
+  &lt;li&gt;NDArray will provide both &lt;code class=&quot;highlighter-rouge&quot;&gt;static and dynamic&lt;/code&gt; containers.&lt;/li&gt;
+  &lt;li&gt;To guarantee performance, NDArray expression templates allow to intelligently remove temporaries and enable &lt;code class=&quot;highlighter-rouge&quot;&gt;lazy evaluation&lt;/code&gt;. And I will try to take use of SIMD instructions for CPU, GPU or some ASIC platforms.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;[1] &lt;span id=&quot;eigen_repo&quot;&gt;Eigen bitbucket repo: &lt;a href=&quot;https://bitbucket.org/eigen/&quot;&gt;https://bitbucket.org/eigen/&lt;/a&gt; &lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;[2] &lt;span id=&quot;eigen_page&quot;&gt;Eigen official page: &lt;a href=&quot;http://eigen.tuxfamily.org/&quot;&gt;http://eigen.tuxfamily.org/&lt;/a&gt; &lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;[3] &lt;span id=&quot;wiki_meta&quot;&gt;Template Meta Programming, wiki page: &lt;a href=&quot;https://en.wikipedia.org/wiki/Template_metaprogramming&quot;&gt;https://en.wikipedia.org/wiki/Template_metaprogramming&lt;/a&gt; &lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;[4] &lt;span id=&quot;eigen_lazy&quot;&gt;Eigen Lazy Evaluation and Aliasing, &lt;a href=&quot;http://eigen.tuxfamily.org/dox/TopicLazyEvaluation.html&quot;&gt;http://eigen.tuxfamily.org/dox/TopicLazyEvaluation.html&lt;/a&gt; &lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;[5] &lt;span id=&quot;eigen_tensor&quot;&gt;Eigen Tensor: &lt;a href=&quot;https://bitbucket.org/eigen/eigen/src/677c9f1577810e869f4f09881cabc3e503a810c1/unsupported/Eigen/CXX11/src/Tensor/README.md&quot;&gt;https://bitbucket.org/eigen/eigen/src/677c9f1577810e869f4f09881cabc3e503a810c1/unsupported/Eigen/CXX11/src/Tensor/README.md&lt;/a&gt; &lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;[6] &lt;span id=&quot;taco_page&quot;&gt;TACO official page: &lt;a href=&quot;http://tensor-compiler.org&quot;&gt;http://tensor-compiler.org&lt;/a&gt; &lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;[7] &lt;span id=&quot;taco_pr&quot;&gt;TACO presentation: &lt;a href=&quot;http://groups.csail.mit.edu/commit/presentations/2017/tensor-compiler.pdf&quot;&gt;http://groups.csail.mit.edu/commit/presentations/2017/tensor-compiler.pdf&lt;/a&gt; &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For more details about NDArray src, see its github &lt;a href=&quot;https://github.com/lijiansong/ndarray&quot;&gt;repo&lt;/a&gt; and its &lt;a href=&quot;https://lijiansong.github.io/ndarray/&quot;&gt;gh-pages&lt;/a&gt;…&lt;/p&gt;
+
+&lt;p&gt;Any questions or suggestions, feel free to open an issue @&lt;a href=&quot;https://github.com/lijiansong/ndarray/issues&quot;&gt;here&lt;/a&gt; or e-mail me to &lt;em&gt;lijiansong@ict.ac.cn&lt;/em&gt;.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Tiny Storm SQL: A Real Time Stream Data Analysis Interface for Apache Storm</title>
    <link href="http://localhost:4000/java/2017/06/06/tiny-storm-sql/"/>
    <updated>2017-06-06T01:02:15+08:00</updated>
    <id>http://localhost:4000/java/2017/06/06/tiny-storm-sql</id>
