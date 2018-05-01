@@ -3,10 +3,10 @@
   <channel>
     <title>Json Lee</title>
     <description>Copy Right (c) &lt;a href=&quot;http://lijiansong.github.io&quot; target=&quot;_blank&quot;&gt;Json Lee&lt;/a&gt;.</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 01 May 2018 15:48:19 +0800</pubDate>
-    <lastBuildDate>Tue, 01 May 2018 15:48:19 +0800</lastBuildDate>
+    <link>http://lijiansong.github.io/</link>
+    <atom:link href="http://lijiansong.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 01 May 2018 15:52:46 +0800</pubDate>
+    <lastBuildDate>Tue, 01 May 2018 15:52:46 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -158,8 +158,8 @@ d) Specify a host dependence to a device action.
 
 </description>
         <pubDate>Sat, 28 Apr 2018 02:01:15 +0800</pubDate>
-        <link>http://localhost:4000/cpp/2018/04/28/clang-offloading/</link>
-        <guid isPermaLink="true">http://localhost:4000/cpp/2018/04/28/clang-offloading/</guid>
+        <link>http://lijiansong.github.io/cpp/2018/04/28/clang-offloading/</link>
+        <guid isPermaLink="true">http://lijiansong.github.io/cpp/2018/04/28/clang-offloading/</guid>
         
         <category>platform tool</category>
         
@@ -212,8 +212,8 @@ NDArray is short for N Dimension Array, it is a headers only library for N-Dimen
 
 </description>
         <pubDate>Mon, 26 Feb 2018 01:02:15 +0800</pubDate>
-        <link>http://localhost:4000/cpp/2018/02/26/ndarray/</link>
-        <guid isPermaLink="true">http://localhost:4000/cpp/2018/02/26/ndarray/</guid>
+        <link>http://lijiansong.github.io/cpp/2018/02/26/ndarray/</link>
+        <guid isPermaLink="true">http://lijiansong.github.io/cpp/2018/02/26/ndarray/</guid>
         
         <category>platform tool</category>
         
@@ -349,8 +349,8 @@ To automatically generate Storm topology from the DAG-formatted query plan, we n
 &lt;p&gt;Any questions or suggestions, feel free to open an issue @&lt;a href=&quot;https://github.com/lijiansong/distribution/issues&quot;&gt;here&lt;/a&gt; or e-mail me to &lt;em&gt;lijiansong@ict.ac.cn&lt;/em&gt;.&lt;/p&gt;
 </description>
         <pubDate>Tue, 06 Jun 2017 01:02:15 +0800</pubDate>
-        <link>http://localhost:4000/java/2017/06/06/tiny-storm-sql/</link>
-        <guid isPermaLink="true">http://localhost:4000/java/2017/06/06/tiny-storm-sql/</guid>
+        <link>http://lijiansong.github.io/java/2017/06/06/tiny-storm-sql/</link>
+        <guid isPermaLink="true">http://lijiansong.github.io/java/2017/06/06/tiny-storm-sql/</guid>
         
         <category>platform tool</category>
         
@@ -400,8 +400,8 @@ $ g++ -c hello.s -o hello.o
 &lt;p&gt;Any questions or suggestions, feel free to open an issue @&lt;a href=&quot;https://github.com/lijiansong/Postgraduate-Course/issues&quot;&gt;here&lt;/a&gt; or e-mail me to &lt;em&gt;lijiansong@ict.ac.cn&lt;/em&gt;.&lt;/p&gt;
 </description>
         <pubDate>Fri, 17 Mar 2017 11:02:15 +0800</pubDate>
-        <link>http://localhost:4000/cpp/2017/03/17/elf-parser/</link>
-        <guid isPermaLink="true">http://localhost:4000/cpp/2017/03/17/elf-parser/</guid>
+        <link>http://lijiansong.github.io/cpp/2017/03/17/elf-parser/</link>
+        <guid isPermaLink="true">http://lijiansong.github.io/cpp/2017/03/17/elf-parser/</guid>
         
         <category>platform tool</category>
         
@@ -451,8 +451,8 @@ For more details, see &lt;a href=&quot;https://github.com/lijiansong/blockly-and
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 20 Feb 2017 11:02:15 +0800</pubDate>
-        <link>http://localhost:4000/java/android/tech/2017/02/20/modify-blockly/</link>
-        <guid isPermaLink="true">http://localhost:4000/java/android/tech/2017/02/20/modify-blockly/</guid>
+        <link>http://lijiansong.github.io/java/android/tech/2017/02/20/modify-blockly/</link>
+        <guid isPermaLink="true">http://lijiansong.github.io/java/android/tech/2017/02/20/modify-blockly/</guid>
         
         <category>platform tool</category>
         
@@ -585,8 +585,8 @@ For more details, see &lt;a href=&quot;https://github.com/lijiansong/blockly-and
 &lt;p&gt;&lt;a href=&quot;https://github.com/lijiansong/acm-algorithms/blob/master/CodeForces/woj/%E7%96%AF%E7%8B%82%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98.mobi&quot;&gt;link…&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 05 Feb 2017 13:42:13 +0800</pubDate>
-        <link>http://localhost:4000/temper/2017/02/05/crazy-coder/</link>
-        <guid isPermaLink="true">http://localhost:4000/temper/2017/02/05/crazy-coder/</guid>
+        <link>http://lijiansong.github.io/temper/2017/02/05/crazy-coder/</link>
+        <guid isPermaLink="true">http://lijiansong.github.io/temper/2017/02/05/crazy-coder/</guid>
         
         <category>Temper</category>
         
@@ -641,8 +641,8 @@ A working group for the World Economic Forum met in November 2016 to discuss the
 &lt;/ul&gt;
 </description>
         <pubDate>Fri, 11 Nov 2016 21:02:15 +0800</pubDate>
-        <link>http://localhost:4000/tech/2016/11/11/block-chain/</link>
-        <guid isPermaLink="true">http://localhost:4000/tech/2016/11/11/block-chain/</guid>
+        <link>http://lijiansong.github.io/tech/2016/11/11/block-chain/</link>
+        <guid isPermaLink="true">http://lijiansong.github.io/tech/2016/11/11/block-chain/</guid>
         
         <category>News</category>
         
@@ -735,8 +735,8 @@ A working group for the World Economic Forum met in November 2016 to discuss the
 &lt;/ul&gt;
 </description>
         <pubDate>Sat, 29 Oct 2016 21:35:15 +0800</pubDate>
-        <link>http://localhost:4000/temper/2016/10/29/2016-the-little-prince/</link>
-        <guid isPermaLink="true">http://localhost:4000/temper/2016/10/29/2016-the-little-prince/</guid>
+        <link>http://lijiansong.github.io/temper/2016/10/29/2016-the-little-prince/</link>
+        <guid isPermaLink="true">http://lijiansong.github.io/temper/2016/10/29/2016-the-little-prince/</guid>
         
         <category>Temper</category>
         
@@ -780,8 +780,8 @@ I also want to take part in some programming contest, such as &lt;strong&gt;ACM/
 &lt;p&gt;&lt;a href=&quot;http://www.pgbovine.net/PhD-memoir/pguo-PhD-grind.pdf&quot;&gt;THE PH.D GRIND&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 03 Sep 2016 21:35:15 +0800</pubDate>
-        <link>http://localhost:4000/temper/2016/09/03/2016-study-plan/</link>
-        <guid isPermaLink="true">http://localhost:4000/temper/2016/09/03/2016-study-plan/</guid>
+        <link>http://lijiansong.github.io/temper/2016/09/03/2016-study-plan/</link>
+        <guid isPermaLink="true">http://lijiansong.github.io/temper/2016/09/03/2016-study-plan/</guid>
         
         <category>Temper</category>
         
@@ -809,8 +809,8 @@ Born in 1978, Chris Lattner is an American software developer, best known as the
 
 </description>
         <pubDate>Thu, 25 Aug 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/thumb/2016/08/25/Chris-Lattner-Homepage/</link>
-        <guid isPermaLink="true">http://localhost:4000/thumb/2016/08/25/Chris-Lattner-Homepage/</guid>
+        <link>http://lijiansong.github.io/thumb/2016/08/25/Chris-Lattner-Homepage/</link>
+        <guid isPermaLink="true">http://lijiansong.github.io/thumb/2016/08/25/Chris-Lattner-Homepage/</guid>
         
         <category>People</category>
         

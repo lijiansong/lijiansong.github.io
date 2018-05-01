@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Json Lee</title>
- <link href="http://localhost:4000/atom.xml" rel="self"/>
- <link href="http://localhost:4000/"/>
- <updated>2018-05-01T15:48:19+08:00</updated>
- <id>http://localhost:4000</id>
+ <link href="http://lijiansong.github.io/atom.xml" rel="self"/>
+ <link href="http://lijiansong.github.io/"/>
+ <updated>2018-05-01T15:52:46+08:00</updated>
+ <id>http://lijiansong.github.io</id>
  <author>
    <name>Json Lee</name>
    <email></email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Offloading Actions in Clang Driver</title>
-   <link href="http://localhost:4000/cpp/2018/04/28/clang-offloading/"/>
+   <link href="http://lijiansong.github.io/cpp/2018/04/28/clang-offloading/"/>
    <updated>2018-04-28T02:01:15+08:00</updated>
-   <id>http://localhost:4000/cpp/2018/04/28/clang-offloading</id>
+   <id>http://lijiansong.github.io/cpp/2018/04/28/clang-offloading</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 In heterogeneous computing, many programming models take use of computation offloading by transfering resource intensive computational tasks to an external platform, such as a cluster, grid or a cloud. Offloading may be necessary due to hardware limitations of a devices, such as limited computational power, storage, and energy. Here, we will make a birdview of the offloading action of CUDA and OpenMP in clang driver.
 &lt;/div&gt;
@@ -167,9 +167,9 @@ d) Specify a host dependence to a device action.
  
  <entry>
    <title>NDArray: A Headers only Template Library for N Dimensions Tensor Expressions</title>
-   <link href="http://localhost:4000/cpp/2018/02/26/ndarray/"/>
+   <link href="http://lijiansong.github.io/cpp/2018/02/26/ndarray/"/>
    <updated>2018-02-26T01:02:15+08:00</updated>
-   <id>http://localhost:4000/cpp/2018/02/26/ndarray</id>
+   <id>http://lijiansong.github.io/cpp/2018/02/26/ndarray</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 
 NDArray is short for N Dimension Array, it is a headers only library for N-Dimensions array(i.e. tensor in deep learning) expressions, such as arithmatic operations, reshape, reduction, slice and etc. 
@@ -215,9 +215,9 @@ NDArray is short for N Dimension Array, it is a headers only library for N-Dimen
  
  <entry>
    <title>Tiny Storm SQL: A Real Time Stream Data Analysis Interface for Apache Storm</title>
-   <link href="http://localhost:4000/java/2017/06/06/tiny-storm-sql/"/>
+   <link href="http://lijiansong.github.io/java/2017/06/06/tiny-storm-sql/"/>
    <updated>2017-06-06T01:02:15+08:00</updated>
-   <id>http://localhost:4000/java/2017/06/06/tiny-storm-sql</id>
+   <id>http://lijiansong.github.io/java/2017/06/06/tiny-storm-sql</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 SQL is a well-adopted interface especially for those non-computer major people. Several projects including Hive, Drill, Phoenix and Spark have already invested significantly in their SQL layers. Here we implement a Storm-based query language system for real time stream data analysis. 
 &lt;/div&gt;
@@ -346,9 +346,9 @@ To automatically generate Storm topology from the DAG-formatted query plan, we n
  
  <entry>
    <title>ELF Parser</title>
-   <link href="http://localhost:4000/cpp/2017/03/17/elf-parser/"/>
+   <link href="http://lijiansong.github.io/cpp/2017/03/17/elf-parser/"/>
    <updated>2017-03-17T11:02:15+08:00</updated>
-   <id>http://localhost:4000/cpp/2017/03/17/elf-parser</id>
+   <id>http://lijiansong.github.io/cpp/2017/03/17/elf-parser</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 In Unix-like system, the Executable and Linkable Format (ELF, formerly called Extensible Linking Format) is a common standard file format for executables, object code, shared libraries, and core dumps. 
 &lt;/div&gt;
@@ -391,9 +391,9 @@ $ g++ -c hello.s -o hello.o
  
  <entry>
    <title>Modify the Source Code of Google's Open-source Framework --- Blockly</title>
-   <link href="http://localhost:4000/java/android/tech/2017/02/20/modify-blockly/"/>
+   <link href="http://lijiansong.github.io/java/android/tech/2017/02/20/modify-blockly/"/>
    <updated>2017-02-20T11:02:15+08:00</updated>
-   <id>http://localhost:4000/java/android/tech/2017/02/20/modify-blockly</id>
+   <id>http://lijiansong.github.io/java/android/tech/2017/02/20/modify-blockly</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 Blockly is an open-source framework under Apache 2.0 License for creating visual programming editors. It is a project of Google,which is able to run in web browser, Android or iOS operating system. 
 Blockly uses blocks that link together to make writing code easier, and can generate JavaScript, Python, PHP, Lua or Dart code automatically. It can also be customised to generate code in any computer language.
@@ -436,9 +436,9 @@ For more details, see &lt;a href=&quot;https://github.com/lijiansong/blockly-and
  
  <entry>
    <title>Crazy Coder</title>
-   <link href="http://localhost:4000/temper/2017/02/05/crazy-coder/"/>
+   <link href="http://lijiansong.github.io/temper/2017/02/05/crazy-coder/"/>
    <updated>2017-02-05T13:42:13+08:00</updated>
-   <id>http://localhost:4000/temper/2017/02/05/crazy-coder</id>
+   <id>http://lijiansong.github.io/temper/2017/02/05/crazy-coder</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 &amp;#x5BD2;&amp;#x5047;&amp;#x56DE;&amp;#x5BB6;&amp;#x4E00;&amp;#x5468;&amp;#xFF0C;&amp;#x8BFB;&amp;#x4E86;&amp;#x4E00;&amp;#x672C;&amp;#x5F88;&amp;#x6709;&amp;#x610F;&amp;#x601D;&amp;#x7684;&amp;#x4E66;&amp;#x300A;&amp;#x75AF;&amp;#x72C2;&amp;#x7684;&amp;#x7A0B;&amp;#x5E8F;&amp;#x5458;&amp;#x300B;&amp;#xFF0C;&amp;#x7B97;&amp;#x662F;novel&amp;#x7684;&amp;#x90A3;&amp;#x4E00;&amp;#x7C7B;&amp;#x5427;&amp;#x3002;&amp;#x8FD9;&amp;#x672C;&amp;#x4E66;&amp;#x63CF;&amp;#x5199;&amp;#x4E86;&amp;#x7A0B;&amp;#x5E8F;&amp;#x5458;&amp;#x4E0D;&amp;#x540C;&amp;#x5E38;&amp;#x4EBA;&amp;#x7684;&amp;#x751F;&amp;#x6D3B;&amp;#x65B9;&amp;#x5F0F;&amp;#x3001;&amp;#x4EF7;&amp;#x503C;&amp;#x89C2;&amp;#x5FF5;&amp;#x548C;&amp;#x8F6F;&amp;#x4EF6;&amp;#x884C;&amp;#x4E1A;&amp;#x4E2D;&amp;#x7684;&amp;#x5F62;&amp;#x5F62;&amp;#x8272;&amp;#x8272;&amp;#x7684;&amp;#x4EBA;&amp;#x548C;&amp;#x4E8B;&amp;#xFF0C;&amp;#x611F;&amp;#x89C9;&amp;#x4E66;&amp;#x4E2D;&amp;#x7684;&amp;#x6BCF;&amp;#x4E00;&amp;#x53E5;&amp;#x90FD;&amp;#x582A;&amp;#x79F0;&amp;#x7ECF;&amp;#x5178;...
 &lt;/div&gt;
@@ -560,9 +560,9 @@ For more details, see &lt;a href=&quot;https://github.com/lijiansong/blockly-and
  
  <entry>
    <title>Block Chain</title>
-   <link href="http://localhost:4000/tech/2016/11/11/block-chain/"/>
+   <link href="http://lijiansong.github.io/tech/2016/11/11/block-chain/"/>
    <updated>2016-11-11T21:02:15+08:00</updated>
-   <id>http://localhost:4000/tech/2016/11/11/block-chain</id>
+   <id>http://lijiansong.github.io/tech/2016/11/11/block-chain</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
   Recently, there is a hot term named blockchain, in Chinese is &amp;#x201C;&amp;#x533A;&amp;#x5757;&amp;#x94FE;&amp;#x201D;. I made some research on it. A blockchain &amp;#x2014; originally block chain &amp;#x2014; is a distributed database that maintains a continuously-growing list of records called blocks. Each block contains a timestamp and a link to a previous block.
 &lt;/div&gt;
@@ -610,9 +610,9 @@ A working group for the World Economic Forum met in November 2016 to discuss the
  
  <entry>
    <title>The Little Prince</title>
-   <link href="http://localhost:4000/temper/2016/10/29/2016-the-little-prince/"/>
+   <link href="http://lijiansong.github.io/temper/2016/10/29/2016-the-little-prince/"/>
    <updated>2016-10-29T21:35:15+08:00</updated>
-   <id>http://localhost:4000/temper/2016/10/29/2016-the-little-prince</id>
+   <id>http://lijiansong.github.io/temper/2016/10/29/2016-the-little-prince</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
   Something is wrong with the relationship between my girl friend and me these days. But I believe tomorrow will be better, and everything will be better. &lt;br /&gt;
   It is only with the heart that one can see rightly; what is essential is invisible to the eyes...
@@ -698,9 +698,9 @@ A working group for the World Economic Forum met in November 2016 to discuss the
  
  <entry>
    <title>2016 Study Plan</title>
-   <link href="http://localhost:4000/temper/2016/09/03/2016-study-plan/"/>
+   <link href="http://lijiansong.github.io/temper/2016/09/03/2016-study-plan/"/>
    <updated>2016-09-03T21:35:15+08:00</updated>
-   <id>http://localhost:4000/temper/2016/09/03/2016-study-plan</id>
+   <id>http://lijiansong.github.io/temper/2016/09/03/2016-study-plan</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
   It has been a long day since new term begins. Numerous life trivial needs to be done, such as purchasing house and living things, going through all the formalities, and etc.
 &lt;/div&gt;
@@ -737,9 +737,9 @@ I also want to take part in some programming contest, such as &lt;strong&gt;ACM/
  
  <entry>
    <title>Chris Lattner's Homepage</title>
-   <link href="http://localhost:4000/thumb/2016/08/25/Chris-Lattner-Homepage/"/>
+   <link href="http://lijiansong.github.io/thumb/2016/08/25/Chris-Lattner-Homepage/"/>
    <updated>2016-08-25T00:00:00+08:00</updated>
-   <id>http://localhost:4000/thumb/2016/08/25/Chris-Lattner-Homepage</id>
+   <id>http://lijiansong.github.io/thumb/2016/08/25/Chris-Lattner-Homepage</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
 Born in 1978, Chris Lattner is an American software developer, best known as the main author of LLVM and related projects, such as the compiler Clang and the programming language Swift. As of 2016, he works at Apple Inc., as Director of the Developer Tools department, leading the Xcode, Instruments, and compiler teams.
 
@@ -760,9 +760,9 @@ Born in 1978, Chris Lattner is an American software developer, best known as the
  
  <entry>
    <title>Config File Parser</title>
-   <link href="http://localhost:4000/yacc/cpp/2016/08/22/config-file-parser/"/>
+   <link href="http://lijiansong.github.io/yacc/cpp/2016/08/22/config-file-parser/"/>
    <updated>2016-08-22T00:00:00+08:00</updated>
-   <id>http://localhost:4000/yacc/cpp/2016/08/22/config-file-parser</id>
+   <id>http://lijiansong.github.io/yacc/cpp/2016/08/22/config-file-parser</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
   This archive is about how to use Flex and Bison (Yacc) to parse config files that is self-defined. 
 &lt;/div&gt;
@@ -924,9 +924,9 @@ NULLV-&amp;gt;NULL
  
  <entry>
    <title>Libs-Manager-Engine</title>
-   <link href="http://localhost:4000/android/java/2016/08/17/libs-manager-engine/"/>
+   <link href="http://lijiansong.github.io/android/java/2016/08/17/libs-manager-engine/"/>
    <updated>2016-08-17T00:00:00+08:00</updated>
-   <id>http://localhost:4000/android/java/2016/08/17/libs-manager-engine</id>
+   <id>http://lijiansong.github.io/android/java/2016/08/17/libs-manager-engine</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
   I have been coding an platform recently, which can manage library binaries on end users devices, such as android, iOS and so on.
 
