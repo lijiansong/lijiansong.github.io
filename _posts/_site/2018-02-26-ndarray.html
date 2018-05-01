@@ -1,0 +1,40 @@
+<div class="message">
+
+NDArray is short for N Dimension Array, it is a headers only library for N-Dimensions array(i.e. tensor in deep learning) expressions, such as arithmatic operations, reshape, reduction, slice and etc. 
+</div>
+<p><!-- more --></p>
+
+<h2 id="relevant-research">Relevant Research</h2>
+
+<p>In deep learning applications, tensor can be seen everywhere<a href="#taco_pr">[7]</a>. It is necessary to wrap its operations to lower the difficulty and cost for application developers.</p>
+
+<p>Eigen<a href="#eigen_repo">[1]</a><a href="#eigen_page">[2]</a> is a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms. It has been applied into many open-source project, e.g. <a href="https://github.com/tensorflow/tensorflow">TensorFlow</a> and etc. Its implementation is template meta programming<a href="#wiki_meta">[3]</a> based and its expression templates allow to intelligently remove temporaries and enable <code class="highlighter-rouge">lazy evaluation</code>, when that is appropriate<a href="#eigen_lazy">[4]</a>.</p>
+
+<p>TACO(Tensor Algebra Compiler)<a href="#taco_page">[6]</a>is a C++ library that computes tensor algebra expressions on sparse and dense tensors. It uses novel compiler techniques to get performance competitive with hand-optimized kernels in widely used libraries for both sparse tensor algebra and sparse linear algebra.</p>
+
+<h2 id="ndarray-key-features">NDArray Key Features</h2>
+
+<p>Many C++11 new features has been applied during its implementation, e.g. Rvalue references, variadic templates, initializer lists, type traits and etc. Some of its design concept comes from C++ STL container and Eigen tensor<a href="#eigen_tensor">[5]</a>.</p>
+
+<ul>
+  <li>NDArray is versatile. It provides much flexibility, since its implementation is <code class="highlighter-rouge">template meta programming</code> based. It supports all standard numeric types, and any dimension NDArrays.</li>
+  <li>NDArray will provide both <code class="highlighter-rouge">static and dynamic</code> containers.</li>
+  <li>To guarantee performance, NDArray expression templates allow to intelligently remove temporaries and enable <code class="highlighter-rouge">lazy evaluation</code>. And I will try to take use of SIMD instructions for CPU, GPU or some ASIC platforms.</li>
+</ul>
+
+<h2 id="reference">Reference</h2>
+
+<ul>
+  <li>[1] <span id="eigen_repo">Eigen bitbucket repo: <a href="https://bitbucket.org/eigen/">https://bitbucket.org/eigen/</a> </span></li>
+  <li>[2] <span id="eigen_page">Eigen official page: <a href="http://eigen.tuxfamily.org/">http://eigen.tuxfamily.org/</a> </span></li>
+  <li>[3] <span id="wiki_meta">Template Meta Programming, wiki page: <a href="https://en.wikipedia.org/wiki/Template_metaprogramming">https://en.wikipedia.org/wiki/Template_metaprogramming</a> </span></li>
+  <li>[4] <span id="eigen_lazy">Eigen Lazy Evaluation and Aliasing, <a href="http://eigen.tuxfamily.org/dox/TopicLazyEvaluation.html">http://eigen.tuxfamily.org/dox/TopicLazyEvaluation.html</a> </span></li>
+  <li>[5] <span id="eigen_tensor">Eigen Tensor: <a href="https://bitbucket.org/eigen/eigen/src/677c9f1577810e869f4f09881cabc3e503a810c1/unsupported/Eigen/CXX11/src/Tensor/README.md">https://bitbucket.org/eigen/eigen/src/677c9f1577810e869f4f09881cabc3e503a810c1/unsupported/Eigen/CXX11/src/Tensor/README.md</a> </span></li>
+  <li>[6] <span id="taco_page">TACO official page: <a href="http://tensor-compiler.org">http://tensor-compiler.org</a> </span></li>
+  <li>[7] <span id="taco_pr">TACO presentation: <a href="http://groups.csail.mit.edu/commit/presentations/2017/tensor-compiler.pdf">http://groups.csail.mit.edu/commit/presentations/2017/tensor-compiler.pdf</a> </span></li>
+</ul>
+
+<p>For more details about NDArray src, see its github <a href="https://github.com/lijiansong/ndarray">repo</a> and its <a href="https://lijiansong.github.io/ndarray/">gh-pages</a>…</p>
+
+<p>Any questions or suggestions, feel free to open an issue @<a href="https://github.com/lijiansong/ndarray/issues">here</a> or e-mail me to <em>lijiansong@ict.ac.cn</em>.</p>
+

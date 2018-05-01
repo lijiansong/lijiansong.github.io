@@ -4,13 +4,166 @@
  <title>Json Lee</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-04-07T15:27:52+08:00</updated>
+ <updated>2018-05-01T15:48:19+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Json Lee</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Offloading Actions in Clang Driver</title>
+   <link href="http://localhost:4000/cpp/2018/04/28/clang-offloading/"/>
+   <updated>2018-04-28T02:01:15+08:00</updated>
+   <id>http://localhost:4000/cpp/2018/04/28/clang-offloading</id>
+   <content type="html">&lt;div class=&quot;message&quot;&gt;
+In heterogeneous computing, many programming models take use of computation offloading by transfering resource intensive computational tasks to an external platform, such as a cluster, grid or a cloud. Offloading may be necessary due to hardware limitations of a devices, such as limited computational power, storage, and energy. Here, we will make a birdview of the offloading action of CUDA and OpenMP in clang driver.
+&lt;/div&gt;
+&lt;p&gt;&lt;!-- more --&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;clang-offloading-action&quot;&gt;Clang Offloading Action&lt;/h2&gt;
+
+&lt;p&gt;In clang, the offload action is expected to be used in four different situations:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+a) Set a toolchain/architecture/kind for a host action:
+
+   Host Action 1 -&amp;gt; OffloadAction -&amp;gt; Host Action 2
+
+b) Set a toolchain/architecture/kind for a device action;
+
+   Device Action 1 -&amp;gt; OffloadAction -&amp;gt; Device Action 2
+
+c) Specify a device dependence to a host action;
+
+   Device Action 1  _
+                     \
+     Host Action 1  ---&amp;gt; OffloadAction -&amp;gt; Host Action 2
+
+d) Specify a host dependence to a device action.
+
+     Host Action 1  _
+                     \
+   Device Action 1  ---&amp;gt; OffloadAction -&amp;gt; Device Action 2
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;As is shown above, clang offloading actions take two design properties:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;For a) and b), clang just returns the job generated for the dependence;&lt;/li&gt;
+  &lt;li&gt;For c) and d) clang overrides the current action with the host/device dependence if the current toolchain is host/device and set the offload dependences information with the jobs obtained from the device/host dependences.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;cuda-offloading&quot;&gt;CUDA offloading&lt;/h2&gt;
+
+&lt;p&gt;In clang driver module, the driver extensions for cuda mainly focuses on the support for CUDA by extending existing support with:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Host and device actions;&lt;/li&gt;
+  &lt;li&gt;Selection of right toolchain per function based on &lt;code class=&quot;highlighter-rouge&quot;&gt;host, device, global&lt;/code&gt; markups;&lt;/li&gt;
+  &lt;li&gt;Linker tool (fatbinary) is used to combine objects for different compute capability(not nvlink);&lt;/li&gt;
+  &lt;li&gt;Host action is used to embed device code into host-produced binary.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Let’s have an overview of cuda’s offloading. We can obtain the following action graph when compiling two source files for host and a CUDA device, namely kernel-call.cu and a.cpp:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/blog-img/2018_04_28_cuda_offload.png&quot; alt=&quot;image&quot; title=&quot;CUDA offloading example&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As is shown from the figure above, if we are generating code for the device or we are in a backend phase, we attempt to generate a fat binary. Clang compiles each arch to &lt;code class=&quot;highlighter-rouge&quot;&gt;ptx and assemble to cubin&lt;/code&gt;, then feed the &lt;code class=&quot;highlighter-rouge&quot;&gt;cubin and the ptx&lt;/code&gt; into a device “link” action, which uses &lt;code class=&quot;highlighter-rouge&quot;&gt;cuda-fatbin&lt;/code&gt; to combine these cubins into one fatbin.  The fatbin is then an input to the host action. During cuda device phase, clang creates an offloading action for backend and assembler action respectively. And an offload action is used to add a host dependence to the device linker actions.&lt;/p&gt;
+
+&lt;p&gt;By &lt;code class=&quot;highlighter-rouge&quot;&gt;clang kernel-call.cu a.cpp -ccc-print-phases&lt;/code&gt;, we will get following pipelined phases behind clang compiling:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0: input, &quot;kernel-call.cu&quot;, cuda, (host-cuda)
+1: preprocessor, {0}, cuda-cpp-output, (host-cuda)
+2: compiler, {1}, ir, (host-cuda)
+3: input, &quot;kernel-call.cu&quot;, cuda, (device-cuda, sm_20)
+4: preprocessor, {3}, cuda-cpp-output, (device-cuda, sm_20)
+5: compiler, {4}, ir, (device-cuda, sm_20)
+6: backend, {5}, assembler, (device-cuda, sm_20)
+7: assembler, {6}, object, (device-cuda, sm_20)
+8: offload, &quot;device-cuda (nvptx64-nvidia-cuda:sm_20)&quot; {7}, object
+9: offload, &quot;device-cuda (nvptx64-nvidia-cuda:sm_20)&quot; {6}, assembler
+10: linker, {8, 9}, cuda-fatbin, (device-cuda)
+11: offload, &quot;host-cuda (x86_64-apple-darwin17.2.0)&quot; {2}, &quot;device-cuda (nvptx64-nvidia-cuda)&quot; {10}, ir
+12: backend, {11}, assembler, (host-cuda)
+13: assembler, {12}, object, (host-cuda)
+14: input, &quot;a.cpp&quot;, c++, (host-cuda)
+15: preprocessor, {14}, c++-cpp-output, (host-cuda)
+16: compiler, {15}, ir, (host-cuda)
+17: backend, {16}, assembler, (host-cuda)
+18: assembler, {17}, object, (host-cuda)
+19: linker, {13, 18}, image, (host-cuda)
+20: bind-arch, &quot;x86_64&quot;, {19}, image
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And we can get the following bindings result by command &lt;code class=&quot;highlighter-rouge&quot;&gt;clang kernel-call.cu a.cpp -ccc-print-bindings&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# &quot;nvptx64-nvidia-cuda&quot; - &quot;clang&quot;, inputs: [&quot;kernel-call.cu&quot;], output: &quot;/var/folders/sp/yzrv8j5s4dg6mc4bgzvcc1h80000gn/T/kernel-call-10d9de.s&quot;
+
+# &quot;nvptx64-nvidia-cuda&quot; - &quot;NVPTX::Assembler&quot;, inputs: [&quot;/var/folders/sp/yzrv8j5s4dg6mc4bgzvcc1h80000gn/T/kernel-call-10d9de.s&quot;], output: &quot;/var/folders/sp/yzrv8j5s4dg6mc4bgzvcc1h80000gn/T/kernel-call-6a0708.o&quot;
+
+# &quot;nvptx64-nvidia-cuda&quot; - &quot;NVPTX::Linker&quot;, inputs: [&quot;/var/folders/sp/yzrv8j5s4dg6mc4bgzvcc1h80000gn/T/kernel-call-6a0708.o&quot;, &quot;/var/folders/sp/yzrv8j5s4dg6mc4bgzvcc1h80000gn/T/kernel-call-10d9de.s&quot;], output: &quot;/var/folders/sp/yzrv8j5s4dg6mc4bgzvcc1h80000gn/T/kernel-call-c3b1ee.fatbin&quot;
+
+# &quot;x86_64-apple-darwin17.2.0&quot; - &quot;clang&quot;, inputs: [&quot;kernel-call.cu&quot;, &quot;/var/folders/sp/yzrv8j5s4dg6mc4bgzvcc1h80000gn/T/kernel-call-c3b1ee.fatbin&quot;], output: &quot;/var/folders/sp/yzrv8j5s4dg6mc4bgzvcc1h80000gn/T/kernel-call-a9bed9.o&quot;
+
+# &quot;x86_64-apple-darwin17.2.0&quot; - &quot;clang&quot;, inputs: [&quot;a.cpp&quot;], output: &quot;/var/folders/sp/yzrv8j5s4dg6mc4bgzvcc1h80000gn/T/a-cfaee5.o&quot;
+
+# &quot;x86_64-apple-darwin17.2.0&quot; - &quot;darwin::Linker&quot;, inputs: [&quot;/var/folders/sp/yzrv8j5s4dg6mc4bgzvcc1h80000gn/T/kernel-call-a9bed9.o&quot;, &quot;/var/folders/sp/yzrv8j5s4dg6mc4bgzvcc1h80000gn/T/a-cfaee5.o&quot;], output: &quot;a.out&quot;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;openmp-offloading&quot;&gt;OpenMP Offloading&lt;/h2&gt;
+
+&lt;p&gt;Compared to CUDA, OpenMP has relocation of symbols across host/device and the dependencies between host and device toolchains is possible. Therefore, OpenMP takes the following offloading strategy. Below is the action graph obtained when compiling two source files for host and an OpenMP device:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/blog-img/2018_04_28_openmp_offload.png&quot; alt=&quot;image&quot; title=&quot;OpenMP offloading example&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As we can see, an offload action is used to add a host dependence to the device compile actions and add a device dependence to the host linking action&lt;a href=&quot;#ibm_offload_paper&quot;&gt;[1]&lt;/a&gt;. The host depends on device action in the linking phase, when all the device images have to be embedded in the host image. Besides, when generating code for OpenMP, clang use the host compile phase output as a dependence to the device compile phase so that it can learn what declarations should be emitted.&lt;/p&gt;
+
+&lt;p&gt;Let’s take OpenMP offloading for PPC64 and NVPTX64 for an example, the offloding graph is shown below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/blog-img/2018_04_28_openmp_offload_ppc64_nvptx64.png&quot; alt=&quot;image&quot; title=&quot;OpenMP offloading for ppc64 and nvptx64&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here the LLVM IR for ppc64 target is the host bitcode file contains metadata that indicates what regions and functions should be compiled for device. And nvlink will link libomptarget-nvptx64 and the sass file dumped by ptxas. Here, Libomptarget-nvptx.bc will be precompiled with clang-cuda, and finally is the linking of various sections done by linker script which is generated by clang, and we will get a single &lt;code class=&quot;highlighter-rouge&quot;&gt;fat binary&lt;/code&gt; for multiple devices, e.g. FPGA, DSP accelerator, GPU and etc.&lt;/p&gt;
+
+&lt;p&gt;To sum up, in contrast with CUDA, the generic offloading action for OpenMP contains:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Replaces CUDA’s host and device actions, including:
+    &lt;ul&gt;
+      &lt;li&gt;The offloading kind (e.g. OpenMP, CUDA)&lt;/li&gt;
+      &lt;li&gt;The toolchain used by the dependencies (e.g. nvptx, amd)&lt;/li&gt;
+      &lt;li&gt;Device architecture (e.g. sm_60)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Host to device dependency
+    &lt;ul&gt;
+      &lt;li&gt;The host builds a list of target regions to be compiled for device&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Device to host dependency
+    &lt;ul&gt;
+      &lt;li&gt;Bundling of object code in single binary&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For the source code of CUDA and OpenMP offloading action, see here: &lt;a href=&quot;https://github.com/llvm-mirror/clang/blob/master/lib/Driver/Driver.cpp#L2127-L2538&quot;&gt;https://github.com/llvm-mirror/clang/blob/master/lib/Driver/Driver.cpp#L2127-L2538&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ref&quot;&gt;REF&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;[1] &lt;span id=&quot;ibm_offload_paper&quot;&gt;OpenMP offloading support, &lt;a href=&quot;https://researcher.watson.ibm.com/researcher/files/us-zsura/17_llvmATSC2016.pdf&quot;&gt;paper&lt;/a&gt; and &lt;a href=&quot;https://llvm-hpc3-workshop.github.io/slides/Bertolli.pdf&quot;&gt;slide&lt;/a&gt;. &lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;[2] Generic Offload File Bundler Tool: &lt;a href=&quot;http://clang-developers.42468.n3.nabble.com/RFC-OpenMP-CUDA-Generic-Offload-File-Bundler-Tool-td4050147.html&quot;&gt;http://clang-developers.42468.n3.nabble.com/RFC-OpenMP-CUDA-Generic-Offload-File-Bundler-Tool-td4050147.html&lt;/a&gt; and &lt;a href=&quot;https://chromium.googlesource.com/external/github.com/llvm-mirror/clang/+/refs/heads/master/test/Driver/openmp-offload-gpu.c&quot;&gt;example&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;[3] Clang Driver Internals: &lt;a href=&quot;https://clang.llvm.org/docs/DriverInternals.html&quot;&gt;https://clang.llvm.org/docs/DriverInternals.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;[4] Clang review: &lt;a href=&quot;https://reviews.llvm.org/D21852&quot;&gt;https://reviews.llvm.org/D21852&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;[5] Calng review: &lt;a href=&quot;https://www.mail-archive.com/cfe-commits@lists.llvm.org/msg36757.html&quot;&gt;https://www.mail-archive.com/cfe-commits@lists.llvm.org/msg36757.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;[6] [CUDA][OpenMP] Add a generic offload action builder: &lt;a href=&quot;https://reviews.llvm.org/D18172&quot;&gt;https://reviews.llvm.org/D18172&lt;/a&gt; and revision: &lt;a href=&quot;http://llvm.org/viewvc/llvm-project?view=revision&amp;amp;revision=282865&quot;&gt;http://llvm.org/viewvc/llvm-project?view=revision&amp;amp;revision=282865&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;[7] Clang Driver source code: &lt;a href=&quot;https://github.com/llvm-mirror/clang/tree/master/lib/Driver&quot;&gt;https://github.com/llvm-mirror/clang/tree/master/lib/Driver&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Any questions or suggestions, feel free to open an issue @&lt;a href=&quot;https://github.com/lijiansong/clang-llvm-tutorial&quot;&gt;here&lt;/a&gt; or e-mail me to &lt;em&gt;lijiansong@ict.ac.cn&lt;/em&gt;.&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>NDArray: A Headers only Template Library for N Dimensions Tensor Expressions</title>
