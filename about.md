@@ -46,3 +46,5 @@ My research directions focus on *Distributed Computing, Parallel Computing, Comp
 ## Postscript
 The early summary is released on [CSDN](http://blog.csdn.net/u011000290). <br>
 Any questions or suggestions, feel free to open an issue on [GitHub](https://github.com/lijiansong) or email me to lijiansong@ict.ac.cn .
+> 冯老师说得对：“若干年以后，大家回想起来，更多关注的是你做了什么，而不是说你发了几篇论文！”
+
