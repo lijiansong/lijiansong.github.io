@@ -59,7 +59,7 @@ tag_page: '/blog/tags/'
 category_page: '/blog/categories/'
 
 hero:
-  image: /public/img/Valgrind.png
+  image: /public/img/Valgrind.jpg
   caption: Original Artwork &copy; <a href="http://valgrind.org/">Valgrind™ Developers</a>
 
 # Puglins
