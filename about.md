@@ -44,7 +44,9 @@ My research directions focus on *Distributed Computing, Parallel Computing, Comp
 - Champions of 5000m/1500m long-distance race for many times, Wuhan University, 2014
 
 ## Postscript
-The early summary is released on [CSDN](http://blog.csdn.net/u011000290). <br>
+The early summary is posted on [CSDN](http://blog.csdn.net/u011000290). <br>
 Any questions or suggestions, feel free to open an issue on [GitHub](https://github.com/lijiansong) or email me to lijiansong@ict.ac.cn .
-> 冯老师说得对：“若干年以后，大家回想起来，更多关注的是你做了什么，而不是说你发了几篇论文！”
+> 冯老师说：“若干年以后，大家回想起来，更多关注的是你做了什么，而不是说你发了几篇论文！”
+
+心情不好的时候，我也会告诫自己：做系统，一定要有耐心和坚持，即使是做工程项目也是如此，以为自己干的心态，积极参与！
 
