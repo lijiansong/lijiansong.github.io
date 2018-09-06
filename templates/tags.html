@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}Tags{% endblock %}
+
+{% block content %}
+<h1>Tags</h1>
+<dl>
+  {% for tag in blog.tags %}
+  <dt><a href="/tags/{{ tag | urlencode }}/" class="label label-default">{{tag}}</a> ({{ blog.posts_by_tag(tag) | length }})</dt>
+  <dd></dd>
+  {% endfor %}
+</dl>
+{% endblock %}

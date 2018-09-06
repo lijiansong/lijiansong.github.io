@@ -1,0 +1,33 @@
+@page {
+  size: 21cm 29.7cm;
+  margin: 1cm;
+}
+
+@media print {
+
+  body {
+    width: 90%;
+    max-width: max-content;
+  }
+
+  body > header, body > footer, body > nav {
+    display: none;
+  }
+
+  body {
+    font-size: $print-root-size;
+  }
+
+  pre {
+    font-size: inherit;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+
+  a[href] {
+    text-decoration: underline;
+  }
+
+}

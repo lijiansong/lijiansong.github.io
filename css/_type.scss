@@ -1,0 +1,149 @@
+html {
+  text-rendering: optimizeLegibility;
+  font-variant-ligatures: common-ligatures discretionary-ligatures historical-ligatures contextual;
+  -webkit-font-variant-ligatures: common-ligatures discretionary-ligatures historical-ligatures contextual;
+  font-kerning: normal;
+  font-family: $font;
+  font-size: $root-size;
+  line-height: $line-height;
+  color: $text-color;
+  background-color: $body-bg;
+}
+
+h1, h2, h3, h4, h5, h6, p.subtitle {
+  font-weight: 500;
+  color: $headings-color;
+  padding: 0em;
+  margin-top: 2 * $margin-size;
+  margin-bottom: $margin-size;
+}
+
+h1 {
+  font-size: 2.44rem;
+}
+h2 {
+  font-size: 1.93rem;
+}
+h3 {
+  font-size: 1.56rem;
+}
+h4 {
+  font-size: 1.25rem;
+}
+h5 {
+  font-size: 1.0rem;
+}
+h6 {
+  font-size: 0.85rem;
+}
+
+p.subtitle {
+  font-size: 1.25rem;
+  margin-top: -0.8 * $margin-size;
+}
+
+p {
+  text-align: justify;
+  margin-top: 0;
+  margin-bottom: $margin-size;
+}
+
+table {
+  margin-bottom: $margin-size;
+  width: 100%;
+}
+
+header + p, th, b, strong {
+  font-weight: bold;
+}
+
+.list-inline {
+  padding: 0;
+}
+
+dd {
+  margin-left: 35px;
+}
+
+p.taglist > a, a.label {
+  display: inline;
+  padding: 0em 0.3em 0em 0.3em;
+  font-weight: bold;
+  color: $tag-color;
+  background-color: darken($tag-bg-color, 40%);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  transition: 1s;
+  transition-timing-function: ease;
+
+  &:hover {
+    background-color: darken($tag-bg-color, 60%);
+    text-decoration: none;
+  }
+}
+
+blockquote {
+  margin-left: 0rem;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-left: 3px #e0e0e0 solid;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+pre {
+  font-size: $pre-size;
+  padding: 0.5rem;
+  border: thin solid $well-border;
+  border-radius: $border-radius;
+  background-color: $well-bg;
+  overflow-y: auto;
+}
+
+figure pre {
+  border: none;
+}
+
+code, pre {
+  font-family: $font-mono;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  transition-duration: 0.3s;
+}
+
+a:hover, a:focus {
+  color: $link-hover-color;
+  // text-decoration: underline;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+dt, dd {
+  margin-bottom: $margin-size;
+}
+
+th {
+  text-align: inherit;
+}
+
+th, td {
+  padding: 0.4rem;
+  vertical-align: top;
+  border-top: thin solid #ddd;
+}
+
+table > thead:first-child > tr:first-child > th {
+  border-top: 0
+}

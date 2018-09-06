@@ -1,0 +1,87 @@
+/* Misc */
+
+.taglist {
+  padding: 0;
+}
+
+.taglist > a {
+  margin: 0.1em;
+  transition: 1s;
+}
+
+figure, .figure {
+  padding: 1rem;
+  margin: 0 0 1rem 0;
+  background-color: $well-bg;
+  border: 1px solid $well-border;
+  border-radius: $border-radius;
+  blockquote {
+    border-color: #ddd;
+    border-color: rgba(0,0,0,.15);
+  }
+}
+
+figure, .figure, pre {
+  transition-duration: 0.5s;
+}
+.zoom {
+  transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+}
+
+code {
+  background-color: inherit;
+}
+
+/* CSS3 */
+a:not([href]) {
+  color: inherit;
+}
+
+/* samp & kdb */
+
+samp.prompt {
+  font-weight: bold;
+  font-color: black;
+}
+
+samp.output {
+  color: blue;
+  font-weight: bold;
+}
+
+kbd.command {
+  background-color: grey;
+}
+
+.line-dense {
+  line-height: 100%;
+}
+
+
+img.emoji {
+  height: 1.5em;
+  width: 1.5em;
+  vertical-align: bottom;
+}
+
+div.MathJax_SVG_Display {
+  text-align: left;
+}
+
+@keyframes flash {
+ from {
+   color: red;
+ }
+ to {
+   color: inherit;
+ }
+}
+
+:target, h1:target, h2:target, h3:target, h4:target, h5:target {
+  animation-duration: 2s;
+  animation-name: flash;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="http://lijiansong.github.io/">
+  <title>/dev/posts/</title>
+  <id>http://lijiansong.github.io/tags/People/feed.atom</id>
+  <link href="http://lijiansong.github.io/" />
+  <link rel="self" href="http://lijiansong.github.io/tags/People/feed.atom/" />
+  
+  <updated>2016-08-25T00:00:00+02:00</updated>
+  
+  <author>
+    <name>Gabriel Corona</name>
+  </author>
+
+  
+  <entry>
+      <title>Chris Lattner&#39;s Homepage</title>
+      
+      <link rel="alternate" href="http://lijiansong.github.io/2016/08/25/Chris-Lattner-Homepage/" />
+      <id>http://lijiansong.github.io/2016/08/25/Chris-Lattner-Homepage/</id>
+      <published>2016-08-25T00:00:00+02:00</published>
+      <updated>2016-08-25T00:00:00+02:00</updated>
+      <author>
+        <name>Gabriel Corona</name>
+      </author>
+      <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
+        <p>Born in 1978, Chris Lattner is an American software developer, best known as the main author of LLVM and related projects, such as the compiler Clang and the programming language Swift. As of 2016, he works at Apple Inc., as Director of the Developer Tools department, leading the Xcode, Instruments, and compiler teams.</p>
+      </div></summary>
+  </entry>
+  
+
+</feed>

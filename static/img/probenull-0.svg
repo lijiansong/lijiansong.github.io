@@ -1,0 +1,453 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" width="1200" height="418" onload="init(evt)" viewBox="0 0 1200 418" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs >
+	<linearGradient id="background" y1="0" y2="1" x1="0" x2="0" >
+		<stop stop-color="#eeeeee" offset="5%" />
+		<stop stop-color="#eeeeb0" offset="95%" />
+	</linearGradient>
+</defs>
+<style type="text/css">
+	.func_g:hover { stroke:black; stroke-width:0.5; }
+</style>
+<script type="text/ecmascript">
+<![CDATA[
+	var details;
+	function init(evt) { details = document.getElementById("details").firstChild; }
+	function s(info) { details.nodeValue = "Function: " + info; }
+	function c() { details.nodeValue = ' '; }
+]]>
+</script>
+<rect x="0.0" y="0" width="1200.0" height="418.0" fill="url(#background)"  />
+<text text-anchor="middle" x="600" y="24" font-size="17" font-family="Verdana" fill="rgb(0,0,0)"  >Flame Graph</text>
+<text text-anchor="" x="10" y="401" font-size="12" font-family="Verdana" fill="rgb(0,0,0)" id="details" > </text>
+<g class="func_g" onmouseover="s('__strcmp_sse42 (1 samples, 0.20%)')" onmouseout="c()">
+<title>__strcmp_sse42 (1 samples, 0.20%)</title><rect x="57.3" y="33" width="2.4" height="15.0" fill="rgb(254,143,33)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('_Ux86_64_get_proc_name (9 samples, 1.80%)')" onmouseout="c()">
+<title>_Ux86_64_get_proc_name (9 samples, 1.80%)</title><rect x="1166.4" y="161" width="21.2" height="15.0" fill="rgb(254,11,53)" rx="2" ry="2" />
+<text text-anchor="" x="1169.35270541082" y="171.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >_..</text>
+</g>
+<g class="func_g" onmouseover="s('compare_heap_area_with_type (47 samples, 9.42%)')" onmouseout="c()">
+<title>compare_heap_area_with_type (47 samples, 9.42%)</title><rect x="50.2" y="129" width="111.1" height="15.0" fill="rgb(205,15,4)" rx="2" ry="2" />
+<text text-anchor="" x="53.2004008016032" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >compare_heap_..</text>
+</g>
+<g class="func_g" onmouseover="s('_Ux86_64_get_elf_image (4 samples, 0.80%)')" onmouseout="c()">
+<title>_Ux86_64_get_elf_image (4 samples, 0.80%)</title><rect x="1178.2" y="113" width="9.4" height="15.0" fill="rgb(246,43,48)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('compare_heap_area (13 samples, 2.61%)')" onmouseout="c()">
+<title>compare_heap_area (13 samples, 2.61%)</title><rect x="50.2" y="81" width="30.7" height="15.0" fill="rgb(213,146,20)" rx="2" ry="2" />
+<text text-anchor="" x="53.2004008016032" y="91.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >co..</text>
+</g>
+<g class="func_g" onmouseover="s('__strcmp_sse42 (4 samples, 0.80%)')" onmouseout="c()">
+<title>__strcmp_sse42 (4 samples, 0.80%)</title><rect x="69.1" y="49" width="9.5" height="15.0" fill="rgb(244,207,34)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('add_compared_pointers (8 samples, 1.60%)')" onmouseout="c()">
+<title>add_compared_pointers (8 samples, 1.60%)</title><rect x="24.2" y="177" width="18.9" height="15.0" fill="rgb(215,187,31)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('__strcmp_sse42 (7 samples, 1.40%)')" onmouseout="c()">
+<title>__strcmp_sse42 (7 samples, 1.40%)</title><rect x="99.9" y="97" width="16.5" height="15.0" fill="rgb(209,194,42)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('get_type_description (7 samples, 1.40%)')" onmouseout="c()">
+<title>get_type_description (7 samples, 1.40%)</title><rect x="1064.7" y="145" width="16.5" height="15.0" fill="rgb(211,27,15)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('reset_heap_information (14 samples, 2.81%)')" onmouseout="c()">
+<title>reset_heap_information (14 samples, 2.81%)</title><rect x="1119.1" y="209" width="33.1" height="15.0" fill="rgb(247,7,11)" rx="2" ry="2" />
+<text text-anchor="" x="1122.05811623246" y="219.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >re..</text>
+</g>
+<g class="func_g" onmouseover="s('__memmove_ssse3_back (1 samples, 0.20%)')" onmouseout="c()">
+<title>__memmove_ssse3_back (1 samples, 0.20%)</title><rect x="33.6" y="129" width="2.4" height="15.0" fill="rgb(254,90,15)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('xbt_dict_get_elm_or_null (4 samples, 0.80%)')" onmouseout="c()">
+<title>xbt_dict_get_elm_or_null (4 samples, 0.80%)</title><rect x="913.3" y="161" width="9.5" height="15.0" fill="rgb(215,165,33)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('get_type_description (123 samples, 24.65%)')" onmouseout="c()">
+<title>get_type_description (123 samples, 24.65%)</title><rect x="620.1" y="161" width="290.9" height="15.0" fill="rgb(214,103,41)" rx="2" ry="2" />
+<text text-anchor="" x="623.100200400802" y="171.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >get_type_description</text>
+</g>
+<g class="func_g" onmouseover="s('xbt_dict_cursor_get_or_free (18 samples, 3.61%)')" onmouseout="c()">
+<title>xbt_dict_cursor_get_or_free (18 samples, 3.61%)</title><rect x="116.4" y="97" width="42.6" height="15.0" fill="rgb(251,129,52)" rx="2" ry="2" />
+<text text-anchor="" x="119.412825651303" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >xbt_..</text>
+</g>
+<g class="func_g" onmouseover="s('MC_do_the_modelcheck_for_real (499 samples, 100.00%)')" onmouseout="c()">
+<title>MC_do_the_modelcheck_for_real (499 samples, 100.00%)</title><rect x="10.0" y="289" width="1180.0" height="15.0" fill="rgb(212,222,41)" rx="2" ry="2" />
+<text text-anchor="" x="13" y="299.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >MC_do_the_modelcheck_for_real</text>
+</g>
+<g class="func_g" onmouseover="s('MC_take_snapshot_stacks (10 samples, 2.00%)')" onmouseout="c()">
+<title>MC_take_snapshot_stacks (10 samples, 2.00%)</title><rect x="1166.4" y="193" width="23.6" height="15.0" fill="rgb(221,73,20)" rx="2" ry="2" />
+<text text-anchor="" x="1169.35270541082" y="203.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >M..</text>
+</g>
+<g class="func_g" onmouseover="s('__memcpy_ssse3_back (1 samples, 0.20%)')" onmouseout="c()">
+<title>__memcpy_ssse3_back (1 samples, 0.20%)</title><rect x="21.8" y="161" width="2.4" height="15.0" fill="rgb(222,176,15)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('__GI__IO_default_uflow (3 samples, 0.60%)')" onmouseout="c()">
+<title>__GI__IO_default_uflow (3 samples, 0.60%)</title><rect x="1159.3" y="145" width="7.1" height="15.0" fill="rgb(250,197,36)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('xbt_dict_cursor_step (6 samples, 1.20%)')" onmouseout="c()">
+<title>xbt_dict_cursor_step (6 samples, 1.20%)</title><rect x="263.0" y="113" width="14.2" height="15.0" fill="rgb(223,19,15)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('xbt_getline (3 samples, 0.60%)')" onmouseout="c()">
+<title>xbt_getline (3 samples, 0.60%)</title><rect x="1159.3" y="177" width="7.1" height="15.0" fill="rgb(217,191,27)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('visited_state_new (16 samples, 3.21%)')" onmouseout="c()">
+<title>visited_state_new (16 samples, 3.21%)</title><rect x="1152.2" y="225" width="37.8" height="15.0" fill="rgb(209,178,41)" rx="2" ry="2" />
+<text text-anchor="" x="1155.16432865731" y="235.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >vis..</text>
+</g>
+<g class="func_g" onmouseover="s('_start (499 samples, 100.00%)')" onmouseout="c()">
+<title>_start (499 samples, 100.00%)</title><rect x="10.0" y="353" width="1180.0" height="15.0" fill="rgb(234,101,35)" rx="2" ry="2" />
+<text text-anchor="" x="13" y="363.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >_start</text>
+</g>
+<g class="func_g" onmouseover="s('MC_snapshot_add_region (3 samples, 0.60%)')" onmouseout="c()">
+<title>MC_snapshot_add_region (3 samples, 0.60%)</title><rect x="1152.2" y="177" width="7.1" height="15.0" fill="rgb(252,52,27)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('__strcmp_sse42 (1 samples, 0.20%)')" onmouseout="c()">
+<title>__strcmp_sse42 (1 samples, 0.20%)</title><rect x="918.1" y="145" width="2.3" height="15.0" fill="rgb(251,178,30)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('compare_areas_with_type (75 samples, 15.03%)')" onmouseout="c()">
+<title>compare_areas_with_type (75 samples, 15.03%)</title><rect x="922.8" y="193" width="177.3" height="15.0" fill="rgb(235,78,17)" rx="2" ry="2" />
+<text text-anchor="" x="925.785571142285" y="203.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >compare_areas_with_type</text>
+</g>
+<g class="func_g" onmouseover="s('__strcmp_sse42 (1 samples, 0.20%)')" onmouseout="c()">
+<title>__strcmp_sse42 (1 samples, 0.20%)</title><rect x="1088.3" y="145" width="2.4" height="15.0" fill="rgb(221,11,49)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('MC_replay (1 samples, 0.20%)')" onmouseout="c()">
+<title>MC_replay (1 samples, 0.20%)</title><rect x="10.0" y="241" width="2.4" height="15.0" fill="rgb(214,64,38)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('main (499 samples, 100.00%)')" onmouseout="c()">
+<title>main (499 samples, 100.00%)</title><rect x="10.0" y="321" width="1180.0" height="15.0" fill="rgb(250,75,53)" rx="2" ry="2" />
+<text text-anchor="" x="13" y="331.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >main</text>
+</g>
+<g class="func_g" onmouseover="s('xbt_malloc0 (3 samples, 0.60%)')" onmouseout="c()">
+<title>xbt_malloc0 (3 samples, 0.60%)</title><rect x="1152.2" y="145" width="7.1" height="15.0" fill="rgb(208,175,23)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('get_type_description (8 samples, 1.60%)')" onmouseout="c()">
+<title>get_type_description (8 samples, 1.60%)</title><rect x="1081.2" y="161" width="18.9" height="15.0" fill="rgb(228,99,18)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('xbt_dynar_insert_at_ptr (1 samples, 0.20%)')" onmouseout="c()">
+<title>xbt_dynar_insert_at_ptr (1 samples, 0.20%)</title><rect x="33.6" y="145" width="2.4" height="15.0" fill="rgb(245,166,51)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('mmalloc_no_memset (3 samples, 0.60%)')" onmouseout="c()">
+<title>mmalloc_no_memset (3 samples, 0.60%)</title><rect x="1112.0" y="161" width="7.1" height="15.0" fill="rgb(239,37,38)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('__memset_sse2 (2 samples, 0.40%)')" onmouseout="c()">
+<title>__memset_sse2 (2 samples, 0.40%)</title><rect x="1154.5" y="81" width="4.8" height="15.0" fill="rgb(246,212,53)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('free (7 samples, 1.40%)')" onmouseout="c()">
+<title>free (7 samples, 1.40%)</title><rect x="1130.9" y="193" width="16.5" height="15.0" fill="rgb(248,92,36)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('init_heap_information (8 samples, 1.60%)')" onmouseout="c()">
+<title>init_heap_information (8 samples, 1.60%)</title><rect x="1100.1" y="209" width="19.0" height="15.0" fill="rgb(221,16,33)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('xbt_dict_cursor_step (1 samples, 0.20%)')" onmouseout="c()">
+<title>xbt_dict_cursor_step (1 samples, 0.20%)</title><rect x="1097.8" y="145" width="2.3" height="15.0" fill="rgb(220,177,18)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('_Uelf64_get_proc_name_in_image (5 samples, 1.00%)')" onmouseout="c()">
+<title>_Uelf64_get_proc_name_in_image (5 samples, 1.00%)</title><rect x="1166.4" y="113" width="11.8" height="15.0" fill="rgb(229,68,5)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('MC_get_local_variables_values (10 samples, 2.00%)')" onmouseout="c()">
+<title>MC_get_local_variables_values (10 samples, 2.00%)</title><rect x="1166.4" y="177" width="23.6" height="15.0" fill="rgb(209,219,38)" rx="2" ry="2" />
+<text text-anchor="" x="1169.35270541082" y="187.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >M..</text>
+</g>
+<g class="func_g" onmouseover="s('__strcmp_sse42 (7 samples, 1.40%)')" onmouseout="c()">
+<title>__strcmp_sse42 (7 samples, 1.40%)</title><rect x="948.8" y="97" width="16.6" height="15.0" fill="rgb(244,30,10)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('xbt_dict_cursor_get_or_free (5 samples, 1.00%)')" onmouseout="c()">
+<title>xbt_dict_cursor_get_or_free (5 samples, 1.00%)</title><rect x="965.4" y="97" width="11.8" height="15.0" fill="rgb(213,85,33)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('sem_post (1 samples, 0.20%)')" onmouseout="c()">
+<title>sem_post (1 samples, 0.20%)</title><rect x="40.7" y="113" width="2.4" height="15.0" fill="rgb(222,148,22)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('__strcmp_sse42 (1 samples, 0.20%)')" onmouseout="c()">
+<title>__strcmp_sse42 (1 samples, 0.20%)</title><rect x="1067.0" y="129" width="2.4" height="15.0" fill="rgb(215,39,18)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('xbt_dict_cursor_get_or_free (16 samples, 3.21%)')" onmouseout="c()">
+<title>xbt_dict_cursor_get_or_free (16 samples, 3.21%)</title><rect x="225.2" y="113" width="37.8" height="15.0" fill="rgb(231,199,2)" rx="2" ry="2" />
+<text text-anchor="" x="228.190380761523" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >xbt..</text>
+</g>
+<g class="func_g" onmouseover="s('compare_heap_area (13 samples, 2.61%)')" onmouseout="c()">
+<title>compare_heap_area (13 samples, 2.61%)</title><rect x="50.2" y="113" width="30.7" height="15.0" fill="rgb(236,14,37)" rx="2" ry="2" />
+<text text-anchor="" x="53.2004008016032" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >co..</text>
+</g>
+<g class="func_g" onmouseover="s('_Uelf64_get_proc_name (9 samples, 1.80%)')" onmouseout="c()">
+<title>_Uelf64_get_proc_name (9 samples, 1.80%)</title><rect x="1166.4" y="129" width="21.2" height="15.0" fill="rgb(221,25,33)" rx="2" ry="2" />
+<text text-anchor="" x="1169.35270541082" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >_..</text>
+</g>
+<g class="func_g" onmouseover="s('mmalloc (3 samples, 0.60%)')" onmouseout="c()">
+<title>mmalloc (3 samples, 0.60%)</title><rect x="1112.0" y="177" width="7.1" height="15.0" fill="rgb(248,14,29)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('__strcmp_sse42 (30 samples, 6.01%)')" onmouseout="c()">
+<title>__strcmp_sse42 (30 samples, 6.01%)</title><rect x="393.1" y="129" width="70.9" height="15.0" fill="rgb(210,102,28)" rx="2" ry="2" />
+<text text-anchor="" x="396.086172344689" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >__strcmp..</text>
+</g>
+<g class="func_g" onmouseover="s('__tls_get_addr (1 samples, 0.20%)')" onmouseout="c()">
+<title>__tls_get_addr (1 samples, 0.20%)</title><rect x="31.3" y="161" width="2.3" height="15.0" fill="rgb(216,86,36)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('__strcmp_sse42 (6 samples, 1.20%)')" onmouseout="c()">
+<title>__strcmp_sse42 (6 samples, 1.20%)</title><rect x="1017.4" y="113" width="14.2" height="15.0" fill="rgb(223,141,53)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('get_type_description (49 samples, 9.82%)')" onmouseout="c()">
+<title>get_type_description (49 samples, 9.82%)</title><rect x="161.3" y="129" width="115.9" height="15.0" fill="rgb(246,72,2)" rx="2" ry="2" />
+<text text-anchor="" x="164.342685370741" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >get_type_descr..</text>
+</g>
+<g class="func_g" onmouseover="s('__libc_start_main (499 samples, 100.00%)')" onmouseout="c()">
+<title>__libc_start_main (499 samples, 100.00%)</title><rect x="10.0" y="337" width="1180.0" height="15.0" fill="rgb(242,9,30)" rx="2" ry="2" />
+<text text-anchor="" x="13" y="347.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >__libc_start_main</text>
+</g>
+<g class="func_g" onmouseover="s('xbt_dynar_insert_at (1 samples, 0.20%)')" onmouseout="c()">
+<title>xbt_dynar_insert_at (1 samples, 0.20%)</title><rect x="33.6" y="161" width="2.4" height="15.0" fill="rgb(206,121,16)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('mmalloc (2 samples, 0.40%)')" onmouseout="c()">
+<title>mmalloc (2 samples, 0.40%)</title><rect x="1154.5" y="97" width="4.8" height="15.0" fill="rgb(247,145,1)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('_xbt_dynar_cursor_get (1 samples, 0.20%)')" onmouseout="c()">
+<title>_xbt_dynar_cursor_get (1 samples, 0.20%)</title><rect x="21.8" y="177" width="2.4" height="15.0" fill="rgb(229,147,33)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('read (3 samples, 0.60%)')" onmouseout="c()">
+<title>read (3 samples, 0.60%)</title><rect x="1159.3" y="113" width="7.1" height="15.0" fill="rgb(216,201,8)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('compare_heap_area (364 samples, 72.95%)')" onmouseout="c()">
+<title>compare_heap_area (364 samples, 72.95%)</title><rect x="50.2" y="177" width="860.8" height="15.0" fill="rgb(242,152,5)" rx="2" ry="2" />
+<text text-anchor="" x="53.2004008016032" y="187.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >compare_heap_area</text>
+</g>
+<g class="func_g" onmouseover="s('compare_global_variables (385 samples, 77.15%)')" onmouseout="c()">
+<title>compare_global_variables (385 samples, 77.15%)</title><rect x="12.4" y="209" width="910.4" height="15.0" fill="rgb(217,150,25)" rx="2" ry="2" />
+<text text-anchor="" x="15.3647294589178" y="219.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >compare_global_variables</text>
+</g>
+<g class="func_g" onmouseover="s('compare_heap_area_with_type (241 samples, 48.30%)')" onmouseout="c()">
+<title>compare_heap_area_with_type (241 samples, 48.30%)</title><rect x="50.2" y="161" width="569.9" height="15.0" fill="rgb(246,110,17)" rx="2" ry="2" />
+<text text-anchor="" x="53.2004008016032" y="171.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >compare_heap_area_with_type</text>
+</g>
+<g class="func_g" onmouseover="s('compare_heap_area (60 samples, 12.02%)')" onmouseout="c()">
+<title>compare_heap_area (60 samples, 12.02%)</title><rect x="922.8" y="145" width="141.9" height="15.0" fill="rgb(213,4,19)" rx="2" ry="2" />
+<text text-anchor="" x="925.785571142285" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >compare_heap_area</text>
+</g>
+<g class="func_g" onmouseover="s('__tls_get_addr (1 samples, 0.20%)')" onmouseout="c()">
+<title>__tls_get_addr (1 samples, 0.20%)</title><rect x="1128.5" y="193" width="2.4" height="15.0" fill="rgb(234,15,2)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('MC_region_new (3 samples, 0.60%)')" onmouseout="c()">
+<title>MC_region_new (3 samples, 0.60%)</title><rect x="1152.2" y="161" width="7.1" height="15.0" fill="rgb(245,51,9)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('heap_area_free (2 samples, 0.40%)')" onmouseout="c()">
+<title>heap_area_free (2 samples, 0.40%)</title><rect x="1147.4" y="193" width="4.8" height="15.0" fill="rgb(227,64,47)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('is_visited_state (498 samples, 99.80%)')" onmouseout="c()">
+<title>is_visited_state (498 samples, 99.80%)</title><rect x="12.4" y="241" width="1177.6" height="15.0" fill="rgb(206,136,40)" rx="2" ry="2" />
+<text text-anchor="" x="15.3647294589178" y="251.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >is_visited_state</text>
+</g>
+<g class="func_g" onmouseover="s('compare_heap_area (96 samples, 19.24%)')" onmouseout="c()">
+<title>compare_heap_area (96 samples, 19.24%)</title><rect x="50.2" y="145" width="227.0" height="15.0" fill="rgb(235,19,12)" rx="2" ry="2" />
+<text text-anchor="" x="53.2004008016032" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >compare_heap_area</text>
+</g>
+<g class="func_g" onmouseover="s('maps_next (4 samples, 0.80%)')" onmouseout="c()">
+<title>maps_next (4 samples, 0.80%)</title><rect x="1178.2" y="97" width="9.4" height="15.0" fill="rgb(241,68,27)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('get_type_description (31 samples, 6.21%)')" onmouseout="c()">
+<title>get_type_description (31 samples, 6.21%)</title><rect x="991.4" y="129" width="73.3" height="15.0" fill="rgb(207,132,34)" rx="2" ry="2" />
+<text text-anchor="" x="994.362725450902" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >get_type..</text>
+</g>
+<g class="func_g" onmouseover="s('__memcpy_ssse3_back (1 samples, 0.20%)')" onmouseout="c()">
+<title>__memcpy_ssse3_back (1 samples, 0.20%)</title><rect x="10.0" y="193" width="2.4" height="15.0" fill="rgb(215,113,32)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('__strcmp_sse42 (6 samples, 1.20%)')" onmouseout="c()">
+<title>__strcmp_sse42 (6 samples, 1.20%)</title><rect x="211.0" y="113" width="14.2" height="15.0" fill="rgb(248,0,47)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('_IO_getc (3 samples, 0.60%)')" onmouseout="c()">
+<title>_IO_getc (3 samples, 0.60%)</title><rect x="1159.3" y="161" width="7.1" height="15.0" fill="rgb(205,134,53)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('get_proc_name (9 samples, 1.80%)')" onmouseout="c()">
+<title>get_proc_name (9 samples, 1.80%)</title><rect x="1166.4" y="145" width="21.2" height="15.0" fill="rgb(253,64,5)" rx="2" ry="2" />
+<text text-anchor="" x="1169.35270541082" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >g..</text>
+</g>
+<g class="func_g" onmouseover="s('get_type_description (34 samples, 6.81%)')" onmouseout="c()">
+<title>get_type_description (34 samples, 6.81%)</title><rect x="80.9" y="113" width="80.4" height="15.0" fill="rgb(205,216,13)" rx="2" ry="2" />
+<text text-anchor="" x="83.9418837675351" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >get_type_..</text>
+</g>
+<g class="func_g" onmouseover="s('xbt_dict_cursor_step (2 samples, 0.40%)')" onmouseout="c()">
+<title>xbt_dict_cursor_step (2 samples, 0.40%)</title><rect x="1059.9" y="113" width="4.8" height="15.0" fill="rgb(245,119,41)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('MC_get_memory_regions (6 samples, 1.20%)')" onmouseout="c()">
+<title>MC_get_memory_regions (6 samples, 1.20%)</title><rect x="1152.2" y="193" width="14.2" height="15.0" fill="rgb(238,110,54)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('xbt_dict_cursor_get_or_free (47 samples, 9.42%)')" onmouseout="c()">
+<title>xbt_dict_cursor_get_or_free (47 samples, 9.42%)</title><rect x="778.5" y="145" width="111.2" height="15.0" fill="rgb(250,103,38)" rx="2" ry="2" />
+<text text-anchor="" x="781.537074148297" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >xbt_dict_curs..</text>
+</g>
+<g class="func_g" onmouseover="s('snapshot_compare (482 samples, 96.59%)')" onmouseout="c()">
+<title>snapshot_compare (482 samples, 96.59%)</title><rect x="12.4" y="225" width="1139.8" height="15.0" fill="rgb(247,39,8)" rx="2" ry="2" />
+<text text-anchor="" x="15.3647294589178" y="235.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >snapshot_compare</text>
+</g>
+<g class="func_g" onmouseover="s('MC_modelcheck_safety (499 samples, 100.00%)')" onmouseout="c()">
+<title>MC_modelcheck_safety (499 samples, 100.00%)</title><rect x="10.0" y="273" width="1180.0" height="15.0" fill="rgb(212,50,26)" rx="2" ry="2" />
+<text text-anchor="" x="13" y="283.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >MC_modelcheck_safety</text>
+</g>
+<g class="func_g" onmouseover="s('compare_heap_area (75 samples, 15.03%)')" onmouseout="c()">
+<title>compare_heap_area (75 samples, 15.03%)</title><rect x="922.8" y="177" width="177.3" height="15.0" fill="rgb(217,62,47)" rx="2" ry="2" />
+<text text-anchor="" x="925.785571142285" y="187.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >compare_heap_area</text>
+</g>
+<g class="func_g" onmouseover="s('_Uelf64_lookup_symbol (5 samples, 1.00%)')" onmouseout="c()">
+<title>_Uelf64_lookup_symbol (5 samples, 1.00%)</title><rect x="1166.4" y="97" width="11.8" height="15.0" fill="rgb(210,16,25)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('get_type_description (29 samples, 5.81%)')" onmouseout="c()">
+<title>get_type_description (29 samples, 5.81%)</title><rect x="922.8" y="113" width="68.6" height="15.0" fill="rgb(250,187,0)" rx="2" ry="2" />
+<text text-anchor="" x="925.785571142285" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >get_typ..</text>
+</g>
+<g class="func_g" onmouseover="s('xbt_dict_cursor_get_or_free (3 samples, 0.60%)')" onmouseout="c()">
+<title>xbt_dict_cursor_get_or_free (3 samples, 0.60%)</title><rect x="1069.4" y="129" width="7.1" height="15.0" fill="rgb(249,168,43)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('xbt_dynar_get_ptr (3 samples, 0.60%)')" onmouseout="c()">
+<title>xbt_dynar_get_ptr (3 samples, 0.60%)</title><rect x="43.1" y="161" width="7.1" height="15.0" fill="rgb(238,157,52)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('xbt_dict_cursor_step (1 samples, 0.20%)')" onmouseout="c()">
+<title>xbt_dict_cursor_step (1 samples, 0.20%)</title><rect x="159.0" y="97" width="2.3" height="15.0" fill="rgb(248,121,35)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('MC_region_restore (1 samples, 0.20%)')" onmouseout="c()">
+<title>MC_region_restore (1 samples, 0.20%)</title><rect x="10.0" y="209" width="2.4" height="15.0" fill="rgb(208,211,13)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('_xbt_dynar_cursor_get (1 samples, 0.20%)')" onmouseout="c()">
+<title>_xbt_dynar_cursor_get (1 samples, 0.20%)</title><rect x="1187.6" y="161" width="2.4" height="15.0" fill="rgb(222,57,53)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('mfree (7 samples, 1.40%)')" onmouseout="c()">
+<title>mfree (7 samples, 1.40%)</title><rect x="1130.9" y="177" width="16.5" height="15.0" fill="rgb(238,195,28)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('compare_local_variables (75 samples, 15.03%)')" onmouseout="c()">
+<title>compare_local_variables (75 samples, 15.03%)</title><rect x="922.8" y="209" width="177.3" height="15.0" fill="rgb(208,81,12)" rx="2" ry="2" />
+<text text-anchor="" x="925.785571142285" y="219.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >compare_local_variables</text>
+</g>
+<g class="func_g" onmouseover="s('_xbt_dynar_elm (2 samples, 0.40%)')" onmouseout="c()">
+<title>_xbt_dynar_elm (2 samples, 0.40%)</title><rect x="45.5" y="145" width="4.7" height="15.0" fill="rgb(224,170,7)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('__strncpy_sse2_unaligned (1 samples, 0.20%)')" onmouseout="c()">
+<title>__strncpy_sse2_unaligned (1 samples, 0.20%)</title><rect x="1175.8" y="81" width="2.4" height="15.0" fill="rgb(251,191,32)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('xbt_dict_cursor_get_or_free@plt (1 samples, 0.20%)')" onmouseout="c()">
+<title>xbt_dict_cursor_get_or_free@plt (1 samples, 0.20%)</title><rect x="589.4" y="129" width="2.3" height="15.0" fill="rgb(209,140,22)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('xbt_dict_cursor_get_or_free (1 samples, 0.20%)')" onmouseout="c()">
+<title>xbt_dict_cursor_get_or_free (1 samples, 0.20%)</title><rect x="78.6" y="49" width="2.3" height="15.0" fill="rgb(205,42,1)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('__tls_get_addr (1 samples, 0.20%)')" onmouseout="c()">
+<title>__tls_get_addr (1 samples, 0.20%)</title><rect x="1109.6" y="193" width="2.4" height="15.0" fill="rgb(245,197,52)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('mmalloc_no_memset (2 samples, 0.40%)')" onmouseout="c()">
+<title>mmalloc_no_memset (2 samples, 0.40%)</title><rect x="36.0" y="97" width="4.7" height="15.0" fill="rgb(225,84,49)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('smpi_main (499 samples, 100.00%)')" onmouseout="c()">
+<title>smpi_main (499 samples, 100.00%)</title><rect x="10.0" y="305" width="1180.0" height="15.0" fill="rgb(214,175,19)" rx="2" ry="2" />
+<text text-anchor="" x="13" y="315.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >smpi_main</text>
+</g>
+<g class="func_g" onmouseover="s('compare_heap_area_with_type (6 samples, 1.20%)')" onmouseout="c()">
+<title>compare_heap_area_with_type (6 samples, 1.20%)</title><rect x="50.2" y="65" width="14.2" height="15.0" fill="rgb(206,71,25)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('compare_heap_area_with_type (67 samples, 13.43%)')" onmouseout="c()">
+<title>compare_heap_area_with_type (67 samples, 13.43%)</title><rect x="922.8" y="161" width="158.4" height="15.0" fill="rgb(251,37,14)" rx="2" ry="2" />
+<text text-anchor="" x="925.785571142285" y="171.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >compare_heap_area_wi..</text>
+</g>
+<g class="func_g" onmouseover="s('MC_dpor (499 samples, 100.00%)')" onmouseout="c()">
+<title>MC_dpor (499 samples, 100.00%)</title><rect x="10.0" y="257" width="1180.0" height="15.0" fill="rgb(214,62,15)" rx="2" ry="2" />
+<text text-anchor="" x="13" y="267.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >MC_dpor</text>
+</g>
+<g class="func_g" onmouseover="s('get_type_description (6 samples, 1.20%)')" onmouseout="c()">
+<title>get_type_description (6 samples, 1.20%)</title><rect x="50.2" y="49" width="14.2" height="15.0" fill="rgb(219,61,19)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('xbt_dict_cursor_step (6 samples, 1.20%)')" onmouseout="c()">
+<title>xbt_dict_cursor_step (6 samples, 1.20%)</title><rect x="977.2" y="97" width="14.2" height="15.0" fill="rgb(232,7,51)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('get_type_description (145 samples, 29.06%)')" onmouseout="c()">
+<title>get_type_description (145 samples, 29.06%)</title><rect x="277.2" y="145" width="342.9" height="15.0" fill="rgb(245,60,24)" rx="2" ry="2" />
+<text text-anchor="" x="280.214428857715" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >get_type_description</text>
+</g>
+<g class="func_g" onmouseover="s('compare_areas_with_type (384 samples, 76.95%)')" onmouseout="c()">
+<title>compare_areas_with_type (384 samples, 76.95%)</title><rect x="14.7" y="193" width="908.1" height="15.0" fill="rgb(247,140,10)" rx="2" ry="2" />
+<text text-anchor="" x="17.7294589178357" y="203.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >compare_areas_with_type</text>
+</g>
+<g class="func_g" onmouseover="s('malloc (2 samples, 0.40%)')" onmouseout="c()">
+<title>malloc (2 samples, 0.40%)</title><rect x="1154.5" y="113" width="4.8" height="15.0" fill="rgb(229,12,46)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('xbt_dict_cursor_step (9 samples, 1.80%)')" onmouseout="c()">
+<title>xbt_dict_cursor_step (9 samples, 1.80%)</title><rect x="889.7" y="145" width="21.3" height="15.0" fill="rgb(243,83,28)" rx="2" ry="2" />
+<text text-anchor="" x="892.679358717435" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >x..</text>
+</g>
+<g class="func_g" onmouseover="s('compare_heap_area_with_type (13 samples, 2.61%)')" onmouseout="c()">
+<title>compare_heap_area_with_type (13 samples, 2.61%)</title><rect x="50.2" y="97" width="30.7" height="15.0" fill="rgb(205,59,19)" rx="2" ry="2" />
+<text text-anchor="" x="53.2004008016032" y="107.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >co..</text>
+</g>
+<g class="func_g" onmouseover="s('__memset_sse2 (1 samples, 0.20%)')" onmouseout="c()">
+<title>__memset_sse2 (1 samples, 0.20%)</title><rect x="1152.2" y="113" width="2.3" height="15.0" fill="rgb(244,65,15)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('malloc (3 samples, 0.60%)')" onmouseout="c()">
+<title>malloc (3 samples, 0.60%)</title><rect x="36.0" y="129" width="7.1" height="15.0" fill="rgb(229,44,54)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('compare_heap_area_with_type (29 samples, 5.81%)')" onmouseout="c()">
+<title>compare_heap_area_with_type (29 samples, 5.81%)</title><rect x="922.8" y="129" width="68.6" height="15.0" fill="rgb(229,110,16)" rx="2" ry="2" />
+<text text-anchor="" x="925.785571142285" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >compare..</text>
+</g>
+<g class="func_g" onmouseover="s('xbt_malloc0 (3 samples, 0.60%)')" onmouseout="c()">
+<title>xbt_malloc0 (3 samples, 0.60%)</title><rect x="36.0" y="161" width="7.1" height="15.0" fill="rgb(219,207,17)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('calloc (3 samples, 0.60%)')" onmouseout="c()">
+<title>calloc (3 samples, 0.60%)</title><rect x="36.0" y="145" width="7.1" height="15.0" fill="rgb(253,186,36)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('__strcmp_sse42 (12 samples, 2.40%)')" onmouseout="c()">
+<title>__strcmp_sse42 (12 samples, 2.40%)</title><rect x="750.2" y="145" width="28.3" height="15.0" fill="rgb(209,13,22)" rx="2" ry="2" />
+<text text-anchor="" x="753.160320641283" y="155.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >__..</text>
+</g>
+<g class="func_g" onmouseover="s('mmalloc (2 samples, 0.40%)')" onmouseout="c()">
+<title>mmalloc (2 samples, 0.40%)</title><rect x="36.0" y="113" width="4.7" height="15.0" fill="rgb(246,75,41)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('xbt_dict_cursor_step (2 samples, 0.40%)')" onmouseout="c()">
+<title>xbt_dict_cursor_step (2 samples, 0.40%)</title><rect x="1076.5" y="129" width="4.7" height="15.0" fill="rgb(241,118,7)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('xbt_dict_cursor_get_or_free (12 samples, 2.40%)')" onmouseout="c()">
+<title>xbt_dict_cursor_get_or_free (12 samples, 2.40%)</title><rect x="1031.6" y="113" width="28.3" height="15.0" fill="rgb(231,137,21)" rx="2" ry="2" />
+<text text-anchor="" x="1034.56312625251" y="123.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >xb..</text>
+</g>
+<g class="func_g" onmouseover="s('xbt_dict_cursor_step (12 samples, 2.40%)')" onmouseout="c()">
+<title>xbt_dict_cursor_step (12 samples, 2.40%)</title><rect x="591.7" y="129" width="28.4" height="15.0" fill="rgb(216,149,0)" rx="2" ry="2" />
+<text text-anchor="" x="594.723446893788" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >xb..</text>
+</g>
+<g class="func_g" onmouseover="s('already_compared_pointers (3 samples, 0.60%)')" onmouseout="c()">
+<title>already_compared_pointers (3 samples, 0.60%)</title><rect x="43.1" y="177" width="7.1" height="15.0" fill="rgb(220,134,4)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('xbt_dict_cursor_get_or_free (2 samples, 0.40%)')" onmouseout="c()">
+<title>xbt_dict_cursor_get_or_free (2 samples, 0.40%)</title><rect x="59.7" y="33" width="4.7" height="15.0" fill="rgb(244,122,12)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('xbt_str_hash (1 samples, 0.20%)')" onmouseout="c()">
+<title>xbt_str_hash (1 samples, 0.20%)</title><rect x="920.4" y="145" width="2.4" height="15.0" fill="rgb(218,13,50)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('all (499 samples, 100%)')" onmouseout="c()">
+<title>all (499 samples, 100%)</title><rect x="10.0" y="369" width="1180.0" height="15.0" fill="rgb(247,167,20)" rx="2" ry="2" />
+<text text-anchor="" x="13" y="379.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  ></text>
+</g>
+<g class="func_g" onmouseover="s('xbt_dict_get_or_null (5 samples, 1.00%)')" onmouseout="c()">
+<title>xbt_dict_get_or_null (5 samples, 1.00%)</title><rect x="911.0" y="177" width="11.8" height="15.0" fill="rgb(232,10,16)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('MC_take_snapshot (16 samples, 3.21%)')" onmouseout="c()">
+<title>MC_take_snapshot (16 samples, 3.21%)</title><rect x="1152.2" y="209" width="37.8" height="15.0" fill="rgb(215,6,51)" rx="2" ry="2" />
+<text text-anchor="" x="1155.16432865731" y="219.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >MC_..</text>
+</g>
+<g class="func_g" onmouseover="s('_IO_new_file_underflow (3 samples, 0.60%)')" onmouseout="c()">
+<title>_IO_new_file_underflow (3 samples, 0.60%)</title><rect x="1159.3" y="129" width="7.1" height="15.0" fill="rgb(215,24,41)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('malloc (3 samples, 0.60%)')" onmouseout="c()">
+<title>malloc (3 samples, 0.60%)</title><rect x="1112.0" y="193" width="7.1" height="15.0" fill="rgb(240,219,15)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('xbt_dict_cursor_get_or_free (53 samples, 10.62%)')" onmouseout="c()">
+<title>xbt_dict_cursor_get_or_free (53 samples, 10.62%)</title><rect x="464.0" y="129" width="125.4" height="15.0" fill="rgb(245,102,51)" rx="2" ry="2" />
+<text text-anchor="" x="467.028056112224" y="139.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >xbt_dict_cursor..</text>
+</g>
+<g class="func_g" onmouseover="s('calloc (3 samples, 0.60%)')" onmouseout="c()">
+<title>calloc (3 samples, 0.60%)</title><rect x="1152.2" y="129" width="7.1" height="15.0" fill="rgb(250,16,3)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('MC_restore_snapshot (1 samples, 0.20%)')" onmouseout="c()">
+<title>MC_restore_snapshot (1 samples, 0.20%)</title><rect x="10.0" y="225" width="2.4" height="15.0" fill="rgb(223,20,36)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('get_type_description (7 samples, 1.40%)')" onmouseout="c()">
+<title>get_type_description (7 samples, 1.40%)</title><rect x="64.4" y="65" width="16.5" height="15.0" fill="rgb(214,120,18)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('read (3 samples, 0.60%)')" onmouseout="c()">
+<title>read (3 samples, 0.60%)</title><rect x="1180.5" y="81" width="7.1" height="15.0" fill="rgb(233,19,50)" rx="2" ry="2" />
+</g>
+<g class="func_g" onmouseover="s('xbt_dict_cursor_get_or_free (3 samples, 0.60%)')" onmouseout="c()">
+<title>xbt_dict_cursor_get_or_free (3 samples, 0.60%)</title><rect x="1090.7" y="145" width="7.1" height="15.0" fill="rgb(233,76,26)" rx="2" ry="2" />
+</g>
+</svg>

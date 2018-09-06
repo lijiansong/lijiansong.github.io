@@ -1,0 +1,53 @@
+links:
+  - title: Shaarli
+    url: http://sebsauvage.net/wiki/doku.php?id=php:shaarli#download
+    description: |
+      Shaarli est une de micro-CMS mono-utilisateur pour partager des liens et/ou faire du microblog. C'est ce qui fait tourner cette liste de liens.      
+      C'est en PHP, ça s'installe très facilement et ça tourne sans base de données.
+    date: 2014-03-08
+  - title: Lorraine Data Network
+    url: http://ldn-fai.net/
+    description: LDN est un FAI associatif lorrain qui défends un Internet libre, neutre et décentralisé.
+    date: 2014-03-08
+  - title: Tuto Serveur OpenVPN 
+    url: https://wiki.ldn-fai.net/wiki/Tuto_Serveur_OpenVPN
+    description: |
+      Un tuto pour monter un service de VPN basé sur OpenVPN. Le tuto
+      est réalisé dans le cadre de la mise en place du VPN LDN et en
+      collaboration avec des gens d'ARN.
+    date: 2014-03-08
+  - title: Le Nouveau Jour J 
+    url: http://www.nouveaujourj.fr/
+    description: Le Nouveau Jour J (NJJ) est un journal local/lorrain associatif indépendant. Il se trouve en kiosk (sur Nancy, Longway, Toul, ...).
+    date: 2014-03-08
+  - title: Le bouton "like" de Facebook est un danger pour la vie privée 
+    url: http://www.fsf.org/facebook
+    description: « Because so many sites — including TIME — use Facebook's user-tracking "Like" button, Zuckerberg is able to collect information about people who aren't even users of his site. […] gold mine for government surveillance and advertisers. »
+    date: 2014-12-03
+  - title: Netlib.re 
+    url: http://netlib.re/
+    description: Netlib.re vous donne un nom de domaine, gratuitement et simplement.
+    date: 2014-03-13
+  - title: Feminist Frequency 
+    url: http://www.feministfrequency.com/
+    description: Une analyse féministe de la culture populaire (jeux vidéos, films, séries, comics …). Certaines vidéos ont des sous-titres français et anglais.
+    date: 2014-03-22
+  - title: Rezo.net - Le portail des copains 
+    url:  http://rezo.net/
+    description: Un portail qui regroupe des articles provenant de sources plus ou moins intéressantes (dont des médias alternatifs tels que CQFD, Fakir, Acrimed …).
+    date: 2014-03-22
+  - title: Acrimed
+    url: http://www.acrimed.org/
+    description: Association de critique des médias.
+    date: 2014-03-22
+  - title: The Yes Men Fix The World 
+    url: http://vodo.net/theyesmen
+    description: Un des films des Yes Men visionnable gratuitement (et légalement).
+    date: 2014-03-22
+  - title: US Is an Oligarchy Not a Democracy, says Scientific Study 
+    url: https://www.commondreams.org/view/2014/04/14
+    description: What about France ? What about the European Union ?
+    date: 2014-04-16
+  - title: Les caméras publicitaires, pur fantasme ? - Résistance à l'agression publicitaire 
+    url:  http://antipub.org/spip.php?article357
+    date: 2014-08-18

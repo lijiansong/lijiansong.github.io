@@ -1,0 +1,14 @@
+---
+apache: The Apache HTTP server
+cms: Content Management Systems
+dns: Domain Name System
+dsl: xDSL (ADSL, etc)
+dwarf: DWARF, the debugging format
+elf: ELF, the executable/library format
+perf: perf and perf_event, the Linux subsystem for performance and PMU access
+simgrid: Simgrid, the distributed systems simulator
+tls: TLS (Transport Layer Security), the cryptographic protocol
+unix: the UNIX philosophy
+wine: Wine, the Windows API implemented on POSIX-ish systems
+middleman: a static site generator
+---

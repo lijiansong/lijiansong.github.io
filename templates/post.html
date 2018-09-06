@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}{{post.title}}{% endblock %}
+
+{% block content %}
+<article>
+  <header>
+    <h1>{{ post.title | escape }}</h1>
+    {% if post.subtitle is not none %}<p class="subtitle">{{ post.subtitle | escape }}</p>{% endif %}
+    <p>{% if not post.enabled %}[DRAFT] {% endif %}
+      <time>{{ post.timestamp.strftime('%b %e %Y') }}</time></p>
+    <p class="taglist">
+      {% for tag in post.tags %}
+        <a href="/tags/{{ tag | urlencode }}/" rel="tag" class="label label-default">{{tag}}</a>
+      {% endfor %}
+    </p>
+    {% set next = page.next %}{% set prev = page.prev %}
+    {% if prev is not none %}
+    <p><b lang="en">Previous episode:</b> <a rel="prev"  lang="{{prev.lang or "en" | escape}}" href="{{ prev.href | escape}}">{{ prev.title | escape }}</a></p>
+    {% endif %}
+    {% if next is not none %}
+    <p><b lang="en">Next episode:</b> <a rel="next"  lang="{{next.lang or "en" | escape}}" href="{{ next.href | escape}}">{{ next.title | escape }}</a></p>
+    {% endif %}
+  </header>
+  {{ post.content() | safe }}
+</article>
+{% endblock %}

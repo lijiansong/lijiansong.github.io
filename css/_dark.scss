@@ -1,0 +1,55 @@
+@media screen {
+
+  html.dark, .dark body {
+    background-color: #101010;
+  }
+
+  .dark {
+    body {
+      color: $dark-color;
+    }
+    h1, h2, h3, h4, h5,
+    b, .lead, header + p, p.subtitle {
+      color: $dark-headings-color;
+    }
+    pre, figure {
+      background-color: #303030;
+      border-color: black;
+      color: $dark-color;
+    }
+    a, a b {
+      color: $dark-link-color;
+    }
+    a:not([href]) {
+      color: inherit;
+    }
+
+   .label[href]{
+     color: $dark-headings-color;
+   }
+   .label[href]:hover, .label[href]:focus {
+     color: $dark-link-color;
+   }
+
+    /* Pygments */
+
+   .c, .c1 {
+     color: #7070f0;
+   }
+   .p, .nf, .nv, .n, .no, .vg, .mi, n {
+     color: $dark-color;
+   }
+   .cp {
+     color: #0EF;
+   }
+   .k {
+     color: #0C9;
+   }
+
+   button {
+     color: $dark-color;
+   }
+
+  }
+
+}

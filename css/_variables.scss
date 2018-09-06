@@ -1,0 +1,45 @@
+// Fonts
+
+$icon-font-path:        "/fonts/";
+$fa-font-path:          "/fonts";
+
+$font-mono:  'Source Code Pro', Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-sans:  'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-serif: 'Source Serif Pro', Georgia,"Times New Roman",Times,serif;
+$font:       $font-serif;
+
+// Size
+
+$root-size:              18px;
+$text-size:              1rem;
+$pre-size:               0.75rem;
+
+$indent:                 40px;
+
+$line-height:            1.4;
+$margin-size:            0.7rem;
+
+// Print size
+
+$print-root-size:        10px;
+
+// Colors
+
+$text-color:             #333333;
+$headings-color:         black;
+$code-color:             inherit;
+$tag-bg-color:           #aaa;
+$tag-color:              white;
+$body-bg:                #ffffff;
+$link-color:             darken(rgb(66, 139, 202), 20%);
+$link-hover-color:       darken(rgb(255, 64, 64), 20%);
+
+$well-bg:     #f0f0f0;
+$well-border: #ddd;
+$border-radius: 0.2rem;
+
+// Dark theme colors:
+
+$dark-color: #999;
+$dark-headings-color: #ccc;
+$dark-link-color: #d22;

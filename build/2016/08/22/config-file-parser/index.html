@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang=en> <head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title>Config File Parser - /dev/posts/</title><meta name=viewport content="initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes, width=device-width"><link rel=stylesheet href=/css/main.css></head> <body> <header> <h1>/dev/posts/</h1> </header> <nav> <ul> <li><a href=/ title=Home><i class="fa fa-home" aria-hidden=true></i> Home</a></li> <li><a href=https://github.com/lijiansong title="GitHub Projects"><i class="fa fa-github" aria-hidden=true></i> Project</a></li> <li><a href=/tags/ title=Tags><i class="fa fa-tags" aria-hidden=true></i> Tags</a></li> <li><a href=/archives/ title=Archives><i class="fa fa-list" aria-hidden=true></i> Archives</a></li> <li><button title="Change theme" style="border: none; background:none;" onclick=toggleTheme();><i class="fa fa-adjust" aria-hidden=true></i></button></li> </ul> </nav> <main role=main> <section> <article> <header> <h1>Config File Parser</h1> <p> <time>Aug 22 2016</time></p> <p class=taglist> <a href=/tags/IDL/ rel=tag class="label label-default">IDL</a> <a href=/tags/platform-tool/ rel=tag class="label label-default">platform-tool</a> </p> </header> <p>This archive is about how to use Flex and Bison (Yacc) to parse config files that is self-defined. The contens is shown below:<br></p> <ul> <li><a href=#description-file-design>Description File Design</a></li> <li><a href=#key-values>Key-Values</a></li> <li><a href=#inheritance-mechanism>Inheritance Mechanism</a></li> <li><a href=#induction-mechanism>Induction Mechanism</a></li> <li><a href=#comments>Comments</a></li> <li><a href=#syntax-design>Syntax Design</a></li> <li><a href=#usage>Usage</a></li> </ul> <h2>Description File Design</h2> <h3>Key-Values</h3> <p>Format of the config file is similar to JSON, which is composed of pairs of key-values. The config file is also composed of some tuples, which contain some pairs of key-values. e.g.</p> <div class=codehilite><pre><span></span>section {
+ key1 = &quot;string&quot;;
+ key2 = 12.34;
+}
+</pre></div> <p>Therefore,</p> <div class=codehilite><pre><span></span>section.key1= &quot;string&quot;
+section.key2=12.34
+</pre></div> <h3>Inheritance Mechanism</h3> <p>Besides the features above, the config file also supports inheritance mechanism. The symbol of inheritance is shown by ":", e.g.<br></p> <div class=codehilite><pre><span></span><span class=n>derived_section</span> <span class=o>:</span> <span class=n>section</span> <span class=o>{</span>
+  <span class=n>key1</span> <span class=o>=</span> <span class=s2>&quot;override string&quot;</span><span class=o>;</span>
+  <span class=n>key3</span> <span class=o>=</span> <span class=mi>10</span><span class=o>;</span>
+<span class=o>}</span>
+</pre></div> <p>Therefore,</p> <div class=codehilite><pre><span></span>derived_section.key1=&quot;override string&quot;
+derived_section.key2=12.34
+derived_section.key3=10
+</pre></div> <p>The types of the config file include int, float, string.<br></p> <h3>Induction Mechanism</h3> <p>The config file also introduces induction mechanism, which is expressed by "include", e.g.<br> The contents of a.config:</p> <div class=codehilite><pre><span></span>section_a {
+ key1 = &quot;string&quot;;
+ key2 = 12.34;
+}
+</pre></div> <p>The contents of b.config:</p> <div class=codehilite><pre><span></span><span class=cp>#include</span> <span class=cpf>&quot;path/a.config&quot;</span><span class=cp></span>
+<span class=n>section_b</span> <span class=p>{</span>
+ <span class=n>key1</span> <span class=o>=</span> <span class=s>&quot;str1&quot;</span><span class=p>;</span>
+ <span class=n>key2</span> <span class=o>=</span> <span class=mf>12.34</span><span class=p>;</span>
+<span class=n>x</span> <span class=p>{</span>
+ <span class=n>key1</span><span class=o>=</span><span class=mi>2</span><span class=p>;</span>
+ <span class=n>key2</span><span class=o>=</span><span class=mi>8</span><span class=p>;</span>
+<span class=p>}</span>
+<span class=nl>y</span> <span class=p>:</span> <span class=n>section_b</span><span class=p>.</span><span class=n>x</span> <span class=p>{</span>
+ <span class=n>key1</span><span class=o>=</span><span class=mi>20</span><span class=p>;</span>
+ <span class=n>key3</span><span class=o>=</span><span class=mi>33</span><span class=p>;</span>
+<span class=p>}</span>
+<span class=p>}</span>
+<span class=nl>z</span><span class=p>:</span><span class=n>section_a</span> <span class=p>{</span>
+<span class=n>key1</span><span class=o>=</span><span class=s>&quot;str&quot;</span><span class=p>;</span>
+<span class=n>key2</span><span class=o>=</span><span class=mi>25</span><span class=p>;</span>
+<span class=p>}</span>
+</pre></div> <h3>Comments</h3> <blockquote> <p>The config file also supports comments, formularized by /<em>comments</em>/ or //, e.g.<br></p> </blockquote> <div class=codehilite><pre><span></span>//comment
+section {
+ key1 = /* comment*/ &quot;string&quot;;
+ key2 = 12.34;
+}
+</pre></div> <h2>Syntax Design</h2> <blockquote> <p>To parse the config file, flex &amp; bison is of much efficiency. Before using the mature tools, we have to define the grammar in advance, which is formularized by Backus-Naur Form. The config files' Backus-Naur Form is shown below:<br></p> </blockquote> <div class=codehilite><pre><span></span>tuples::= tuple tuples | \epsilon
+tuples::= ID LB entries RB | ID COLON LB entries RB
+entries::= kv entries | tuple entries | \epsilon
+kv::= ID EQ value END
+value::= FLOAT | INT | ctring | NULLV
+cstring::= STRING cstring
+
+INT-&gt;[0-9]+
+FLOAT-&gt;[+-]?[0-9]+(\.[0-9]*)?
+STRING-&gt;\&quot;(\\.|[^\\&quot;])*\&quot;
+ID-&gt;[a-z_][a-z0-9_\.]*
+LB-&gt;{
+RB-&gt;}
+COLON-&gt;:
+EQ-&gt;=
+END-&gt;;
+NULLV-&gt;NULL
+</pre></div> <h2>Usage</h2> <blockquote> <p>To Compile the source code, you need to install git &amp; make. You can use the following command line to complie them:</p> </blockquote> <div class=codehilite><pre><span></span>$ git clone https://github.com/lijiansong/ConfigFileParser
+$ <span class=nb>cd</span> ConfigFileParser
+$ make
+</pre></div> <p>After the above cmds, you would get an executable file, named <em>config_parser</em>, and a static library suffixed by <em>.a</em>, named <em>lib_cfg_parser.a</em>. You can execute it like this( before use it you need to write a config file that is formulized by the grammar defined above ):</p> <div class=codehilite><pre><span></span>$ ./config_parser test.config
+</pre></div> <p>You can also call the static library <em>lib_cfg_parser.a</em> in your own program.<br><a href=https://github.com/lijiansong/ConfigFileParser>To learn more...</a></p> <hr> <p>Want to see something else extra? <a href=https://github.com/lijiansong/ConfigFileParser/issues>Open an issue.</a></p> </article> </section> </main> <footer> <form action=https://duckduckgo.com/ role=search> <input type=hidden name=sites value=lijiansong.github.io> <input type=hidden name=kae value=-1 id=_ddg_theme> <input role=searchbox name=q aria-label=Search placeholder="Search with DuckDuckGo..."> <button type=submit>Search</button> </form> <p><small> <a href=/about/ >About</a> - Powered by <a lang=fr href=https://github.com/middleman/middleman>Middleman</a> and <a href=https://github.com/FortAwesome/Font-Awesome>Font-Awesome</a> - <a href="mailto:lijiansong AT ict DOT ac DOT cn?subject=[Comment for http://github.com/lijiansong/2016/08/22/config-file-parser/]">Q & A</a> </small></p> </footer> <script src=/js/main.js></script> </body> </html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="http://lijiansong.github.io/">
+  <title>/dev/posts/</title>
+  <id>http://lijiansong.github.io/2018/feed.atom</id>
+  <link href="http://lijiansong.github.io/" />
+  <link rel="self" href="http://lijiansong.github.io/2018/feed.atom/" />
+  
+  <updated>2018-04-28T00:00:00+02:00</updated>
+  
+  <author>
+    <name>Gabriel Corona</name>
+  </author>
+
+  
+  <entry>
+      <title>Offloading Actions in Clang Driver</title>
+      
+      <link rel="alternate" href="http://lijiansong.github.io/2018/04/28/clang-offloading/" />
+      <id>http://lijiansong.github.io/2018/04/28/clang-offloading/</id>
+      <published>2018-04-28T00:00:00+02:00</published>
+      <updated>2018-04-28T00:00:00+02:00</updated>
+      <author>
+        <name>Gabriel Corona</name>
+      </author>
+      <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
+        <p>In heterogeneous computing, many programming models take use of computation offloading by transfering resource intensive computational tasks to an external platform, such as a cluster, grid or a cloud. Offloading may be necessary due to hardware limitations of a devices, such as limited computational power, storage, and energy. Here, we will make a birdview of the offloading action of CUDA and OpenMP in clang driver.</p>
+      </div></summary>
+  </entry>
+  
+  <entry>
+      <title>NDArray: A Headers only Template Library for N Dimensions Tensor Expressions</title>
+      
+      <link rel="alternate" href="http://lijiansong.github.io/2018/02/26/ndarray/" />
+      <id>http://lijiansong.github.io/2018/02/26/ndarray/</id>
+      <published>2018-02-26T00:00:00+01:00</published>
+      <updated>2018-02-26T00:00:00+01:00</updated>
+      <author>
+        <name>Gabriel Corona</name>
+      </author>
+      <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
+        <p>NDArray is short for N Dimension Array, it is a headers only library for N-Dimensions array(i.e. tensor in deep learning) expressions, such as arithmatic operations, reshape, reduction, slice and etc. </p>
+      </div></summary>
+  </entry>
+  
+
+</feed>

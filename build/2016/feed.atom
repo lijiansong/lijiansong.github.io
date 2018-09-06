@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="http://lijiansong.github.io/">
+  <title>/dev/posts/</title>
+  <id>http://lijiansong.github.io/2016/feed.atom</id>
+  <link href="http://lijiansong.github.io/" />
+  <link rel="self" href="http://lijiansong.github.io/2016/feed.atom/" />
+  
+  <updated>2016-11-11T00:00:00+01:00</updated>
+  
+  <author>
+    <name>Gabriel Corona</name>
+  </author>
+
+  
+  <entry>
+      <title>Block Chain</title>
+      
+      <link rel="alternate" href="http://lijiansong.github.io/2016/11/11/block-chain/" />
+      <id>http://lijiansong.github.io/2016/11/11/block-chain/</id>
+      <published>2016-11-11T00:00:00+01:00</published>
+      <updated>2016-11-11T00:00:00+01:00</updated>
+      <author>
+        <name>Gabriel Corona</name>
+      </author>
+      <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
+        <p>Recently, there is a hot term named blockchain, in Chinese is &#x201C;&#x533A;&#x5757;&#x94FE;&#x201D;. I made some research on it. A blockchain &#x2014; originally block chain &#x2014; is a distributed database that maintains a continuously-growing list of records called blocks. Each block contains a timestamp and a link to a previous block.</p>
+      </div></summary>
+  </entry>
+  
+  <entry>
+      <title>The Little Prince</title>
+      
+      <link rel="alternate" href="http://lijiansong.github.io/2016/09/03/2016-the-little-prince/" />
+      <id>http://lijiansong.github.io/2016/09/03/2016-the-little-prince/</id>
+      <published>2016-09-03T00:00:00+02:00</published>
+      <updated>2016-09-03T00:00:00+02:00</updated>
+      <author>
+        <name>Gabriel Corona</name>
+      </author>
+      <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
+        <p>Something is wrong with the relationship between my girl friend and me these days. But I believe tomorrow will be better, and everything will be better. <br>
+It is only with the heart that one can see rightly; what is essential is invisible to the eyes...</p>
+      </div></summary>
+  </entry>
+  
+  <entry>
+      <title>2016 Study Plan</title>
+      
+      <link rel="alternate" href="http://lijiansong.github.io/2016/09/03/2016-study-plan/" />
+      <id>http://lijiansong.github.io/2016/09/03/2016-study-plan/</id>
+      <published>2016-09-03T00:00:00+02:00</published>
+      <updated>2016-09-03T00:00:00+02:00</updated>
+      <author>
+        <name>Gabriel Corona</name>
+      </author>
+      <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
+        <p>It has been a long day since new term begins. Numerous life trivial needs to be done, such as purchasing house and living things, going through all the formalities, and etc.</p>
+      </div></summary>
+  </entry>
+  
+  <entry>
+      <title>Chris Lattner&#39;s Homepage</title>
+      
+      <link rel="alternate" href="http://lijiansong.github.io/2016/08/25/Chris-Lattner-Homepage/" />
+      <id>http://lijiansong.github.io/2016/08/25/Chris-Lattner-Homepage/</id>
+      <published>2016-08-25T00:00:00+02:00</published>
+      <updated>2016-08-25T00:00:00+02:00</updated>
+      <author>
+        <name>Gabriel Corona</name>
+      </author>
+      <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
+        <p>Born in 1978, Chris Lattner is an American software developer, best known as the main author of LLVM and related projects, such as the compiler Clang and the programming language Swift. As of 2016, he works at Apple Inc., as Director of the Developer Tools department, leading the Xcode, Instruments, and compiler teams.</p>
+      </div></summary>
+  </entry>
+  
+  <entry>
+      <title>Config File Parser</title>
+      
+      <link rel="alternate" href="http://lijiansong.github.io/2016/08/22/config-file-parser/" />
+      <id>http://lijiansong.github.io/2016/08/22/config-file-parser/</id>
+      <published>2016-08-22T00:00:00+02:00</published>
+      <updated>2016-08-22T00:00:00+02:00</updated>
+      <author>
+        <name>Gabriel Corona</name>
+      </author>
+      <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
+        <p>This archive is about how to use Flex and Bison (Yacc) to parse config files that is self-defined. 
+The contens is shown below:<br></p>
+      </div></summary>
+  </entry>
+  
+  <entry>
+      <title>Library Manager Engine</title>
+      
+      <link rel="alternate" href="http://lijiansong.github.io/2016/08/17/libs-manager-engine/" />
+      <id>http://lijiansong.github.io/2016/08/17/libs-manager-engine/</id>
+      <published>2016-08-17T00:00:00+02:00</published>
+      <updated>2016-08-17T00:00:00+02:00</updated>
+      <author>
+        <name>Gabriel Corona</name>
+      </author>
+      <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
+        <p>I have been coding an platform recently, which can manage library binaries on end users devices, such as android, iOS and so on.</p>
+<p>The platform is a Service Store, which just like the app store in android, where delelopers develop their own apps and deploy them onto the app store, and users can download the app that they like and install it on his or her devices. Therefore, android's app store can be treated as an ecological system.</p>
+      </div></summary>
+  </entry>
+  
+
+</feed>

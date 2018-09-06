@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="http://lijiansong.github.io/">
+  <title>/dev/posts/</title>
+  <id>http://lijiansong.github.io/tags/IDL/feed.atom</id>
+  <link href="http://lijiansong.github.io/" />
+  <link rel="self" href="http://lijiansong.github.io/tags/IDL/feed.atom/" />
+  
+  <updated>2016-08-22T00:00:00+02:00</updated>
+  
+  <author>
+    <name>Gabriel Corona</name>
+  </author>
+
+  
+  <entry>
+      <title>Config File Parser</title>
+      
+      <link rel="alternate" href="http://lijiansong.github.io/2016/08/22/config-file-parser/" />
+      <id>http://lijiansong.github.io/2016/08/22/config-file-parser/</id>
+      <published>2016-08-22T00:00:00+02:00</published>
+      <updated>2016-08-22T00:00:00+02:00</updated>
+      <author>
+        <name>Gabriel Corona</name>
+      </author>
+      <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
+        <p>This archive is about how to use Flex and Bison (Yacc) to parse config files that is self-defined. 
+The contens is shown below:<br></p>
+      </div></summary>
+  </entry>
+  
+  <entry>
+      <title>Library Manager Engine</title>
+      
+      <link rel="alternate" href="http://lijiansong.github.io/2016/08/17/libs-manager-engine/" />
+      <id>http://lijiansong.github.io/2016/08/17/libs-manager-engine/</id>
+      <published>2016-08-17T00:00:00+02:00</published>
+      <updated>2016-08-17T00:00:00+02:00</updated>
+      <author>
+        <name>Gabriel Corona</name>
+      </author>
+      <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
+        <p>I have been coding an platform recently, which can manage library binaries on end users devices, such as android, iOS and so on.</p>
+<p>The platform is a Service Store, which just like the app store in android, where delelopers develop their own apps and deploy them onto the app store, and users can download the app that they like and install it on his or her devices. Therefore, android's app store can be treated as an ecological system.</p>
+      </div></summary>
+  </entry>
+  
+
+</feed>

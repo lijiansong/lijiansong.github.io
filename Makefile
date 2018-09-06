@@ -1,5 +1,7 @@
-all:
-	jekyll build
-	jekyll s -w
+serve:
+	python app.py serve
+
+build:
+	python app.py build force
 clean:
-	jekyll clean
+	rm -r build
