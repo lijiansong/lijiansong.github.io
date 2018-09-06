@@ -7,6 +7,8 @@ I then switched to some custom Python code (but it is still a static website
 generator). It uses markdown [[7]](#markdown) for posting, jinja2 [[5]](#jinja2) templates and
 SASS [[4]](#SASS). Pygments [[3]](#pygments) is used for syntax highlighting, which is similar to jekyll [[8]](#jekyll) theme syntax highlighting.
 
+Thanks for Gabriel's theme <gabriel.corona@enst-bretagne.fr>.
+
 ## REF
 - [1] <span id="middleman">https://middlemanapp.com/</span>
 - [2] <span id="static_gen">https://www.staticgen.com/</span>
