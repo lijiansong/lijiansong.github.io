@@ -47,7 +47,7 @@ In clang driver module, the driver extensions for cuda mainly focuses on the sup
 
 Let's have an overview of cuda's offloading. We can obtain the following action graph when compiling two source files for host and a CUDA device, namely kernel-call.cu and a.cpp:
 
-![image](/blog-img/2018_04_28_cuda_offload.png "CUDA offloading example")
+![image](/blog-img/2018_04_28_cuda_offload.png "CUDA offloading example"){:height="50%" width="80%"}
 
 As is shown from the figure above, if we are generating code for the device or we are in a backend phase, we attempt to generate a fat binary. Clang compiles each arch to `ptx and assemble to cubin`, then feed the `cubin and the ptx` into a device "link" action, which uses `cuda-fatbin` to combine these cubins into one fatbin.  The fatbin is then an input to the host action. During cuda device phase, clang creates an offloading action for backend and assembler action respectively. And an offload action is used to add a host dependence to the device linker actions.
 
