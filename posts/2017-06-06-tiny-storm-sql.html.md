@@ -12,7 +12,7 @@ For Apache storm [1.1.0](http://storm.apache.org/2017/03/29/storm110-released.ht
 ## System Architecture
   Here we just implement a similar `demo` system which supports real time stream data analysis. The whole architecture is shown below:
   
-  ![image](/blog-img/2017_06_05_architecture.png "System Architecture")
+  ![image](/blog-img/2017_06_05_architecture.png "System Architecture"){:height="100%" width="100%"}
 
 As we can see from the above picture, when the user type a SQL-formatted query clause, the query sequence will be translated into a `query plan` which presents in the shape of a directed acyclic graph. The DAG-formatted query plan is optimized.
 Then it will be mapped into a Storm topology dynamically. Then the topology will be submitted to Storm cluster for running.

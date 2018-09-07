@@ -1,7 +1,8 @@
 serve:
-	python app.py serve
+	python3 app.py serve
 
 build:
-	python app.py build force
+	python3 app.py build force
+
 clean:
 	rm -r build
