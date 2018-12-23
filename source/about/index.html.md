@@ -6,7 +6,7 @@ title: About Json Lee
 This archive is my profile. Now, I am a student at State Key Laboratory of Computer Architecture, in Institute of Computing Technology, Chinese Academy of Sciences. I love coding, long-distance race and cycling.
 
 ## Biography
-I received my B.E. degree in [Computer Science and Technology](http://cs.whu.edu.cn/) from [Wuhan University](http://www.whu.edu.cn) in July 2016 and my Ph.D. degree in [Computer Architecture](http://www.carch.ac.cn/) from [Institute of Computing Technology, CAS](http://www.ict.ac.cn) in January 2021 under the supervision of Prof. Feng Xiaobing and Liu Lei.
+I received my B.E. degree in [Computer Science and Technology](http://cs.whu.edu.cn) from [Wuhan University](http://en.whu.edu.cn) in July 2016 and my Ph.D. degree in [Computer Architecture](http://www.carch.ac.cn/) from [Institute of Computing Technology, CAS](http://www.ict.ac.cn) in January 2021 under the supervision of Prof. [Feng Xiaobing](http://sourcedb.ict.cas.cn/cn/jssrck/200909/t20090917_2496613.html) and Liu Lei.
 
 ## Research Directions
 My research directions focus on *Computer Architecture, Programming Language, Distributed Computing, Parallel Computing, Machine Learning*, and etc.
@@ -24,9 +24,9 @@ My research directions focus on *Computer Architecture, Programming Language, Di
 ## Awards
 - Outstanding Graduate of Wuhan University, Wuhan University, 2016
 - ACM/ICPC, Silver Medal, Shenyang Site 2016
-- Third Prize National Information Security Contest for College Students, China, 2015
-- First Prize of American College Students' Mathematics and Modeling Contest, America, 2015
-- First Prize of Eighth Central China Region of Mathematics and Modeling Contest for College Students, China, 2015
+- Third Place in National Information Security Contest for College Students, China, 2015
+- First Place in American College Students' Mathematics and Modeling Contest, America, 2015
+- First Place of Eighth Central China Region of Mathematics and Modeling Contest for College Students, China, 2015
 - Champions of 5000m / 1500m long-distance race for many times, Wuhan University, 2014
 
 ## Postscript
