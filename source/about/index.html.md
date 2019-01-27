@@ -16,10 +16,11 @@ My research directions focus on *Computer Architecture, Programming Language, Di
 
 ## Research Activities
 - [Compiler](http://www.cambricon.com/index.php?c=page&id=21) construction and implementation for [Cambricon](http://www.cambricon.com) neural network chips, 2018
+- Google AI Machine Learning Winter Camp Peking Site, Automatic App Name Generator - A tool to generate popular app name, GitHub [repo](https://github.com/lijiansong/Kingfish), 2019
 
 ## Internship Experiences
 - 3D Road Modeling and Simulation System, in Wuhan [Zoyon](http://www.zoyon.com.cn/en/) Technology co., ltd, 2015
-- Real-time video style transfer with deep learning methods, in Beijing TensorStack Technology co., ltd, 2017
+- Real-time video style transfer with deep learning methods, in Beijing [TensorStack](https://github.com/tensorstack) Technology co., ltd, 2017
 
 ## Awards
 - Outstanding Graduate of Wuhan University, Wuhan University, 2016
