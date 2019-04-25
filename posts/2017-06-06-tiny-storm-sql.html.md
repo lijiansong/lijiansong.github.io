@@ -2,6 +2,7 @@
 title: "Tiny Storm SQL: A Real Time Stream Data Analysis Interface for Apache Storm"
 tags: platform-tool
 ---
+
 SQL is a well-adopted interface especially for those non-computer major people. Several projects including Hive, Drill, Phoenix and Spark have already invested significantly in their SQL layers. Here we implement a Storm-based query language system for real time stream data analysis. 
 READMORE
 
@@ -111,11 +112,15 @@ WS  : [ \t\r\n]+ -> skip ; // Define whitespace rule, toss it out
 ```
 
 By ANTLR `-visitor` tool, we can easily visit the AST through `visitor design pattern`. We store the necessary info of the sql sequence to build the DAG-formatted query plan. Here we use [`JGraphT`](https://github.com/jgrapht/jgrapht) to traverse the DAG, since it provides various interfaces for handling the DAG. We can eliminate the trouble of reinventing the wheel.
+
 To automatically generate Storm topology from the DAG-formatted query plan, we need to mark the father and child of each node in the DAG. In the DAG, the source tables are Storm spouts in Storm topology. Similarly, the operators of the DAG is storm bolts in Storm topology, so you need to implement these bolts ahead of schedule. Notice, join and group-by operators are time window based, in Storm, you can simply extend `BaseWindowedBolt` to implement the concepts of time window. Of course, you also have to connect to data sources to create Storm spouts to get the stream data. Here we simply create two spouts named `student and tc` to simulate the stream source data.
 
 The key features of the system include:
+
 - the SQL parser is based on `ANTLR`, it is universal for users' typing input;
+
 - the DAG-formatted query plan is based on `JGraphT`, you can access any vertex as you want;
+
 - the Storm topology is generated from the query plan `dynamically`, that is to say the whole system is not limited to a specific application or a specific stream data.
 
 Of course, the demo system is nothing but a demo, there is a lot to be improved. However, you can follow the whole architecture to develop your own interface.
