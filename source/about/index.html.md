@@ -9,7 +9,7 @@ This archive is my profile. Now, I am a Ph.D. candidate at [State Key Laboratory
 I received my B.E. degree in [Computer Science and Technology](http://cs.whu.edu.cn) from [Wuhan University](http://en.whu.edu.cn) in July 2016 and my Ph.D. degree in [Computer Architecture](http://www.carch.ac.cn/) from [Institute of Computing Technology, CAS](http://www.ict.ac.cn) in January 2021 under the supervision of Prof. [Feng Xiaobing](http://sourcedb.ict.cas.cn/cn/jssrck/200909/t20090917_2496613.html) and Liu Lei.
 
 ## Research Directions
-My research directions focus on *Compiler Techniques, Runtime System, Programming Language, Computer Architecture, Distributed Computing, Parallel Computing, Machine Learning*, and etc.
+My research interests span *Compiler Techniques, Runtime System, Programming Language, Computer Architecture, Distributed Computing, Parallel Computing, Machine Learning*, and etc.
 
 ## Publications
 
