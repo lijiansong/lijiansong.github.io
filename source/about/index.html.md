@@ -12,7 +12,9 @@ I received my B.E. degree in [Computer Science and Technology](http://cs.whu.edu
 
 ## Research Directions
 
-My research interests span *Compiler Techniques, Runtime System, Programming Language, Computer Architecture, Distributed Computing, Parallel Computing, Machine Learning* and etc.
+My research interests span **Compiler Techniques, Runtime System, Programming Language, Computer Architecture, Distributed Computing, Parallel Computing, Machine Learning** and etc.
+
+I am interested in everything about the underlying infrastructures, including but not limited to **Compiler, OS, Runtime** and etc.
 
 ## Publications
 
@@ -20,6 +22,7 @@ My research interests span *Compiler Techniques, Runtime System, Programming Lan
 ## Research Activities
 
 - High performance programming language [BANG](http://www.cambricon.com/index.php?c=page&id=21) construction and implementation for [Cambricon neural network chips](http://www.cambricon.com), 2018. More details about the [compiler](http://www.cambricon.com/index.php?c=page&id=21), checkout this [page](http://www.cambricon.com/index.php?c=page&id=21).
+
 - Google AI Machine Learning Winter Camp Peking Site, 2019. Automatic App Name Generator - A tool to generate popular app name. More details, please checkout this GitHub [repo](https://github.com/lijiansong/Kingfish).
 
 ## Internship Experiences
