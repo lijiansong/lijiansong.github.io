@@ -14,7 +14,7 @@ I received my B.E. degree in [Computer Science and Technology](http://cs.whu.edu
 
 My research interests span **Compiler Techniques, Runtime System, Programming Language, Computer Architecture, Distributed Computing, Parallel Computing, Machine Learning** and etc.
 
-I am interested in everything about the underlying infrastructures, including but not limited to **Compiler, OS, Runtime** and etc.
+I am interested in everything about the underlying infrastructures, including but not limited to **Compiler, Programming Language, OS, Runtime, Computer Architecture** and etc.
 
 ## Publications
 
