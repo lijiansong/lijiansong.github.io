@@ -5,27 +5,12 @@
   <link href="http://lijiansong.github.io/" />
   <link rel="self" href="http://lijiansong.github.io/tags/platform-tool/feed.atom/" />
   
-  <updated>2019-07-30T00:00:00+02:00</updated>
+  <updated>2018-04-28T00:00:00+02:00</updated>
   
   <author>
     <name>Gabriel Corona</name>
   </author>
 
-  
-  <entry>
-      <title>Timeline of Programming Languages</title>
-      
-      <link rel="alternate" href="http://lijiansong.github.io/2019/07/30/timeline-of-programming-languages/" />
-      <id>http://lijiansong.github.io/2019/07/30/timeline-of-programming-languages/</id>
-      <published>2019-07-30T00:00:00+02:00</published>
-      <updated>2019-07-30T00:00:00+02:00</updated>
-      <author>
-        <name>Gabriel Corona</name>
-      </author>
-      <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
-        <p>This is a record of historically important programming languages, by a timeline of years.</p>
-      </div></summary>
-  </entry>
   
   <entry>
       <title>Offloading Actions in Clang Driver</title>
