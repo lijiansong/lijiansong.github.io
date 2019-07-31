@@ -8,7 +8,7 @@
   <updated>{{ page.posts[0].timestamp.isoformat() }}</updated>
   {% endif %}
   <author>
-    <name>Gabriel Corona</name>
+    <name>Json Lee</name>
   </author>
 
   {% for post in page.posts %}
