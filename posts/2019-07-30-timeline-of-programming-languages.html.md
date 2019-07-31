@@ -203,4 +203,4 @@ Tips: If you want to see the predecessors and descendants of each programming la
      - quite hard (eg: ensuring one doesn't feed cows with carrots or dead_rabbits),
      - or very hard (eg: ensuring meat can be eaten only once)
 
-More details about the real world rules, please checkout Pixel's [page](http://rigaux.org/language-study/various/is-a-cow-an-animal/).
+     More details about the real world rules, please checkout Pixel's [page](http://rigaux.org/language-study/various/is-a-cow-an-animal/).
