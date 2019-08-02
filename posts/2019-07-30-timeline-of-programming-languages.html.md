@@ -23,6 +23,8 @@ Tips: If you want to see the predecessors and descendants of each programming la
 - <http://rigaux.org/language-study/>
 
 
+## FOOTNOTEs
+
 [^language-concepts]:
 
     This interesting [website](http://rigaux.org/language-study/concepts-history.html) shows the history of programming languages concepts, include but not limit to *Abstract data type, BNF(Backus-Naur Form), Class, Closure, High order function, Lazy evaluation, List comprehension, OOP, Operator overloading, Parametric Polymorphism, Type inference* and etc.
