@@ -21,14 +21,14 @@ I am interested in everything about the underlying infrastructures, including bu
 
 ## Research Activities
 
-- High performance programming language [BANG](http://www.cambricon.com/index.php?c=page&id=21) construction and implementation for [Cambricon neural network chips](http://www.cambricon.com), 2018. More details about the [compiler](http://www.cambricon.com/index.php?c=page&id=21), checkout this [page](http://www.cambricon.com/index.php?c=page&id=21). Thanks to this project, I gained the ability to build and hack a large system.
+- High performance programming language [BANG](http://www.cambricon.com/index.php?m=content&c=index&a=show&catid=127&id=29) construction and implementation for [Cambricon neural network chips](http://www.cambricon.com), 2018. More details about the compiler, checkout this [page](http://www.cambricon.com/index.php?m=content&c=index&a=show&catid=127&id=29). Thanks to this project, I gained the ability to build and hack a large system.
 
 - Google AI Machine Learning Winter Camp Peking Site, 2019. Automatic App Name Generator - A tool to generate popular app name. More details, please checkout this GitHub [repo](https://github.com/lijiansong/Kingfish).
 
 ## Internship Experiences
 
 - 3D Road Modeling and Simulation System, in Wuhan [Zoyon](http://www.zoyon.com.cn/en/) Technology co., ltd, 2015
-- Real-time video style transfer with deep learning methods, in Beijing [TensorStack](https://github.com/tensorstack) Technology co., ltd, 2017
+- Real-time video style transfer with deep learning methods, in Beijing TensorStack Technology co., ltd, 2017
 
 ## Awards
 
