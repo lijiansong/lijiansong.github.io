@@ -25,6 +25,10 @@ I am interested in everything about the underlying infrastructures, including bu
 
 - Google AI Machine Learning Winter Camp Peking Site, 2019. Automatic App Name Generator - A tool to generate popular app name. More details, please checkout this GitHub [repo](https://github.com/lijiansong/Kingfish).
 
+- A tiny DSL for DNN accelerators with formal PL specifications. For more details, please checkout this GitHub [repo](https://github.com/Phaeton-lang).
+
+- Characterizing the deployment of DNNs on commercial AI accelerators, e.g., [Cambricon MLU100](http://www.cambricon.com/) and [Huawei Atlas300](https://ascend.huawei.com). For more details, please checkout this GitHub [repo](https://github.com/Phaeton-lang/Bench-NN-DSP).
+
 ## Internship Experiences
 
 - 3D Road Modeling and Simulation System, in Wuhan [Zoyon](http://www.zoyon.com.cn/en/) Technology co., ltd, 2015
