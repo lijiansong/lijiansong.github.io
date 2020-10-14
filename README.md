@@ -9,13 +9,13 @@ This archive will be updated irregularly.
 
 ## Notice
 
-The site used to be built with Middleman [[1]](#middleman) and its blog plugin [[6]](#middleman_blog), a static website
-generator [[2]](#static_gen).
+> The site used to be built with Middleman [[1]](#middleman) and its blog plugin [[6]](#middleman_blog), a static website
+> generator [[2]](#static_gen).
 
-I rewrite the website deployment and generation by switching to some custom Python code,
-but it is still a static website generator. It uses markdown [[7]](#markdown) for posting, jinja2 [[5]](#jinja2)
-templates and SASS [[4]](#SASS). Pygments [[3]](#pygments) is used for syntax highlighting,
-which is similar to jekyll [[8]](#jekyll) theme syntax highlighting.
+> I rewrite the website deployment and generation by switching to some custom Python code,
+> but it is still a static website generator. It uses markdown [[7]](#markdown) for posting, jinja2 [[5]](#jinja2)
+> templates and SASS [[4]](#SASS). Pygments [[3]](#pygments) is used for syntax highlighting,
+> which is similar to jekyll [[8]](#jekyll) theme syntax highlighting.
 
 Thanks for [Gabriel's](gabriel.corona@enst-bretagne.fr.) theme, very nice and clean.
 

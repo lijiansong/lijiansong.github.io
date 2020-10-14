@@ -20,7 +20,7 @@
       <published>2016-11-11T00:00:00+01:00</published>
       <updated>2016-11-11T00:00:00+01:00</updated>
       <author>
-        <name>Gabriel Corona</name>
+        <name>Json Lee</name>
       </author>
       <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
         <p>Recently, there is a hot term named blockchain, in Chinese is &#x201C;&#x533A;&#x5757;&#x94FE;&#x201D;. I made some research on it. A blockchain &#x2014; originally block chain &#x2014; is a distributed database that maintains a continuously-growing list of records called blocks. Each block contains a timestamp and a link to a previous block.</p>
