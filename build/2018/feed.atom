@@ -20,7 +20,7 @@
       <published>2018-04-28T00:00:00+02:00</published>
       <updated>2018-04-28T00:00:00+02:00</updated>
       <author>
-        <name>Gabriel Corona</name>
+        <name>Json Lee</name>
       </author>
       <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
         <p>In heterogeneous computing, many programming models take use of computation offloading by transfering resource intensive computational tasks to an external platform, such as a cluster, grid or a cloud. Offloading may be necessary due to hardware limitations of a devices, such as limited computational power, storage, and energy. Here, we will make a birdview of the offloading action of CUDA and OpenMP in clang driver.</p>
@@ -35,7 +35,7 @@
       <published>2018-02-26T00:00:00+01:00</published>
       <updated>2018-02-26T00:00:00+01:00</updated>
       <author>
-        <name>Gabriel Corona</name>
+        <name>Json Lee</name>
       </author>
       <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
         <p>NDArray is short for N Dimension Array, it is a headers only library for N-Dimensions array(i.e. tensor in deep learning) expressions, such as arithmatic operations, reshape, reduction, slice and etc. </p>

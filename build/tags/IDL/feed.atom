@@ -20,7 +20,7 @@
       <published>2016-08-22T00:00:00+02:00</published>
       <updated>2016-08-22T00:00:00+02:00</updated>
       <author>
-        <name>Gabriel Corona</name>
+        <name>Json Lee</name>
       </author>
       <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
         <p>This archive is about how to use Flex and Bison (Yacc) to parse config files that is self-defined. 
@@ -36,7 +36,7 @@ The contens is shown below:<br></p>
       <published>2016-08-17T00:00:00+02:00</published>
       <updated>2016-08-17T00:00:00+02:00</updated>
       <author>
-        <name>Gabriel Corona</name>
+        <name>Json Lee</name>
       </author>
       <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
         <p>I have been coding an platform recently, which can manage library binaries on end users devices, such as android, iOS and so on.</p>

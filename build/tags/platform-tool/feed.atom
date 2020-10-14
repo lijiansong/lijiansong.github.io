@@ -20,7 +20,7 @@
       <published>2018-04-28T00:00:00+02:00</published>
       <updated>2018-04-28T00:00:00+02:00</updated>
       <author>
-        <name>Gabriel Corona</name>
+        <name>Json Lee</name>
       </author>
       <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
         <p>In heterogeneous computing, many programming models take use of computation offloading by transfering resource intensive computational tasks to an external platform, such as a cluster, grid or a cloud. Offloading may be necessary due to hardware limitations of a devices, such as limited computational power, storage, and energy. Here, we will make a birdview of the offloading action of CUDA and OpenMP in clang driver.</p>
@@ -35,7 +35,7 @@
       <published>2018-02-26T00:00:00+01:00</published>
       <updated>2018-02-26T00:00:00+01:00</updated>
       <author>
-        <name>Gabriel Corona</name>
+        <name>Json Lee</name>
       </author>
       <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
         <p>NDArray is short for N Dimension Array, it is a headers only library for N-Dimensions array(i.e. tensor in deep learning) expressions, such as arithmatic operations, reshape, reduction, slice and etc. </p>
@@ -50,7 +50,7 @@
       <published>2017-06-06T00:00:00+02:00</published>
       <updated>2017-06-06T00:00:00+02:00</updated>
       <author>
-        <name>Gabriel Corona</name>
+        <name>Json Lee</name>
       </author>
       <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
         <p>SQL is a well-adopted interface especially for those non-computer major people. Several projects including Hive, Drill, Phoenix and Spark have already invested significantly in their SQL layers. Here we implement a Storm-based query language system for real time stream data analysis. </p>
@@ -65,7 +65,7 @@
       <published>2017-03-17T00:00:00+01:00</published>
       <updated>2017-03-17T00:00:00+01:00</updated>
       <author>
-        <name>Gabriel Corona</name>
+        <name>Json Lee</name>
       </author>
       <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
         <p>In Unix-like system, the Executable and Linkable Format (ELF, formerly called Extensible Linking Format) is a common standard file format for executables, object code, shared libraries, and core dumps. </p>
@@ -80,7 +80,7 @@
       <published>2017-02-20T00:00:00+01:00</published>
       <updated>2017-02-20T00:00:00+01:00</updated>
       <author>
-        <name>Gabriel Corona</name>
+        <name>Json Lee</name>
       </author>
       <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
         <p>Blockly is an open-source framework under Apache 2.0 License for creating visual programming editors. It is a project of Google,which is able to run in web browser, Android or iOS operating system. 
@@ -96,7 +96,7 @@ Blockly uses blocks that link together to make writing code easier, and can gene
       <published>2016-08-22T00:00:00+02:00</published>
       <updated>2016-08-22T00:00:00+02:00</updated>
       <author>
-        <name>Gabriel Corona</name>
+        <name>Json Lee</name>
       </author>
       <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
         <p>This archive is about how to use Flex and Bison (Yacc) to parse config files that is self-defined. 
@@ -112,7 +112,7 @@ The contens is shown below:<br></p>
       <published>2016-08-17T00:00:00+02:00</published>
       <updated>2016-08-17T00:00:00+02:00</updated>
       <author>
-        <name>Gabriel Corona</name>
+        <name>Json Lee</name>
       </author>
       <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
         <p>I have been coding an platform recently, which can manage library binaries on end users devices, such as android, iOS and so on.</p>

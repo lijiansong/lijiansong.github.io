@@ -20,7 +20,7 @@
       <published>{{ post.timestamp.isoformat() | escape }}</published>
       <updated>{{ post.updated.isoformat() | escape }}</updated>
       <author>
-        <name>Gabriel Corona</name>
+        <name>Json Lee</name>
       </author>
       <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
         {{ post.summary() | safe }}
