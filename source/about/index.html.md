@@ -25,9 +25,11 @@ I am interested in everything about the underlying infrastructures, including bu
 
 - Google AI Machine Learning Winter Camp Peking Site, 2019. Automatic App Name Generator - A tool to generate popular app name. More details, please checkout this GitHub [repo](https://github.com/lijiansong/Kingfish).
 
+- Characterizing the end-to-end deployment of DNNs on commercial AI accelerators, e.g., [Cambricon MLU100](http://www.cambricon.com/) and [Huawei Atlas300](https://ascend.huawei.com). For more details, please checkout this GitHub [repo](https://github.com/Phaeton-lang/Bench-NN-DSP).
+
 - A tiny DSL for DNN accelerators with formal PL specifications. For more details, please checkout this GitHub [repo](https://github.com/Phaeton-lang).
 
-- Characterizing the deployment of DNNs on commercial AI accelerators, e.g., [Cambricon MLU100](http://www.cambricon.com/) and [Huawei Atlas300](https://ascend.huawei.com). For more details, please checkout this GitHub [repo](https://github.com/Phaeton-lang/Bench-NN-DSP).
+- Application-oblivious memory scheduling support for heterogeneous computing systems. The core idea is to hack a runtime system to automatically pinpoint the memory behaviors of each device memory block and detect the memory access patterns, generate the memory scheduling plan, and thereby to reduce the memory pressure of device accelerators. The implementation is based on the Apache top level project: [Singa](http://singa.apache.org/). For more details, please checkout this [repo](#). Baselines see this [repo](https://github.com/Phaeton-lang/baselines).
 
 ## Internship Experiences
 
