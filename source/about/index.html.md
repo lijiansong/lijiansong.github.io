@@ -31,7 +31,7 @@ I am interested in everything about the underlying infrastructures, including bu
 
 - Application-oblivious memory scheduling support for heterogeneous computing systems. The core idea is to hack a runtime system to automatically pinpoint the memory behaviors of each device memory block and detect the memory access patterns, generate the memory scheduling plan, and thereby to reduce the memory pressure of device accelerators. The implementation is based on the Apache top level project: [Singa](http://singa.apache.org/). For more details, please checkout this [repo](#). Baselines see this [repo](https://github.com/Phaeton-lang/baselines).
 
-- Xilinx Domain Customized Computing Research Winter Camp, 2021. Thanks for the FPGA board provided by Xilinx.
+- Xilinx Customized Computing Winter Camp, 2021. Thanks for the PYNQ-Z2 FPGA board provided by Xilinx.
 
 ## Internship Experiences
 

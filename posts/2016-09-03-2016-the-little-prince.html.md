@@ -2,7 +2,7 @@
 title: The Little Prince
 tags: Temper
 ---
-  Something is wrong with the relationship between my girl friend and me these days. But I believe tomorrow will be better, and everything will be better. <br>
+
 It is only with the heart that one can see rightly; what is essential is invisible to the eyes...
 READMORE
 
