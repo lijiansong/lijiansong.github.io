@@ -21,17 +21,17 @@ I am interested in everything about the underlying infrastructures, including bu
 
 ## Research Activities
 
-- High performance programming language [BANG](http://www.cambricon.com/index.php?m=content&c=index&a=show&catid=127&id=29) construction and implementation for [Cambricon neural network chips](http://www.cambricon.com), 2018. More details about the compiler, checkout this [page](http://www.cambricon.com/index.php?m=content&c=index&a=show&catid=127&id=29). Thanks to this project, I gained the ability to build and hack a large system.
+- 2017.06 ~ 2019.12, High performance programming language [BANG](http://www.cambricon.com/index.php?m=content&c=index&a=show&catid=127&id=29) construction and implementation for [Cambricon neural network chips](http://www.cambricon.com). More details about the compiler, checkout this [page](http://www.cambricon.com/index.php?m=content&c=index&a=show&catid=127&id=29). Thanks to this project, I gained the ability to build and hack a large system.
 
-- Google AI Machine Learning Winter Camp Peking Site, 2019. Automatic App Name Generator - A tool to generate popular app name. More details, please checkout this GitHub [repo](https://github.com/lijiansong/Kingfish).
+- 2019.01 ~ 2019.02, Google AI Machine Learning Winter Camp, Peking Site. Automatic App Name Generator - A tool to generate popular app name. More details, please checkout this GitHub [repo](https://github.com/lijiansong/Kingfish).
 
-- Characterizing the end-to-end deployment of DNNs on commercial AI accelerators, e.g., [Cambricon MLU100](http://www.cambricon.com/) and [Huawei Atlas300](https://ascend.huawei.com). For more details, please checkout this GitHub [repo](https://github.com/Phaeton-lang/Bench-NN-DSP).
+- 2019.09 ~ 2020.03, Characterizing the end-to-end deployment of DNNs on commercial AI accelerators, e.g., [Cambricon MLU100](http://www.cambricon.com/) and [Huawei Atlas300](https://ascend.huawei.com). For more details, please checkout this GitHub [repo](https://github.com/Phaeton-lang/Bench-NN-DSP).
 
-- A tiny DSL for DNN accelerators with formal PL specifications. For more details, please checkout this GitHub [repo](https://github.com/Phaeton-lang).
+- 2019.06 ~ - , A tiny DSL for DNN accelerators with formal PL specifications. For more details, please checkout this GitHub [repo](https://github.com/Phaeton-lang).
 
-- Application-oblivious memory scheduling support for heterogeneous computing systems. The core idea is to hack a runtime system to automatically pinpoint the memory behaviors of each device memory block and detect the memory access patterns, generate the memory scheduling plan, and thereby to reduce the memory pressure of device accelerators. The implementation is based on the Apache top level project: [Singa](http://singa.apache.org/). For more details, please checkout this [repo](#). Baselines see this [repo](https://github.com/Phaeton-lang/baselines).
+- 2020.06 ~ 2021.02, Application-oblivious memory scheduling support for heterogeneous computing systems. The core idea is to implement a runtime system to automatically pinpoint the memory behaviors of each device memory block and detect the memory access patterns, generate the memory scheduling plan, and thereby to reduce the memory pressure of device accelerators. The implementation is based on the Apache top level project: [Singa](http://singa.apache.org/). For more details, please checkout this [repo](#). Baselines see this [repo](https://github.com/Phaeton-lang/baselines).
 
-- Xilinx Customized Computing Winter Camp, 2021. Thanks for the PYNQ-Z2 FPGA board provided by Xilinx.
+- 2021.01 ~ 2021.02, Xilinx Customized Computing Winter Camp. A tiny TPU-like DNN accelerator design and optimization with HLS and LLVM [CIRCT](https://github.com/llvm/circt). Thanks for the PYNQ-Z2 FPGA board provided by Xilinx.
 
 ## Internship Experiences
 
