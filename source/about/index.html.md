@@ -21,7 +21,7 @@ I am interested in everything about the underlying infrastructures, including bu
 
 ## Research Activities
 
-- 2017.06 ~ 2019.12, High performance programming language [BANG](http://www.cambricon.com/index.php?m=content&c=index&a=show&catid=127&id=29) construction and implementation for [Cambricon neural network chips](http://www.cambricon.com). More details about the compiler, checkout this [page](http://www.cambricon.com/index.php?m=content&c=index&a=show&catid=127&id=29). Thanks to this project, I gained the ability to build and hack a large system.
+- 2017.06 ~ 2019.12, High performance programming language [BANG](http://www.cambricon.com/index.php?m=content&c=index&a=show&catid=127&id=29) construction and implementation for [Cambricon neural network chips](http://www.cambricon.com). More details about the compiler, please checkout this [page](http://www.cambricon.com/index.php?m=content&c=index&a=show&catid=127&id=29). Thanks to this project, I gained the ability to build and hack a large system.
 
 - 2019.01 ~ 2019.02, Google AI Machine Learning Winter Camp, Peking Site. Automatic App Name Generator - A tool to generate popular app name. More details, please checkout this GitHub [repo](https://github.com/lijiansong/Kingfish).
 
