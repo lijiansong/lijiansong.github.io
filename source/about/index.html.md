@@ -11,9 +11,11 @@ I am an open source enthusiast. I love coding, long-distance race and cycling.
 
 I received my B.E. degree in [Computer Science and Technology](http://cs.whu.edu.cn) from [Wuhan University](http://en.whu.edu.cn) in July 2016 and my Ph.D. degree in [Computer Architecture](http://www.carch.ac.cn/) from [Institute of Computing Technology, CAS](http://www.ict.ac.cn) in July 2021 under the supervision of Prof. [Feng Xiaobing](http://sourcedb.ict.cas.cn/cn/jssrck/200909/t20090917_2496613.html).
 
+Ph.D. thesis project **On the System Optimizations of DNN Accelerators** from the perspective of *Benchmarking, Compiler* and *Runtime System Optimizations* for the dedicated DNN accelerators.
+
 ## Research Directions
 
-My research interests span **Compiler Techniques, Runtime System, Programming Language, Computer Architecture, Distributed Computing, Parallel Computing, Machine Learning** and etc.
+My research interests span *Compiler Techniques, Runtime System, Programming Language, Computer Architecture, Distributed Computing, Parallel Computing, Machine Learning* and etc.
 
 I am interested in everything about the underlying infrastructures, including but not limited to **Compiler, Programming Language, Operating System, Runtime, Computer Architecture** and etc.
 
