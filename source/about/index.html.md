@@ -50,6 +50,11 @@ I am interested in everything about the underlying infrastructures, including bu
 - First Place of Eighth Central China Region of Mathematics and Modeling Contest for College Students, China, 2015
 - Champions of 5000m / 1500m long-distance race for many times, Wuhan University, 2014
 
+## Useful Links
+
+- System Conference Deadline: <http://www.cs.technion.ac.il/~dan/index_sysvenues_deadline.html>
+- Chronological Listing of A.M. Turing Award Winners: <https://amturing.acm.org/byyear.cfm>
+
 ## Postscript
 
 Any questions or suggestions, feel free to open an issue on [GitHub](https://github.com/lijiansong) or email me to *jsonlee@whu.edu.cn* .
